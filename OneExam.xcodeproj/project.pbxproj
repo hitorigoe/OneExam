@@ -13,9 +13,13 @@
 		22023BF4223BA03500D0A854 /* OneExam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */; };
 		22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22023BF5223BA03700D0A854 /* Assets.xcassets */; };
 		22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */; };
+		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
+		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0092B9232BA3380C0A837E6D /* Pods-OneExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.release.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.release.xcconfig"; sourceTree = "<group>"; };
+		09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22023BE8223BA03500D0A854 /* OneExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22023BEB223BA03500D0A854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22023BED223BA03500D0A854 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		22023BF5223BA03700D0A854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22023BF8223BA03700D0A854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22023BFA223BA03700D0A854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				22023BEA223BA03500D0A854 /* OneExam */,
 				22023BE9223BA03500D0A854 /* Products */,
+				BD0BA9CC98E2CB8035DC5BA3 /* Pods */,
+				767D454238F36A40B05F5BAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,27 @@
 				22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
+				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
 			);
 			path = OneExam;
+			sourceTree = "<group>";
+		};
+		767D454238F36A40B05F5BAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD0BA9CC98E2CB8035DC5BA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */,
+				0092B9232BA3380C0A837E6D /* Pods-OneExam.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22023BFD223BA03700D0A854 /* Build configuration list for PBXNativeTarget "OneExam" */;
 			buildPhases = (
+				E9BDA2A9D3858D6CE3079D0C /* [CP] Check Pods Manifest.lock */,
 				22023BE4223BA03500D0A854 /* Sources */,
 				22023BE5223BA03500D0A854 /* Frameworks */,
 				22023BE6223BA03500D0A854 /* Resources */,
+				706E2A4E04AA680DBC8EE1F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,11 +163,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		706E2A4E04AA680DBC8EE1F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneExam/Pods-OneExam-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OneExam/Pods-OneExam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9BDA2A9D3858D6CE3079D0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneExam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22023BE4223BA03500D0A854 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */,
 				22023BEE223BA03500D0A854 /* ViewController.swift in Sources */,
 				22023BEC223BA03500D0A854 /* AppDelegate.swift in Sources */,
 				22023BF4223BA03500D0A854 /* OneExam.xcdatamodeld in Sources */,
@@ -284,6 +362,7 @@
 		};
 		22023BFE223BA03700D0A854 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +381,7 @@
 		};
 		22023BFF223BA03700D0A854 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0092B9232BA3380C0A837E6D /* Pods-OneExam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
