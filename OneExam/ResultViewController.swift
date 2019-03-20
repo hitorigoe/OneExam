@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  ResultViewController.swift
 //  OneExam
 //
 //  Created by new torigoe on 2019/03/20.
@@ -8,14 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class ResultViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
-    var image1: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
-        image1 = UIImage(named:"chinese_")
-        imageView.image = image1
+
         // Do any additional setup after loading the view.
     }
     
