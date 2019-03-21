@@ -13,13 +13,14 @@
 		22023BF4223BA03500D0A854 /* OneExam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */; };
 		22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22023BF5223BA03700D0A854 /* Assets.xcassets */; };
 		22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */; };
-		226C1AB22242301700731836 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226C1AB12242301700731836 /* GoogleService-Info.plist */; };
 		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
 		22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D222420D7200E33504 /* HomeViewController.swift */; };
 		22BE41D522420DF400E33504 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D422420DF400E33504 /* ExamViewController.swift */; };
 		22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D622420E3300E33504 /* ResultViewController.swift */; };
 		22BE41D922420EA400E33504 /* DLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D822420EA400E33504 /* DLViewController.swift */; };
 		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
+		EFC7EFC72242B5F600904572 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFC7EFC62242B5F600904572 /* GoogleService-Info.plist */; };
+		EFC7EFC92242E28D00904572 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7EFC82242E28D00904572 /* PostData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +34,14 @@
 		22023BF5223BA03700D0A854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22023BF8223BA03700D0A854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22023BFA223BA03700D0A854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226C1AB12242301700731836 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22BE41D222420D7200E33504 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22BE41D422420DF400E33504 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		22BE41D622420E3300E33504 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		22BE41D822420EA400E33504 /* DLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLViewController.swift; sourceTree = "<group>"; };
 		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
+		EFC7EFC62242B5F600904572 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFC7EFC82242E28D00904572 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				22023BEB223BA03500D0A854 /* AppDelegate.swift */,
 				22023BED223BA03500D0A854 /* ViewController.swift */,
+				EFC7EFC82242E28D00904572 /* PostData.swift */,
 				22023BEF223BA03500D0A854 /* Main.storyboard */,
 				22BE41D822420EA400E33504 /* DLViewController.swift */,
 				22BE41D422420DF400E33504 /* ExamViewController.swift */,
@@ -84,7 +87,7 @@
 				22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
-				226C1AB12242301700731836 /* GoogleService-Info.plist */,
+				EFC7EFC62242B5F600904572 /* GoogleService-Info.plist */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
 				22BE41D222420D7200E33504 /* HomeViewController.swift */,
 				22BE41D622420E3300E33504 /* ResultViewController.swift */,
@@ -170,7 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */,
-				226C1AB22242301700731836 /* GoogleService-Info.plist in Resources */,
+				EFC7EFC72242B5F600904572 /* GoogleService-Info.plist in Resources */,
 				22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */,
 				22023BF1223BA03500D0A854 /* Main.storyboard in Resources */,
 			);
@@ -191,6 +194,7 @@
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -201,6 +205,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22BE41D922420EA400E33504 /* DLViewController.swift in Sources */,
+				EFC7EFC92242E28D00904572 /* PostData.swift in Sources */,
 				22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */,
 				22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */,
 				22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */,

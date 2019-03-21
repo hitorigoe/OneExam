@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         // 背景色、選択時の色を設定する
         tabBarController.selectedColor = UIColor(red: 1.0, green: 0.14, blue: 0.11, alpha: 1)
         tabBarController.buttonsBackgroundColor = UIColor(red: 0.16, green: 0.31, blue: 0.17, alpha: 1)
-        tabBarController.selectionIndicatorHeight = 3
+        tabBarController.selectionIndicatorHeight = 4
         
         // 作成したESTabBarControllerを親のViewController（＝self）に追加する
         addChild(tabBarController)
