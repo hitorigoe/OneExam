@@ -172,6 +172,68 @@
             </objects>
             <point key="canvasLocation" x="1452" y="133"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="Sfc-TX-9FW">
+            <objects>
+                <viewController storyboardIdentifier="Setting" id="jUA-Yc-EzB" customClass="SettingViewController" customModule="OneExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nmv-1A-ham">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cY3-Cb-fNW">
+                                <rect key="frame" x="67" y="94" width="240" height="128"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fze-lS-g3m">
+                                <rect key="frame" x="37.5" y="287" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="h0k-Ch-dUQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xED-d8-NUl">
+                                <rect key="frame" x="37.5" y="385" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="9fK-hu-nrn"/>
+                                </constraints>
+                                <state key="normal" title="表示名変更"/>
+                                <connections>
+                                    <action selector="handleChangeButton:" destination="jUA-Yc-EzB" eventType="touchUpInside" id="ASR-jC-f2q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvA-ni-sdV">
+                                <rect key="frame" x="37.5" y="442" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="gh3-dz-QqC"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="handleLogoutButton:" destination="jUA-Yc-EzB" eventType="touchUpInside" id="yfC-BY-ye1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cY3-Cb-fNW" firstAttribute="centerX" secondItem="nmv-1A-ham" secondAttribute="centerX" id="JSr-P8-CeB"/>
+                            <constraint firstItem="cvA-ni-sdV" firstAttribute="centerX" secondItem="nmv-1A-ham" secondAttribute="centerX" id="K7N-Jy-uzU"/>
+                            <constraint firstItem="Fze-lS-g3m" firstAttribute="top" secondItem="cY3-Cb-fNW" secondAttribute="bottom" constant="10" id="Mdg-72-LO6"/>
+                            <constraint firstItem="cY3-Cb-fNW" firstAttribute="top" secondItem="tla-x0-zPD" secondAttribute="top" constant="80" id="RES-jv-Cgf"/>
+                            <constraint firstItem="xED-d8-NUl" firstAttribute="centerX" secondItem="nmv-1A-ham" secondAttribute="centerX" id="XFD-F8-xrU"/>
+                            <constraint firstItem="Fze-lS-g3m" firstAttribute="centerX" secondItem="nmv-1A-ham" secondAttribute="centerX" id="b7a-Vo-416"/>
+                            <constraint firstItem="xED-d8-NUl" firstAttribute="top" secondItem="Fze-lS-g3m" secondAttribute="bottom" constant="10" id="hui-J3-PE1"/>
+                            <constraint firstItem="cvA-ni-sdV" firstAttribute="top" secondItem="xED-d8-NUl" secondAttribute="bottom" constant="10" id="qid-Ci-EKU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tla-x0-zPD"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayNameTextField" destination="Fze-lS-g3m" id="OEq-QF-IF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BO1-XP-DJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="133"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
