@@ -1,5 +1,5 @@
 //
-//  PostData.swift
+//  MasterData.swift
 //  OneExam
 //
 //  Created by 鳥越洋之 on 2019/03/21.
@@ -10,32 +10,23 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class PostData: NSObject {
+class MasterData: NSObject {
     var id: String?
-    var name: String?
+    var title: String?
+    var content: String?
     var date: Date?
-    var likes: [String] = []
-    var isLiked: Bool = false
+    var link: String?
     
     init(snapshot: DataSnapshot, myId: String) {
         self.id = snapshot.key
         
         let valueDictionary = snapshot.value as! [String: Any]
         
-        self.name = valueDictionary["name"] as? String
-        
+        self.title = valueDictionary["title"] as? String
+        self.content = valueDictionary["content"] as? String
+        self.link = valueDictionary["link"] as? String
         let time = valueDictionary["time"] as? String
         self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
         
-        if let likes = valueDictionary["likes"] as? [String] {
-            self.likes = likes
-        }
-        
-        for likeId in self.likes {
-            if likeId == myId {
-                self.isLiked = true
-                break
-            }
-        }
     }
 }
