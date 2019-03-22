@@ -50,7 +50,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if Auth.auth().currentUser != nil {
             if self.observing == false {
                 // 要素が追加されたらmasterArrayに追加してTableViewを再表示する
-                let masterRef = Database.database().reference().child("exam").child("20190321")
+                //let masterRef = Database.database().reference().child("exam").child("20190321")
+                let masterRef = Database.database().reference().child("exam")
                 masterRef.observe(.childAdded, with: { snapshot in
                     print("DEBUG_PRINT: .childAddedイベントが発生しました。1")
                     print(snapshot)

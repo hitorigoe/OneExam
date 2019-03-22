@@ -22,6 +22,8 @@ class MasterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        img = UIImage(named:"china")
+        imgView.image = img
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

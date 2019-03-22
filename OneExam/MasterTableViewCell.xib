@@ -26,33 +26,33 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZkK-pT-JPG">
-                        <rect key="frame" x="321" y="41" width="52" height="106"/>
+                        <rect key="frame" x="321" y="184" width="67" height="130"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="題名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-nn-6eP">
-                                <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="67" height="26.5"/>
                                 <color key="backgroundColor" red="1" green="0.59223706679999999" blue="0.28315287300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ita-Gk-ksv">
-                                <rect key="frame" x="0.0" y="28.5" width="52" height="20.5"/>
+                                <rect key="frame" x="0.0" y="34.5" width="67" height="26.5"/>
                                 <color key="backgroundColor" red="1" green="0.64409096160000001" blue="0.73543933630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQc-Tu-lQC">
-                                <rect key="frame" x="0.0" y="57" width="52" height="20.5"/>
+                                <rect key="frame" x="0.0" y="69" width="67" height="26.5"/>
                                 <color key="backgroundColor" red="0.39163828179999999" green="1" blue="0.51470253600000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="リンク" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxl-Vu-Vea">
-                                <rect key="frame" x="0.0" y="85.5" width="52" height="20.5"/>
+                                <rect key="frame" x="0.0" y="103.5" width="67" height="26.5"/>
                                 <color key="backgroundColor" red="1" green="0.77523994070000002" blue="0.24718693520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -62,8 +62,10 @@
                 <constraints>
                     <constraint firstItem="X7Z-mF-m0Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="Foe-u0-hgA"/>
                     <constraint firstAttribute="bottomMargin" secondItem="X7Z-mF-m0Q" secondAttribute="bottom" constant="10" id="aSf-Uk-pcb"/>
-                    <constraint firstItem="ZkK-pT-JPG" firstAttribute="top" secondItem="X7Z-mF-m0Q" secondAttribute="top" id="cIq-pd-8Ae"/>
+                    <constraint firstItem="ZkK-pT-JPG" firstAttribute="leading" secondItem="X7Z-mF-m0Q" secondAttribute="trailing" constant="10" id="gMt-7K-E5c"/>
                     <constraint firstItem="X7Z-mF-m0Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="hGF-GD-QHn"/>
+                    <constraint firstItem="ZkK-pT-JPG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ocn-UM-f5d"/>
+                    <constraint firstItem="X7Z-mF-m0Q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tvM-ts-toP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

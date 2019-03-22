@@ -12,21 +12,28 @@ import FirebaseDatabase
 
 class MasterData: NSObject {
     var id: String?
-    var title: String?
-    var content: String?
+    var title: String!
+    var content: String!
     var date: Date?
-    var link: String?
+    var link: String!
     
     init(snapshot: DataSnapshot, myId: String) {
         self.id = snapshot.key
+        print("zzz")
+        print(snapshot.key)
+        //let valueDictionary = snapshot.value as! [String: Any]
+        let array = snapshot.value as! [Any]
         
-        let valueDictionary = snapshot.value as! [String: Any]
+        for item in array {
+            let valueDictionary = item as! [String: Any]
+            self.title = valueDictionary["title"] as? String
+            self.content = valueDictionary["content"] as? String
+            self.link = valueDictionary["link"] as? String
+            
+        }
+        print("xxx")
+        print(title)
         
-        self.title = valueDictionary["title"] as? String
-        self.content = valueDictionary["content"] as? String
-        self.link = valueDictionary["link"] as? String
-        //let time = valueDictionary["time"] as? String
-        //self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
         
     }
 }
