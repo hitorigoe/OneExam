@@ -37,10 +37,10 @@ class MasterTableViewCell: UITableViewCell {
         self.titleLabel.text = "\(masterData.title!) "
         self.contentLabel.text = "\(masterData.content!) "
         //self.linkLabel.text = "\(masterData.link!) "
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        //let dateString = formatter.string(from: masterData.date!)
-        //self.dateLabel.text = dateString
+        //let formatter = DateFormatter()
+        //formatter.dateFormat = "yyyy-MM-dd"
+        //let dateString = formatter.string(from: "\(masterData.id!) ")
+        self.dateLabel.text = "\(masterData.id!) "
         
     }
     

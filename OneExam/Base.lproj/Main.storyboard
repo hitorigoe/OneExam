@@ -166,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K46-GA-04u">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -175,7 +175,7 @@
                             <constraint firstItem="K46-GA-04u" firstAttribute="top" secondItem="Nkz-px-RWh" secondAttribute="top" constant="30" id="5x1-O1-aWK"/>
                             <constraint firstItem="K46-GA-04u" firstAttribute="leading" secondItem="Nkz-px-RWh" secondAttribute="leading" id="H3d-sY-pQD"/>
                             <constraint firstItem="Nkz-px-RWh" firstAttribute="trailing" secondItem="K46-GA-04u" secondAttribute="trailing" id="Lja-YV-nBB"/>
-                            <constraint firstItem="Nkz-px-RWh" firstAttribute="bottom" secondItem="K46-GA-04u" secondAttribute="bottom" id="dZL-Sa-WWS"/>
+                            <constraint firstAttribute="bottom" secondItem="K46-GA-04u" secondAttribute="bottom" constant="50" id="Olt-Ra-GMX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nkz-px-RWh"/>
                     </view>
