@@ -26,55 +26,61 @@
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="cGW-dt-nGQ"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZkK-pT-JPG">
-                        <rect key="frame" x="321" y="192.5" width="92" height="113"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-f0-0dE">
+                        <rect key="frame" x="321" y="192.5" width="92" height="122"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="題名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-nn-6eP">
-                                <rect key="frame" x="0.0" y="0.0" width="92" height="31.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ita-Gk-ksv">
-                                <rect key="frame" x="0.0" y="39.5" width="92" height="21.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQc-Tu-lQC">
-                                <rect key="frame" x="0.0" y="69" width="92" height="18"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="問題ページへ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxl-Vu-Vea">
-                                <rect key="frame" x="0.0" y="95" width="92" height="18"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZkK-pT-JPG">
+                                <rect key="frame" x="0.0" y="0.0" width="53" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="題名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-nn-6eP">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="31.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ita-Gk-ksv">
+                                        <rect key="frame" x="0.0" y="39.5" width="53" height="21.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQc-Tu-lQC">
+                                        <rect key="frame" x="0.0" y="69" width="53" height="18"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-38-R3u">
+                                <rect key="frame" x="0.0" y="92" width="92" height="30"/>
+                                <state key="normal" title="問題を解く！"/>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="tZh-38-R3u" firstAttribute="top" secondItem="ZkK-pT-JPG" secondAttribute="bottom" constant="5" id="Qch-Po-xhk"/>
+                            <constraint firstItem="tZh-38-R3u" firstAttribute="leading" secondItem="ZkK-pT-JPG" secondAttribute="leading" id="YAs-XL-vhG"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="PZ7-f0-0dE" firstAttribute="leading" secondItem="X7Z-mF-m0Q" secondAttribute="trailing" constant="10" id="7eU-Jl-tWj"/>
                     <constraint firstItem="X7Z-mF-m0Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="Foe-u0-hgA"/>
+                    <constraint firstItem="PZ7-f0-0dE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xu7-jR-EEs"/>
                     <constraint firstAttribute="bottomMargin" secondItem="X7Z-mF-m0Q" secondAttribute="bottom" constant="10" id="aSf-Uk-pcb"/>
-                    <constraint firstItem="ZkK-pT-JPG" firstAttribute="leading" secondItem="X7Z-mF-m0Q" secondAttribute="trailing" constant="10" id="gMt-7K-E5c"/>
                     <constraint firstItem="X7Z-mF-m0Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="hGF-GD-QHn"/>
-                    <constraint firstItem="ZkK-pT-JPG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ocn-UM-f5d"/>
-                    <constraint firstItem="X7Z-mF-m0Q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tvM-ts-toP"/>
+                    <constraint firstItem="X7Z-mF-m0Q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="m7N-LH-fEe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="contentLabel" destination="Ita-Gk-ksv" id="yX0-md-Jri"/>
                 <outlet property="dateLabel" destination="WQc-Tu-lQC" id="eJT-os-ihn"/>
+                <outlet property="examButton" destination="tZh-38-R3u" id="pie-3A-ib4"/>
                 <outlet property="imgView" destination="X7Z-mF-m0Q" id="V4U-H0-2GX"/>
-                <outlet property="linkLabel" destination="mxl-Vu-Vea" id="wxj-Vh-BDZ"/>
                 <outlet property="titleLabel" destination="cEd-nn-6eP" id="vQO-6H-DiH"/>
             </connections>
             <point key="canvasLocation" x="925.60000000000002" y="-57.571214392803604"/>

@@ -121,8 +121,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
         cell.setMasterData(masterArray[indexPath.row])
+        cell.examButton.addTarget(self, action: #selector(self.nextTo(_:forEvent:)), for: .touchUpInside)
         
         return cell
+    }
+    @objc func nextTo(_ sender: UIButton, forEvent event: UIEvent) {
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        
+        let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
+        examViewController.postdata = masterArray[indexPath!.row]
+        self.present(examViewController, animated: true, completion: nil)
+        
     }
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         // タップされたセルのインデックスを求める

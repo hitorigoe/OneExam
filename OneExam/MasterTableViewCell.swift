@@ -19,6 +19,7 @@ class MasterTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var linkLabel: UILabel!
+    @IBOutlet weak var examButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

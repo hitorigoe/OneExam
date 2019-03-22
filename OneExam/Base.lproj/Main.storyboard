@@ -32,13 +32,75 @@
                     <view key="view" contentMode="scaleToFill" id="LZw-WL-N6B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到北京站需要多少钱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-g0-pHz">
+                                <rect key="frame" x="100" y="170" width="210" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下記の中から正しいものを選んでください。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-cn-zkJ">
+                                <rect key="frame" x="50" y="208" width="346.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
+                                <rect key="frame" x="50" y="420" width="311" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="1. 北京に行くには何線がよいですか？"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
+                                <rect key="frame" x="50" y="508" width="295" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="3. 北京駅までいくらかかりますか？"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
+                                <rect key="frame" x="50" y="552" width="259" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="4. 北京駅は開店していますか？"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
+                                <rect key="frame" x="50" y="464" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="2. 北京へ行くのに金をくれませんか？"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="2YA-yW-0JG"/>
+                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="Brc-a9-8Pg"/>
+                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="Hkb-Fy-yln"/>
+                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="l9S-vO-fSr" secondAttribute="leading" id="Icj-iv-x8m"/>
+                            <constraint firstItem="l9S-vO-fSr" firstAttribute="top" secondItem="6lP-fo-9Z9" secondAttribute="bottom" constant="10" id="KWb-ot-lfw"/>
+                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="O26-gk-eOw"/>
+                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="l9S-vO-fSr" secondAttribute="leading" id="O5q-Mq-EDg"/>
+                            <constraint firstItem="EdD-jl-zOF" firstAttribute="top" secondItem="l9S-vO-fSr" secondAttribute="bottom" constant="10" id="OGm-HJ-69e"/>
+                            <constraint firstItem="6lP-fo-9Z9" firstAttribute="top" secondItem="LZw-WL-N6B" secondAttribute="topMargin" constant="400" id="SZh-cy-kre"/>
+                            <constraint firstItem="l9S-vO-fSr" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="Uv9-QC-Oeb"/>
+                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="top" secondItem="EdD-jl-zOF" secondAttribute="bottom" constant="10" id="c2K-7s-QBM"/>
+                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="fbX-Pb-NT3"/>
+                            <constraint firstItem="GoW-cn-zkJ" firstAttribute="top" secondItem="Ad6-g0-pHz" secondAttribute="bottom" constant="10" id="hmE-Vb-0AM"/>
+                            <constraint firstItem="l9S-vO-fSr" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="k5T-CZ-lS6"/>
+                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="mdJ-cQ-cMN"/>
+                            <constraint firstItem="Ad6-g0-pHz" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="100" id="nVn-vg-WCr"/>
+                            <constraint firstItem="l9S-vO-fSr" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="rqP-tR-Jx4"/>
+                            <constraint firstItem="6lP-fo-9Z9" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="50" id="uh9-Yd-HzM"/>
+                            <constraint firstItem="Ad6-g0-pHz" firstAttribute="top" secondItem="9yP-tA-KP2" secondAttribute="top" constant="150" id="wBY-ZY-Wgp"/>
+                            <constraint firstItem="GoW-cn-zkJ" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="50" id="xaP-u8-rmT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9yP-tA-KP2"/>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="6lP-fo-9Z9" id="wyR-oN-Uqf"/>
+                        <outlet property="button2" destination="l9S-vO-fSr" id="CLU-fE-0NQ"/>
+                        <outlet property="button3" destination="EdD-jl-zOF" id="Qrj-fb-oDf"/>
+                        <outlet property="button4" destination="kBc-Qv-7Ph" id="8RM-LD-M9y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heP-kL-PNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="806"/>
+            <point key="canvasLocation" x="165.59999999999999" y="805.54722638680664"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="pIA-mS-9br">
