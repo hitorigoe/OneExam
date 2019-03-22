@@ -16,6 +16,7 @@
 		2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A760224352FD00D594F6 /* SettingViewController.swift */; };
 		2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */; };
 		2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */; };
+		2208E1482244B75E00DEFF76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2208E1472244B75E00DEFF76 /* GoogleService-Info.plist */; };
 		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
 		22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D222420D7200E33504 /* HomeViewController.swift */; };
 		22BE41D522420DF400E33504 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D422420DF400E33504 /* ExamViewController.swift */; };
@@ -40,6 +41,7 @@
 		2206A760224352FD00D594F6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
+		2208E1472244B75E00DEFF76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22BE41D222420D7200E33504 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22BE41D422420DF400E33504 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				22023BF5223BA03700D0A854 /* Assets.xcassets */,
 				22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
+				2208E1472244B75E00DEFF76 /* GoogleService-Info.plist */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
 				EFC7EFC62242B5F600904572 /* GoogleService-Info.plist */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
@@ -186,6 +189,7 @@
 				22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */,
 				22023BF1223BA03500D0A854 /* Main.storyboard in Resources */,
 				2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */,
+				2208E1482244B75E00DEFF76 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

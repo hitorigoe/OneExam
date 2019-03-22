@@ -70,7 +70,6 @@
             <connections>
                 <outlet property="contentLabel" destination="Ita-Gk-ksv" id="yX0-md-Jri"/>
                 <outlet property="dateLabel" destination="WQc-Tu-lQC" id="eJT-os-ihn"/>
-                <outlet property="imageView" destination="H2p-sc-9uM" id="syn-zv-VWb"/>
                 <outlet property="imgView" destination="X7Z-mF-m0Q" id="V4U-H0-2GX"/>
                 <outlet property="linkLabel" destination="mxl-Vu-Vea" id="wxj-Vh-BDZ"/>
                 <outlet property="titleLabel" destination="cEd-nn-6eP" id="vQO-6H-DiH"/>

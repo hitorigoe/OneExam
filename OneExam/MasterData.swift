@@ -25,8 +25,8 @@ class MasterData: NSObject {
         self.title = valueDictionary["title"] as? String
         self.content = valueDictionary["content"] as? String
         self.link = valueDictionary["link"] as? String
-        let time = valueDictionary["time"] as? String
-        self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
+        //let time = valueDictionary["time"] as? String
+        //self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
         
     }
 }
