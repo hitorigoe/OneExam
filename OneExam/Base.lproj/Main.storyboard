@@ -34,34 +34,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到北京站需要多少钱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-g0-pHz">
-                                <rect key="frame" x="100" y="170" width="210" height="28"/>
+                                <rect key="frame" x="100" y="214" width="210" height="28"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下記の中から正しいものを選んでください。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-cn-zkJ">
-                                <rect key="frame" x="50" y="208" width="346.5" height="20.5"/>
+                                <rect key="frame" x="50" y="252" width="346.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
-                                <rect key="frame" x="50" y="420" width="311" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
+                                <rect key="frame" x="50" y="464" width="311" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="bbz-nA-pkc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="1. 北京に行くには何線がよいですか？"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                <rect key="frame" x="50" y="508" width="295" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
+                                <rect key="frame" x="50" y="552" width="295" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="295" id="OHf-hW-MJP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="3. 北京駅までいくらかかりますか？"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                <rect key="frame" x="50" y="552" width="259" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
+                                <rect key="frame" x="50" y="596" width="259" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="AKc-gw-ari"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="4. 北京駅は開店していますか？"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
-                                <rect key="frame" x="50" y="464" width="314" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
+                                <rect key="frame" x="50" y="508" width="314" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="LXo-z0-nrr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="2. 北京へ行くのに金をくれませんか？"/>
                             </button>
@@ -91,16 +103,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9yP-tA-KP2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WQe-l2-Ge9">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" width="20" id="Vf2-2m-5Gz">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="button1" destination="6lP-fo-9Z9" id="wyR-oN-Uqf"/>
                         <outlet property="button2" destination="l9S-vO-fSr" id="CLU-fE-0NQ"/>
                         <outlet property="button3" destination="EdD-jl-zOF" id="Qrj-fb-oDf"/>
                         <outlet property="button4" destination="kBc-Qv-7Ph" id="8RM-LD-M9y"/>
+                        <outlet property="questionLabel" destination="Ad6-g0-pHz" id="FQE-IN-XFB"/>
+                        <outlet property="templateLabel" destination="GoW-cn-zkJ" id="lHL-mw-Mjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heP-kL-PNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165.59999999999999" y="805.54722638680664"/>
+            <point key="canvasLocation" x="1104.8" y="805.54722638680664"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="pIA-mS-9br">
@@ -115,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cl8-nR-OzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="806"/>
+            <point key="canvasLocation" x="1735.2" y="805.54722638680664"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yRI-eG-7CF">
@@ -130,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3HW-fu-bx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="807"/>
+            <point key="canvasLocation" x="2388" y="806.44677661169419"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="4eQ-kA-xPg">
@@ -310,6 +329,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BO1-XP-DJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2153" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GJY-Xj-feH">
+            <objects>
+                <navigationController storyboardIdentifier="Navi" automaticallyAdjustsScrollViewInsets="NO" id="1Rb-Bf-TUb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UEx-SA-ZjI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9RI-fM-OD1" kind="relationship" relationship="rootViewController" id="bMc-Co-rsp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2XP-E4-u4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="805.54722638680664"/>
         </scene>
     </scenes>
     <resources>

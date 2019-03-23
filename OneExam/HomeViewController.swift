@@ -121,10 +121,54 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
         cell.setMasterData(masterArray[indexPath.row])
-        cell.examButton.addTarget(self, action: #selector(self.nextTo(_:forEvent:)), for: .touchUpInside)
+        //cell.examButton.addTarget(self, action: #selector(self.nextTo(_:forEvent:)), for: .touchUpInside)
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
+        
+        //let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
+        //examViewController.postdata = masterArray[indexPath.row]
+        //self.present(examViewController, animated: true, completion: nil)
+        // ① UIAlertControllerクラスのインスタンスを生成
+        // タイトル, メッセージ, Alertのスタイルを指定する
+        // 第3引数のpreferredStyleでアラートの表示スタイルを指定する
+        let alert: UIAlertController = UIAlertController(title: "中国語試験", message: "試験を開始します。よろしいですか？", preferredStyle:  UIAlertController.Style.alert)
+        
+        // ② Actionの設定
+        // Action初期化時にタイトル, スタイル, 押された時に実行されるハンドラを指定する
+        // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
+        // OKボタン
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            print("OK")
+            //let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
+            //examViewController.postdata = self.masterArray[indexPath.row].id
+            
+            //self.present(examViewController, animated: true, completion: nil)
+            let navigationController = self.storyboard?.instantiateViewController(withIdentifier:"Navi") as! UINavigationController
+            let examViewController = navigationController.topViewController  as! ExamViewController
+            
+            examViewController.postdata = self.masterArray[indexPath.row].id
+            self.present(navigationController, animated: true, completion: nil)
+        })
+        // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            // ボタンが押された時の処理を書く（クロージャ実装）
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        
+        // ③ UIAlertControllerにActionを追加
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        // ④ Alertを表示
+        present(alert, animated: true, completion: nil)
+    }
+    /*
     @objc func nextTo(_ sender: UIButton, forEvent event: UIEvent) {
         
         // タップされたセルのインデックスを求める
@@ -139,6 +183,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.present(examViewController, animated: true, completion: nil)
         
     }
+ */
     @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
         // タップされたセルのインデックスを求める
         let touch = event.allTouches?.first
