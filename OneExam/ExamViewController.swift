@@ -15,6 +15,7 @@ import FirebaseDatabase
 class ExamViewController: UIViewController {
     var postdata:Any?
     var masterArray: [MasterData] = []
+    var isChecked : Bool = true
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -45,13 +46,14 @@ class ExamViewController: UIViewController {
         self.view.addSubview(view)
 
         // Do any additional setup after loading the view.
-        let rgba = UIColor.lightGray // ボタン背景色設定
+        let rgba = UIColor.gray // ボタン背景色設定
         button1.backgroundColor = rgba                                               // 背景色
         button1.layer.borderWidth = 0                                              // 枠線の幅
         button1.layer.borderColor = UIColor.black.cgColor                            // 枠線の色
         button1.layer.cornerRadius = 5.0 // 角丸のサイズ
         button1.titleEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
         button1.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        
         
         button2.backgroundColor = rgba                                               // 背景色
         button2.layer.borderWidth = 0                                              // 枠線の幅
@@ -86,4 +88,48 @@ class ExamViewController: UIViewController {
     }
     */
 
+
+    @IBAction func actionButton1(_ sender: UIButton) {
+        isChecked = !isChecked
+        if isChecked {
+            button1.backgroundColor = .gray
+        } else {
+            //sender.setTitle("X", for: .normal)
+            button1.backgroundColor = .orange
+        }
+    }
+    
+
+    @IBAction func actionButton2(_ sender: UIButton) {
+        isChecked = !isChecked
+        if isChecked {
+            button2.backgroundColor = .gray
+        } else {
+            //sender.setTitle("X", for: .normal)
+            button2.backgroundColor = .orange
+        }
+    }
+    
+
+    
+    @IBAction func actionButton3(_ sender: UIButton) {
+        isChecked = !isChecked
+        if isChecked {
+            button3.backgroundColor = .gray
+        } else {
+            //sender.setTitle("X", for: .normal)
+            button3.backgroundColor = .orange
+        }
+    }
+    
+    @IBAction func actionButton4(_ sender: UIButton) {
+        isChecked = !isChecked
+        if isChecked {
+            button4.backgroundColor = .gray
+        } else {
+            //sender.setTitle("X", for: .normal)
+            button4.backgroundColor = .orange
+        }
+    }
+    
 }
