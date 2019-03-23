@@ -16,6 +16,9 @@ class ExamViewController: UIViewController {
     var postdata:Any?
     var masterArray: [MasterData] = []
     var isChecked : Bool = true
+    var accessIndex : String = "0"
+    var aaa : Any?
+    var i : Int = 0
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -25,13 +28,37 @@ class ExamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let masterRef = Database.database().reference().child("exam").child(postdata! as! String)
+        let masterRef = Database.database().reference().child("exam").child(postdata as! String)
+        
         masterRef.observe(.childAdded, with: { snapshot in
-            dump(snapshot)
+            print("DEBUG_PRINT: .childAddedイベントが発生しました。5")
+            //print(snapshot.key.propertyList())
+            self.i = self.i + 1
+            let valueDic = snapshot.value as! [String : Any]
+            // MasterDataクラスを生成して受け取ったデータを設定する
+                //let masterData = MasterData(snapshot: snapshot, myId: "aa")
+            
+
+                print("datastart")
+                print(self.i)
+            self.aaa = valueDic["title"] as? String
+            if(self.i == 1) {
+                //self.button1.text = valueDic["title"] as! UILabel
+                self.questionLabel.text = valueDic["question"] as? String
+                self.templateLabel.text = valueDic["template"] as? String
+                self.button1.setTitle(valueDic["question"] as? String, for: .normal)
+                //self.button2.setTitle(valueDic["choices"], for: .normal)
+                
+                
+                //self.contentLabel.text = "\(masterData.content!) "
+            }
+                // TableViewを再表示する
+                //self.tableView.reloadData()
+            print("dataend")
             
         })
-
-        dump(masterRef)
+        
+        
         let view = UIView()
         view.frame = CGRect(x:10,y:100,width:self.view.bounds.width - 20,height:250)
         // 枠線の色
