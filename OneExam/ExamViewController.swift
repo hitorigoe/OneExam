@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import PKHUD
 
 
 class ExamViewController: UIViewController {
@@ -29,6 +30,8 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var templateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("aaaaacc")
+        dump(postdata)
         
 
         
@@ -80,7 +83,9 @@ class ExamViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
-        
+        print("vvv")
+        print(page)
+        print("vvv")
         masterRef.observe(.childAdded, with: { snapshot in
             print("DEBUG_PRINT: .childAddedイベントが発生しました。10")
             //print(snapshot.key.propertyList())
@@ -92,7 +97,7 @@ class ExamViewController: UIViewController {
                 //print(masterData)
                 self.masterArray.insert(masterData, at: 0)
                 self.aaa = valueDic["title"] as? String
-                if(self.page == 1) {
+
                     //self.button1.text = valueDic["title"] as! UILabel
                     self.questionLabel.text = masterData.question
                     self.templateLabel.text = masterData.template
@@ -107,7 +112,6 @@ class ExamViewController: UIViewController {
                     
                     
                     //self.contentLabel.text = "\(masterData.content!) "
-                }
             }
             self.i = self.i + 1
             print("カウンタ")
@@ -146,6 +150,9 @@ class ExamViewController: UIViewController {
             print(answer)
             if button1.currentTitle!.contains(answer!) {
                 print("正解")
+                HUD.flash(.success, delay: 1.0) { finished in
+                    // Completion Handler
+                }
             } else {
                 print("不正解")
             }
@@ -162,6 +169,9 @@ class ExamViewController: UIViewController {
             button2.backgroundColor = .orange
             if button2.currentTitle!.contains(answer!) {
                 print("正解")
+                HUD.flash(.success, delay: 1.0) { finished in
+                    // Completion Handler
+                }
             } else {
                 print("不正解")
             }
@@ -179,6 +189,13 @@ class ExamViewController: UIViewController {
             button3.backgroundColor = .orange
             if button3.currentTitle!.contains(answer!) {
                 print("正解")
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.checkmarkImage, title: "正解です！", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
+                }
+                
+                
             } else {
                 print("不正解")
             }
@@ -194,10 +211,37 @@ class ExamViewController: UIViewController {
             button4.backgroundColor = .orange
             if button4.currentTitle!.contains(answer!) {
                 print("正解")
+                HUD.flash(.success, delay: 1.0) { finished in
+
+                }
             } else {
                 print("不正解")
             }
         }
     }
+    class CustomHUDView: PKHUDSquareBaseView {
+        
+        override init(image: UIImage?, title: String?, subtitle: String?) {
+            super.init(image: image, title: title, subtitle: subtitle)
+            
+            titleLabel.textColor = UIColor.lightGray
+            
+            backgroundColor = UIColor(red: 0xAB/0xFF, green: 0xD2/0xFF, blue: 0xFC/0xFF, alpha: 1.0)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
+    }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        print("aaaa")
+        let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
+        examViewController.page = self.page + 1
+        examViewController.postdata = self.postdata
+        self.navigationController?.pushViewController(examViewController, animated: true)
+        
+    }
+    
     
 }
