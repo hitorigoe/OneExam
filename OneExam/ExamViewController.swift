@@ -142,19 +142,31 @@ class ExamViewController: UIViewController {
         isChecked = !isChecked
         if isChecked {
             button1.backgroundColor = .gray
+            button2.isEnabled = true
+            button3.isEnabled = true
+            button4.isEnabled = true
         } else {
             //sender.setTitle("X", for: .normal)
             button1.backgroundColor = .orange
+            button2.isEnabled = false
+            button3.isEnabled = false
+            button4.isEnabled = false
             dump(button1.currentTitle)
             print("answer")
             print(answer)
             if button1.currentTitle!.contains(answer!) {
-                print("正解")
-                HUD.flash(.success, delay: 1.0) { finished in
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
             } else {
                 print("不正解")
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
+                }
             }
         }
     }
@@ -164,16 +176,29 @@ class ExamViewController: UIViewController {
         isChecked = !isChecked
         if isChecked {
             button2.backgroundColor = .gray
+            button1.isEnabled = true
+            button3.isEnabled = true
+            button4.isEnabled = true
         } else {
             //sender.setTitle("X", for: .normal)
             button2.backgroundColor = .orange
+            button1.isEnabled = false
+            button3.isEnabled = false
+            button4.isEnabled = false
             if button2.currentTitle!.contains(answer!) {
                 print("正解")
-                HUD.flash(.success, delay: 1.0) { finished in
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
             } else {
                 print("不正解")
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
+                }
             }
         }
     }
@@ -184,12 +209,18 @@ class ExamViewController: UIViewController {
         isChecked = !isChecked
         if isChecked {
             button3.backgroundColor = .gray
+            button1.isEnabled = true
+            button2.isEnabled = true
+            button4.isEnabled = true
         } else {
             //sender.setTitle("X", for: .normal)
             button3.backgroundColor = .orange
+            button1.isEnabled = false
+            button2.isEnabled = false
+            button4.isEnabled = false
             if button3.currentTitle!.contains(answer!) {
                 print("正解")
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.checkmarkImage, title: "正解です！", subtitle: nil)
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
@@ -198,6 +229,11 @@ class ExamViewController: UIViewController {
                 
             } else {
                 print("不正解")
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
+                }
             }
         }
     }
@@ -206,16 +242,29 @@ class ExamViewController: UIViewController {
         isChecked = !isChecked
         if isChecked {
             button4.backgroundColor = .gray
+            button1.isEnabled = true
+            button2.isEnabled = true
+            button3.isEnabled = true
         } else {
             //sender.setTitle("X", for: .normal)
             button4.backgroundColor = .orange
+            button1.isEnabled = false
+            button2.isEnabled = false
+            button3.isEnabled = false
             if button4.currentTitle!.contains(answer!) {
                 print("正解")
-                HUD.flash(.success, delay: 1.0) { finished in
-
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
                 }
             } else {
                 print("不正解")
+                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                PKHUD.sharedHUD.show(onView: view)
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
+                }
             }
         }
     }
