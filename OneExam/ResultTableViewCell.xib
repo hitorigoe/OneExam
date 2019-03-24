@@ -38,10 +38,19 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="tMc-do-Xfm"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5h-GE-nPY">
+                        <rect key="frame" x="30" y="113" width="563" height="41"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <state key="normal" title="動画で確認"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="e5h-GE-nPY" secondAttribute="trailing" constant="10" id="4Jq-oc-vv4"/>
                     <constraint firstItem="zU8-1b-YEc" firstAttribute="top" secondItem="nxJ-rM-7wO" secondAttribute="bottom" constant="20" id="59m-Na-Q4p"/>
+                    <constraint firstItem="e5h-GE-nPY" firstAttribute="top" secondItem="zU8-1b-YEc" secondAttribute="bottom" constant="30" id="8r1-AZ-1pg"/>
                     <constraint firstItem="nxJ-rM-7wO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="D1f-iO-8ud"/>
+                    <constraint firstItem="e5h-GE-nPY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="YKt-1B-tGu"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="top" secondItem="nxJ-rM-7wO" secondAttribute="top" id="YW7-SK-v1B"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="bcg-Dy-1Yx"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="j7Y-fC-5ar"/>

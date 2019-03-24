@@ -34,12 +34,17 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var templateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("aaaaacc")
-        dump(postdata)
-        
-
-        
-        
+        let masterRef2 = Database.database().reference().child("exam").child(postdata as! String)
+        masterRef2.observe(.childAdded, with: { snapshot in
+            var count = snapshot.key.count
+            let userID = Auth.auth().currentUser?.uid
+            let postRef = Database.database().reference().child("users_exam_detail")
+            let postDic = ["master_id": self.postdata as! String, "question_number": self.i,   "uid":userID!, "correct":"incorrect"] as [String:Any]
+            postRef.setValue(postDic)
+            print("ppp")
+            print(userID)
+            
+        })
         let view = UIView()
         view.frame = CGRect(x:10,y:100,width:self.view.bounds.width - 20,height:250)
         // 枠線の色
