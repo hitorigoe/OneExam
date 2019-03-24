@@ -45,46 +45,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
                                 <rect key="frame" x="50" y="414" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="bbz-nA-pkc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="1. 北京に行くには何線がよいですか？"/>
+                                <state key="normal" title="1. 北京？"/>
                                 <connections>
                                     <action selector="actionButton1:" destination="9RI-fM-OD1" eventType="touchUpInside" id="Sl6-m3-uqM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
                                 <rect key="frame" x="50" y="502" width="295" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="295" id="OHf-hW-MJP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="3. 北京駅までいくらかかりますか？"/>
+                                <state key="normal" title="3. 北京？"/>
                                 <connections>
                                     <action selector="actionButton3:" destination="9RI-fM-OD1" eventType="touchUpInside" id="OnC-An-DRk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
                                 <rect key="frame" x="50" y="546" width="259" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="AKc-gw-ari"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="4. 北京駅は開店していますか？"/>
+                                <state key="normal" title="4. 北京？"/>
                                 <connections>
                                     <action selector="actionButton4:" destination="9RI-fM-OD1" eventType="touchUpInside" id="1uM-NJ-4jf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
                                 <rect key="frame" x="50" y="458" width="314" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="LXo-z0-nrr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="2. 北京へ行くのに金をくれませんか？"/>
+                                <state key="normal" title="2. 北京？"/>
                                 <connections>
                                     <action selector="actionButton2:" destination="9RI-fM-OD1" eventType="touchUpInside" id="99m-va-C0z"/>
                                 </connections>

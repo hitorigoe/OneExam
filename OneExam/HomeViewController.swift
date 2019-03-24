@@ -59,7 +59,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     // MasterDataクラスを生成して受け取ったデータを設定する
                     if let uid = Auth.auth().currentUser?.uid {
-                        let masterData = MasterData(snapshot: snapshot, myId: uid)
+                        let masterData = MasterData(snapshot: snapshot
+                        )
                         self.masterArray.insert(masterData, at: 0)
                         
                         // TableViewを再表示する
@@ -70,9 +71,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 masterRef.observe(.childChanged, with: { snapshot in
                     print("DEBUG_PRINT: .childChangedイベントが発生しました。2")
                     
-                    if let uid = Auth.auth().currentUser?.uid {
+                    if (Auth.auth().currentUser?.uid) != nil {
                         
-                        let masterData = MasterData(snapshot: snapshot, myId: uid)
+                        let masterData = MasterData(snapshot: snapshot)
                         
                         // 保持している配列からidが同じものを探す
                         var index: Int = 0
@@ -126,7 +127,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
+        _ = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
         
         //let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
         //examViewController.postdata = masterArray[indexPath.row]
@@ -191,9 +192,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let indexPath = tableView.indexPathForRow(at: point)
         
         // 配列からタップされたインデックスのデータを取り出す
-        let masterData = masterArray[indexPath!.row]
+        _ = masterArray[indexPath!.row]
         // Firebaseに保存するデータの準備
-        if let uid = Auth.auth().currentUser?.uid {
+        if (Auth.auth().currentUser?.uid) != nil {
             //let postRef = Database.database().reference().child(Const.PostPath).child(postData.id!)
             //let likes = ["likes": postData.likes]
             //postRef.updateChildValues(likes)

@@ -13,6 +13,7 @@
 		22023BF4223BA03500D0A854 /* OneExam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */; };
 		22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22023BF5223BA03700D0A854 /* Assets.xcassets */; };
 		22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */; };
+		2205A2FB224767B600DFBB2A /* MasterData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205A2FA224767B600DFBB2A /* MasterData2.swift */; };
 		2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A760224352FD00D594F6 /* SettingViewController.swift */; };
 		2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */; };
 		2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */; };
@@ -38,6 +39,7 @@
 		22023BF5223BA03700D0A854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22023BF8223BA03700D0A854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22023BFA223BA03700D0A854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2205A2FA224767B600DFBB2A /* MasterData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData2.swift; sourceTree = "<group>"; };
 		2206A760224352FD00D594F6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */,
 				2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */,
 				EF4FFB7122438FC400AD277C /* MasterData.swift */,
+				2205A2FA224767B600DFBB2A /* MasterData2.swift */,
 			);
 			path = OneExam;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2205A2FB224767B600DFBB2A /* MasterData2.swift in Sources */,
 				EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */,
 				22BE41D922420EA400E33504 /* DLViewController.swift in Sources */,
 				22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */,

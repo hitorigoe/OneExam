@@ -14,11 +14,13 @@ import FirebaseDatabase
 
 class ExamViewController: UIViewController {
     var postdata:Any?
-    var masterArray: [MasterData] = []
+    var masterArray: [MasterData2] = []
     var isChecked : Bool = true
     var accessIndex : String = "0"
     var aaa : Any?
     var i : Int = 0
+    var page: Int = 1
+    var answer: String?
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -28,35 +30,7 @@ class ExamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let masterRef = Database.database().reference().child("exam").child(postdata as! String)
-        
-        masterRef.observe(.childAdded, with: { snapshot in
-            print("DEBUG_PRINT: .childAddedイベントが発生しました。5")
-            //print(snapshot.key.propertyList())
-            self.i = self.i + 1
-            let valueDic = snapshot.value as! [String : Any]
-            // MasterDataクラスを生成して受け取ったデータを設定する
-                //let masterData = MasterData(snapshot: snapshot, myId: "aa")
-            
 
-                print("datastart")
-                print(self.i)
-            self.aaa = valueDic["title"] as? String
-            if(self.i == 1) {
-                //self.button1.text = valueDic["title"] as! UILabel
-                self.questionLabel.text = valueDic["question"] as? String
-                self.templateLabel.text = valueDic["template"] as? String
-                self.button1.setTitle(valueDic["question"] as? String, for: .normal)
-                //self.button2.setTitle(valueDic["choices"], for: .normal)
-                
-                
-                //self.contentLabel.text = "\(masterData.content!) "
-            }
-                // TableViewを再表示する
-                //self.tableView.reloadData()
-            print("dataend")
-            
-        })
         
         
         let view = UIView()
@@ -104,6 +78,50 @@ class ExamViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let masterRef = Database.database().reference().child("exam").child(postdata as! String)
+        
+        masterRef.observe(.childAdded, with: { snapshot in
+            print("DEBUG_PRINT: .childAddedイベントが発生しました。10")
+            //print(snapshot.key.propertyList())
+            
+            let valueDic = snapshot.value as! [String : Any]
+            print("datastart")
+            if self.page - 1 == self.i {
+                let masterData = MasterData2(snapshot: snapshot)
+                //print(masterData)
+                self.masterArray.insert(masterData, at: 0)
+                self.aaa = valueDic["title"] as? String
+                if(self.page == 1) {
+                    //self.button1.text = valueDic["title"] as! UILabel
+                    self.questionLabel.text = masterData.question
+                    self.templateLabel.text = masterData.template
+                    self.answer = masterData.answer
+                    
+                    self.button1.setTitle(masterData.button1  ,for: .normal)
+                    self.button2.setTitle(masterData.button2  ,for: .normal)
+                    self.button3.setTitle(masterData.button3  ,for: .normal)
+                    self.button4.setTitle(masterData.button4  ,for: .normal)
+                    //self.button1.setTitle(valueDic["choices"] as! Array for: .normal)
+                    //self.button2.setTitle(valueDic["choices"], for: .normal)
+                    
+                    
+                    //self.contentLabel.text = "\(masterData.content!) "
+                }
+            }
+            self.i = self.i + 1
+            print("カウンタ")
+            print(self.i)
+            
+            
+
+            // TableViewを再表示する
+            //self.tableView.reloadData()
+            print("dataend")
+            
+        })
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -123,6 +141,14 @@ class ExamViewController: UIViewController {
         } else {
             //sender.setTitle("X", for: .normal)
             button1.backgroundColor = .orange
+            dump(button1.currentTitle)
+            print("answer")
+            print(answer)
+            if button1.currentTitle!.contains(answer!) {
+                print("正解")
+            } else {
+                print("不正解")
+            }
         }
     }
     
@@ -134,6 +160,11 @@ class ExamViewController: UIViewController {
         } else {
             //sender.setTitle("X", for: .normal)
             button2.backgroundColor = .orange
+            if button2.currentTitle!.contains(answer!) {
+                print("正解")
+            } else {
+                print("不正解")
+            }
         }
     }
     
@@ -146,6 +177,11 @@ class ExamViewController: UIViewController {
         } else {
             //sender.setTitle("X", for: .normal)
             button3.backgroundColor = .orange
+            if button3.currentTitle!.contains(answer!) {
+                print("正解")
+            } else {
+                print("不正解")
+            }
         }
     }
     
@@ -156,6 +192,11 @@ class ExamViewController: UIViewController {
         } else {
             //sender.setTitle("X", for: .normal)
             button4.backgroundColor = .orange
+            if button4.currentTitle!.contains(answer!) {
+                print("正解")
+            } else {
+                print("不正解")
+            }
         }
     }
     

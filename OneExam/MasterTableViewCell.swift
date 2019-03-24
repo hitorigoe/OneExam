@@ -34,7 +34,7 @@ class MasterTableViewCell: UITableViewCell {
     }
     
     func setMasterData(_ masterData: MasterData) {
-        
+        print("setMasterDataにきた")
         self.titleLabel.text = "\(masterData.title!) "
         self.contentLabel.text = "\(masterData.content!) "
         //self.linkLabel.text = "\(masterData.link!) "
