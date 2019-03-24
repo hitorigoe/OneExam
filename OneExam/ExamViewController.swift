@@ -21,11 +21,15 @@ class ExamViewController: UIViewController {
     var aaa : Any?
     var i : Int = 0
     var page: Int = 1
+    var maxCnt : Int = 0
     var answer: String?
+    var resultPage : Bool = false
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var templateLabel: UILabel!
     override func viewDidLoad() {
@@ -83,14 +87,16 @@ class ExamViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
-        print("vvv")
-        print(page)
-        print("vvv")
+        
+
         masterRef.observe(.childAdded, with: { snapshot in
+            print(snapshot.key)
             print("DEBUG_PRINT: .childAddedイベントが発生しました。10")
             //print(snapshot.key.propertyList())
             
             let valueDic = snapshot.value as! [String : Any]
+
+            
             print("datastart")
             if self.page - 1 == self.i {
                 let masterData = MasterData2(snapshot: snapshot)
@@ -109,13 +115,24 @@ class ExamViewController: UIViewController {
                     self.button4.setTitle(masterData.button4  ,for: .normal)
                     //self.button1.setTitle(valueDic["choices"] as! Array for: .normal)
                     //self.button2.setTitle(valueDic["choices"], for: .normal)
+                print("vvv")
+                print(self.maxCnt)
+                print(self.page)
+                print("vvv")
+                if self.maxCnt == snapshot.key.count  {
+                    
+                    self.nextButton.setTitle("結果へ進む！"  ,for: .normal)
+                    self.resultPage = true
+                }
                     
                     
                     //self.contentLabel.text = "\(masterData.content!) "
             }
             self.i = self.i + 1
             print("カウンタ")
-            print(self.i)
+            self.maxCnt = self.i
+            print(self.maxCnt) // 問題数
+            print(self.page)
             
             
 
@@ -283,13 +300,16 @@ class ExamViewController: UIViewController {
         }
     }
     
-    @IBAction func nextButton(_ sender: Any) {
-        print("aaaa")
-        let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
-        examViewController.page = self.page + 1
-        examViewController.postdata = self.postdata
-        self.navigationController?.pushViewController(examViewController, animated: true)
-        
+    @IBAction func nextButton(_ sender: UIButton) {
+        if resultPage == false {
+            let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
+            examViewController.page = self.page + 1
+            examViewController.postdata = self.postdata
+            self.navigationController?.pushViewController(examViewController, animated: true)
+        } else {
+            let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
+            self.navigationController?.pushViewController(resultViewController, animated: true)
+        }
     }
     
     

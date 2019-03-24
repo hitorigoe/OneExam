@@ -24,6 +24,8 @@
 		22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D622420E3300E33504 /* ResultViewController.swift */; };
 		22BE41D922420EA400E33504 /* DLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D822420EA400E33504 /* DLViewController.swift */; };
 		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
+		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
+		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
 		EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FFB7122438FC400AD277C /* MasterData.swift */; };
 		EFC7EFC72242B5F600904572 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFC7EFC62242B5F600904572 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		22BE41D622420E3300E33504 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		22BE41D822420EA400E33504 /* DLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLViewController.swift; sourceTree = "<group>"; };
 		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
+		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		EF4FFB7122438FC400AD277C /* MasterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData.swift; sourceTree = "<group>"; };
 		EFC7EFC62242B5F600904572 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +110,8 @@
 				2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */,
 				EF4FFB7122438FC400AD277C /* MasterData.swift */,
 				2205A2FA224767B600DFBB2A /* MasterData2.swift */,
+				EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */,
+				EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */,
 			);
 			path = OneExam;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				EFC7EFC72242B5F600904572 /* GoogleService-Info.plist in Resources */,
 				22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */,
 				22023BF1223BA03500D0A854 /* Main.storyboard in Resources */,
+				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,
 				2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */,
 				2208E1482244B75E00DEFF76 /* GoogleService-Info.plist in Resources */,
 			);
@@ -271,6 +278,7 @@
 				2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */,
 				22023BEE223BA03500D0A854 /* ViewController.swift in Sources */,
 				22023BEC223BA03500D0A854 /* AppDelegate.swift in Sources */,
+				EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */,
 				22023BF4223BA03500D0A854 /* OneExam.xcdatamodeld in Sources */,
 				2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */,
 				22BE41D522420DF400E33504 /* ExamViewController.swift in Sources */,

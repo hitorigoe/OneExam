@@ -139,6 +139,7 @@
                         <outlet property="button2" destination="l9S-vO-fSr" id="CLU-fE-0NQ"/>
                         <outlet property="button3" destination="EdD-jl-zOF" id="Qrj-fb-oDf"/>
                         <outlet property="button4" destination="kBc-Qv-7Ph" id="8RM-LD-M9y"/>
+                        <outlet property="nextButton" destination="qXs-rQ-XkC" id="w4U-It-rrI"/>
                         <outlet property="questionLabel" destination="Ad6-g0-pHz" id="FQE-IN-XFB"/>
                         <outlet property="templateLabel" destination="GoW-cn-zkJ" id="lHL-mw-Mjg"/>
                     </connections>
