@@ -17,21 +17,31 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var answerBox : [String:Bool] = [:]
     var postdata:Any?
     var postRef3 :DatabaseReference!
-    var resultArray: [ResultData] = []
-
+    var masterArray: [MasterData2] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let userID = Auth.auth().currentUser?.uid
         for item in answerBox {
-            print("aaa")
-            dump(item)
-            print("bbb")
               self.postRef3 = Database.database().reference().child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
               self.postRef3.setValue(item.value)
+           // Database.database().reference().child("exam").child(postdata as! String).observe(.childAdded, with: { snapshot in
+           //     // Get user value
+           //
+           //     let resultData = ResultData(snapshot: snapshot)
+           //     self.resultArray.insert(resultData, at: 0)
+           //     // ...
+           // }) { (error) in
+           //     print(error.localizedDescription)
+           // }
+
+            
               
         }
 
-        
+        print("aaaa")
+        dump(masterArray)
+        print("bbbb")
         tableView.delegate = self
         tableView.dataSource = self
         //initTableView()
@@ -49,17 +59,6 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return answerBox.count
     }
@@ -67,8 +66,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
-        cell.setResultData(resultArray[indexPath.row])
-        
+        //dump(masterArray[answerBox.count].title!)
+        print("aqaqaqaq")
+        //cell.setMasterData2(masterArray[indexPath.row])
+        cell.questionLabel.text = masterArray[0].title!
+        cell.answerLabel.text = masterArray[0].answer
         return cell
     }
     /*

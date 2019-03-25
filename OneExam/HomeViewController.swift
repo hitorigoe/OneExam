@@ -58,9 +58,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     
                     // MasterDataクラスを生成して受け取ったデータを設定する
-                    if let uid = Auth.auth().currentUser?.uid {
-                        let masterData = MasterData(snapshot: snapshot
-                        )
+                    if (Auth.auth().currentUser?.uid) != nil {
+                        let masterData = MasterData(snapshot: snapshot)
                         self.masterArray.insert(masterData, at: 0)
                         
                         // TableViewを再表示する

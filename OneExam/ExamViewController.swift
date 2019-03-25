@@ -302,6 +302,7 @@ class ExamViewController: UIViewController {
             let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
             resultViewController.answerBox = self.answerBox
             resultViewController.postdata = self.postdata
+            resultViewController.masterArray = self.masterArray
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
     }
