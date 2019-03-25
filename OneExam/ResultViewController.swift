@@ -14,8 +14,22 @@ import FirebaseDatabase
 class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var answerBox : [String:Bool] = [:]
+    var postdata:Any?
+    var postRef3 :DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userID = Auth.auth().currentUser?.uid
+        for item in answerBox {
+            print("aaa")
+            dump(item)
+            print("bbb")
+              self.postRef3 = Database.database().reference().child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
+              self.postRef3.setValue(item.value)
+              
+        }
+
+        
         tableView.delegate = self
         tableView.dataSource = self
         //initTableView()

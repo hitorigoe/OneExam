@@ -300,6 +300,8 @@ class ExamViewController: UIViewController {
             dump(self.answerBox)
             print("answerBox")
             let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
+            resultViewController.answerBox = self.answerBox
+            resultViewController.postdata = self.postdata
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
     }
