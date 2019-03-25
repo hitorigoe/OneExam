@@ -17,6 +17,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var answerBox : [String:Bool] = [:]
     var postdata:Any?
     var postRef3 :DatabaseReference!
+    var resultArray: [ResultData] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let userID = Auth.auth().currentUser?.uid
@@ -59,12 +61,13 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return answerBox.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
+        cell.setResultData(resultArray[indexPath.row])
         
         return cell
     }

@@ -29,5 +29,15 @@ class ResultTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func setResultData(_ resultData: ResultData) {
+        
+        self.questionLabel.text = "\(resultData.question!) "
+        self.answerLabel.text = "\(resultData.answer!) "
+        //self.linkLabel.text = "\(masterData.link!) "
+        //let formatter = DateFormatter()
+        //formatter.dateFormat = "yyyy-MM-dd"
+        //let dateString = formatter.string(from: "\(masterData.id!) ")
+    
+    }
     
 }
