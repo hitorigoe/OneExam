@@ -20,10 +20,15 @@ class ExamViewController: UIViewController {
     var accessIndex : String = "0"
     var aaa : Any?
     var i : Int = 0
+    var j : Int = 0
     var page: Int = 1
     var maxCnt : Int = 0
     var answer: String?
     var resultPage : Bool = false
+    var postDic : [Int:[String:Any]]?
+    var postRef3 :DatabaseReference!
+    var immediately : Bool = false
+    var answerBox : [[String:Bool]]?
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -36,13 +41,11 @@ class ExamViewController: UIViewController {
         super.viewDidLoad()
         let masterRef2 = Database.database().reference().child("exam").child(postdata as! String)
         masterRef2.observe(.childAdded, with: { snapshot in
-            var count = snapshot.key.count
-            let userID = Auth.auth().currentUser?.uid
-            let postRef = Database.database().reference().child("users_exam_detail")
-            let postDic = ["master_id": self.postdata as! String, "question_number": self.i,   "uid":userID!, "correct":"incorrect"] as [String:Any]
-            postRef.setValue(postDic)
-            print("ppp")
-            print(userID)
+        let userID = Auth.auth().currentUser?.uid
+        
+            self.postRef3 = Database.database().reference().child("users_exam_detail").child(userID!).child(self.postdata as! String).child("answer\(snapshot.key)")
+            self.postRef3.setValue("false")
+            
             
         })
         let view = UIView()
@@ -95,14 +98,9 @@ class ExamViewController: UIViewController {
         
 
         masterRef.observe(.childAdded, with: { snapshot in
-            print(snapshot.key)
-            print("DEBUG_PRINT: .childAddedイベントが発生しました。10")
-            //print(snapshot.key.propertyList())
             
             let valueDic = snapshot.value as! [String : Any]
-
             
-            print("datastart")
             if self.page - 1 == self.i {
                 let masterData = MasterData2(snapshot: snapshot)
                 //print(masterData)
@@ -118,32 +116,14 @@ class ExamViewController: UIViewController {
                     self.button2.setTitle(masterData.button2  ,for: .normal)
                     self.button3.setTitle(masterData.button3  ,for: .normal)
                     self.button4.setTitle(masterData.button4  ,for: .normal)
-                    //self.button1.setTitle(valueDic["choices"] as! Array for: .normal)
-                    //self.button2.setTitle(valueDic["choices"], for: .normal)
-                print("vvv")
-                print(self.maxCnt)
-                print(self.page)
-                print("vvv")
                 if self.maxCnt == snapshot.key.count  {
                     
                     self.nextButton.setTitle("結果へ進む！"  ,for: .normal)
                     self.resultPage = true
                 }
-                    
-                    
-                    //self.contentLabel.text = "\(masterData.content!) "
             }
             self.i = self.i + 1
-            print("カウンタ")
             self.maxCnt = self.i
-            print(self.maxCnt) // 問題数
-            print(self.page)
-            
-            
-
-            // TableViewを再表示する
-            //self.tableView.reloadData()
-            print("dataend")
             
         })
     }
@@ -173,22 +153,21 @@ class ExamViewController: UIViewController {
             button2.isEnabled = false
             button3.isEnabled = false
             button4.isEnabled = false
-            dump(button1.currentTitle)
-            print("answer")
-            print(answer)
             if button1.currentTitle!.contains(answer!) {
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
+                    
                 }
+                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
             } else {
-                print("不正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
+                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
             }
         }
     }
@@ -208,19 +187,19 @@ class ExamViewController: UIViewController {
             button3.isEnabled = false
             button4.isEnabled = false
             if button2.currentTitle!.contains(answer!) {
-                print("正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
+                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
             } else {
-                print("不正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
+                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
             }
         }
     }
@@ -241,21 +220,20 @@ class ExamViewController: UIViewController {
             button2.isEnabled = false
             button4.isEnabled = false
             if button3.currentTitle!.contains(answer!) {
-                print("正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                
+                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
                 
             } else {
-                print("不正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
+                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
             }
         }
     }
@@ -274,19 +252,19 @@ class ExamViewController: UIViewController {
             button2.isEnabled = false
             button3.isEnabled = false
             if button4.currentTitle!.contains(answer!) {
-                print("正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
+                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
             } else {
-                print("不正解")
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
+                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
             }
         }
     }
@@ -307,11 +285,16 @@ class ExamViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         if resultPage == false {
+
+            
             let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
             examViewController.page = self.page + 1
             examViewController.postdata = self.postdata
             self.navigationController?.pushViewController(examViewController, animated: true)
         } else {
+            print("answerBox")
+            dump(self.answerBox)
+            print("answerBox")
             let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
