@@ -20,7 +20,7 @@ class ExamViewController: UIViewController {
     var accessIndex : String = "0"
     var aaa : Any?
     var i : Int = 0
-    var j : Int = 0
+    var j : Int = 1
     var page: Int = 1
     var maxCnt : Int = 0
     var answer: String?
@@ -28,7 +28,7 @@ class ExamViewController: UIViewController {
     var postDic : [Int:[String:Any]]?
     var postRef3 :DatabaseReference!
     var immediately : Bool = false
-    var answerBox : [[String:Bool]]?
+    var answerBox : [String:Bool] = [:]
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -42,12 +42,13 @@ class ExamViewController: UIViewController {
         let masterRef2 = Database.database().reference().child("exam").child(postdata as! String)
         masterRef2.observe(.childAdded, with: { snapshot in
         let userID = Auth.auth().currentUser?.uid
-        
-            self.postRef3 = Database.database().reference().child("users_exam_detail").child(userID!).child(self.postdata as! String).child("answer\(snapshot.key)")
-            self.postRef3.setValue("false")
             
+            self.postRef3 = Database.database().reference().child("users_exam_detail").child(userID!).child(self.postdata as! String).child("answer\(self.j)")
+            self.postRef3.setValue("false")
+            self.j = self.j + 1
             
         })
+        
         let view = UIView()
         view.frame = CGRect(x:10,y:100,width:self.view.bounds.width - 20,height:250)
         // 枠線の色
@@ -160,14 +161,14 @@ class ExamViewController: UIViewController {
                     // Completion Handler
                     
                 }
-                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = true
             } else {
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = false
             }
         }
     }
@@ -192,14 +193,14 @@ class ExamViewController: UIViewController {
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = true
             } else {
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = false
             }
         }
     }
@@ -225,7 +226,7 @@ class ExamViewController: UIViewController {
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = true
                 
             } else {
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
@@ -233,7 +234,7 @@ class ExamViewController: UIViewController {
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = false
             }
         }
     }
@@ -257,14 +258,14 @@ class ExamViewController: UIViewController {
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": true]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = true
             } else {
                 PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
                 PKHUD.sharedHUD.show(onView: view)
                 PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                 }
-                self.answerBox = [["answer\(self.page)": false]] as [[String:Bool]]?
+                self.answerBox["answer\(self.page)"] = false
             }
         }
     }
@@ -285,11 +286,14 @@ class ExamViewController: UIViewController {
     
     @IBAction func nextButton(_ sender: UIButton) {
         if resultPage == false {
-
+            print("1answerBox")
+            dump(self.answerBox)
+            print("1answerBox")
             
             let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
             examViewController.page = self.page + 1
             examViewController.postdata = self.postdata
+            examViewController.answerBox = self.answerBox
             self.navigationController?.pushViewController(examViewController, animated: true)
         } else {
             print("answerBox")

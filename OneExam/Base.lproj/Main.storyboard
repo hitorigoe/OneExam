@@ -34,61 +34,66 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到北京站需要多少钱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-g0-pHz">
-                                <rect key="frame" x="100" y="164" width="175" height="28"/>
+                                <rect key="frame" x="82.5" y="164" width="210" height="27.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下記の中から正しいものを選んでください。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-cn-zkJ">
-                                <rect key="frame" x="50" y="202" width="346.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下記の中から正しいものを選んでください。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-cn-zkJ">
+                                <rect key="frame" x="30" y="201.5" width="346.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
-                                <rect key="frame" x="50" y="414" width="311" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="311" id="bbz-nA-pkc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="1. 北京？"/>
-                                <connections>
-                                    <action selector="actionButton1:" destination="9RI-fM-OD1" eventType="touchUpInside" id="Sl6-m3-uqM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                <rect key="frame" x="50" y="502" width="295" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="295" id="OHf-hW-MJP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="3. 北京？"/>
-                                <connections>
-                                    <action selector="actionButton3:" destination="9RI-fM-OD1" eventType="touchUpInside" id="OnC-An-DRk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                <rect key="frame" x="50" y="546" width="259" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="259" id="AKc-gw-ari"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="4. 北京？"/>
-                                <connections>
-                                    <action selector="actionButton4:" destination="9RI-fM-OD1" eventType="touchUpInside" id="1uM-NJ-4jf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
-                                <rect key="frame" x="50" y="458" width="314" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="LXo-z0-nrr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="2. 北京？"/>
-                                <connections>
-                                    <action selector="actionButton2:" destination="9RI-fM-OD1" eventType="touchUpInside" id="99m-va-C0z"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-fF-2yS">
+                                <rect key="frame" x="20" y="414" width="314" height="166"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="311" id="bbz-nA-pkc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="1. 北京？"/>
+                                        <connections>
+                                            <action selector="actionButton1:" destination="9RI-fM-OD1" eventType="touchUpInside" id="Sl6-m3-uqM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
+                                        <rect key="frame" x="0.0" y="44" width="314" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="314" id="LXo-z0-nrr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="2. 北京？"/>
+                                        <connections>
+                                            <action selector="actionButton2:" destination="9RI-fM-OD1" eventType="touchUpInside" id="99m-va-C0z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
+                                        <rect key="frame" x="0.0" y="88" width="295" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="295" id="OHf-hW-MJP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="3. 北京？"/>
+                                        <connections>
+                                            <action selector="actionButton3:" destination="9RI-fM-OD1" eventType="touchUpInside" id="OnC-An-DRk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
+                                        <rect key="frame" x="0.0" y="132" width="259" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="259" id="AKc-gw-ari"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="4. 北京？"/>
+                                        <connections>
+                                            <action selector="actionButton4:" destination="9RI-fM-OD1" eventType="touchUpInside" id="1uM-NJ-4jf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qXs-rQ-XkC">
                                 <rect key="frame" x="37.5" y="631" width="300" height="36"/>
                                 <constraints>
@@ -103,29 +108,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="2YA-yW-0JG"/>
+                            <constraint firstItem="xRF-fF-2yS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="20" id="7h6-Ps-POd"/>
                             <constraint firstItem="Ad6-g0-pHz" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="9FB-63-hSM"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="Ann-OI-Il6"/>
-                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="Brc-a9-8Pg"/>
-                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="Hkb-Fy-yln"/>
-                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="l9S-vO-fSr" secondAttribute="leading" id="Icj-iv-x8m"/>
-                            <constraint firstItem="l9S-vO-fSr" firstAttribute="top" secondItem="6lP-fo-9Z9" secondAttribute="bottom" constant="10" id="KWb-ot-lfw"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="bottom" secondItem="9yP-tA-KP2" secondAttribute="bottom" id="NNb-kk-qN2"/>
-                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="O26-gk-eOw"/>
-                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="leading" secondItem="l9S-vO-fSr" secondAttribute="leading" id="O5q-Mq-EDg"/>
-                            <constraint firstItem="EdD-jl-zOF" firstAttribute="top" secondItem="l9S-vO-fSr" secondAttribute="bottom" constant="10" id="OGm-HJ-69e"/>
-                            <constraint firstItem="l9S-vO-fSr" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="Uv9-QC-Oeb"/>
-                            <constraint firstItem="6lP-fo-9Z9" firstAttribute="top" secondItem="9yP-tA-KP2" secondAttribute="top" constant="350" id="aN2-M8-rIp"/>
                             <constraint firstItem="Ad6-g0-pHz" firstAttribute="top" secondItem="9yP-tA-KP2" secondAttribute="top" constant="100" id="bO2-MD-WpT"/>
-                            <constraint firstItem="kBc-Qv-7Ph" firstAttribute="top" secondItem="EdD-jl-zOF" secondAttribute="bottom" constant="10" id="c2K-7s-QBM"/>
-                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="fbX-Pb-NT3"/>
                             <constraint firstItem="GoW-cn-zkJ" firstAttribute="top" secondItem="Ad6-g0-pHz" secondAttribute="bottom" constant="10" id="hmE-Vb-0AM"/>
-                            <constraint firstItem="l9S-vO-fSr" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="k5T-CZ-lS6"/>
-                            <constraint firstItem="EdD-jl-zOF" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="mdJ-cQ-cMN"/>
-                            <constraint firstItem="Ad6-g0-pHz" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="100" id="nVn-vg-WCr"/>
-                            <constraint firstItem="l9S-vO-fSr" firstAttribute="leading" secondItem="6lP-fo-9Z9" secondAttribute="leading" id="rqP-tR-Jx4"/>
-                            <constraint firstItem="6lP-fo-9Z9" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="50" id="uh9-Yd-HzM"/>
-                            <constraint firstItem="GoW-cn-zkJ" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="50" id="xaP-u8-rmT"/>
+                            <constraint firstItem="GoW-cn-zkJ" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="30" id="rHN-da-e2l"/>
+                            <constraint firstItem="xRF-fF-2yS" firstAttribute="top" secondItem="GoW-cn-zkJ" secondAttribute="bottom" constant="192" id="tUQ-FI-KiP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9yP-tA-KP2"/>
                     </view>

@@ -23,13 +23,12 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         let nib = UINib(nibName: "ResultTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         
-        //tableView.rowHeight = UITableView.automaticDimension
-        print("aaa")
-        print(UIScreen.main.bounds.width)
-        print(UITableView.automaticDimension)
+        tableView.rowHeight = UITableView.automaticDimension
+
         // テーブル行の高さの概算値を設定しておく
         // 高さ概算値 = 「縦横比1:1のUIImageViewの高さ(=画面幅)」+「いいねボタン、キャプションラベル、その他余白の高さの合計概算(=100pt)」
-        tableView.estimatedRowHeight = UIScreen.main.bounds.width
+        tableView.estimatedRowHeight = UIScreen.main.bounds.width + 100
+
 
         // Do any additional setup after loading the view.
     }
@@ -55,13 +54,10 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
+    /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170 //変更
     }
-    private func initTableView() {
-        tableView.register(UINib(nibName: "ResultTableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
-        tableView.estimatedRowHeight = 150 //追加
-        tableView.rowHeight = UITableView.automaticDimension //追加
-    }
+    */
 
 }
