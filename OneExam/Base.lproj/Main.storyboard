@@ -404,6 +404,9 @@
                                 <rect key="frame" x="10" y="574" width="355" height="30"/>
                                 <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="動画ダウンロード"/>
+                                <connections>
+                                    <action selector="touchedStartDownloadButton:" destination="knS-Np-z5g" eventType="touchUpInside" id="Hm6-0K-JR4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

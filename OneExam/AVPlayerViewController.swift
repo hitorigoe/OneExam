@@ -33,6 +33,33 @@ class AVPlayerViewController: UIViewController {
         player.play()
     }
     
+    @IBAction func touchedStartDownloadButton(_ sender: UIButton) {
+        //テキトーに動画ダウンロード
+        let url = URL(string: "https://www.vidsplay.com/wp-content/uploads/2017/05/toyboat.mp4")
+        let request = URLRequest(url: url!)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if(data == nil){
+                print("ダウンロード失敗")
+                return
+            }
+            if data!.count == 0 {
+                print("ダウンロード失敗？")
+            } else {
+                print("ダウンロード成功時")
+                //ドキュメントフォルダのパス
+                let path = NSSearchPathForDirectoriesInDomains(
+                    .documentDirectory,
+                    .userDomainMask, true).last!
+                //ファイルのパス
+                let _path = path + "/test.mp4"
+                
+                //アプリ内に保存
+                try? data?.write(to: URL(fileURLWithPath: _path))
+                print("ダウンロード終了")
+            }
+        }
+        task.resume()
+    }
     /*
     // MARK: - Navigation
 
