@@ -16,6 +16,7 @@ import PKHUD
 class ExamViewController: UIViewController {
     var postdata:Any?
     var masterArray: [MasterData2] = []
+    var newArray: Array<Any> = ["aaa","bbb"]
     var isChecked : Bool = true
     var accessIndex : String = "0"
     var aaa : Any?
@@ -99,20 +100,22 @@ class ExamViewController: UIViewController {
         
 
         masterRef.observe(.childAdded, with: { snapshot in
-            
+            print("mosmos")
             let valueDic = snapshot.value as! [String : Any]
             
             if self.page - 1 == self.i {
                 let masterData = MasterData2(snapshot: snapshot)
                 //print(masterData)
                 self.masterArray.insert(masterData, at: 0)
+                
+                //self.newArray.append(masterData)
                 self.aaa = valueDic["title"] as? String
 
                     //self.button1.text = valueDic["title"] as! UILabel
                     self.questionLabel.text = masterData.question
                     self.templateLabel.text = masterData.template
                     self.answer = masterData.answer
-                    
+                    self.newArray.append(masterData.question)
                     self.button1.setTitle(masterData.button1  ,for: .normal)
                     self.button2.setTitle(masterData.button2  ,for: .normal)
                     self.button3.setTitle(masterData.button3  ,for: .normal)
@@ -303,6 +306,10 @@ class ExamViewController: UIViewController {
             resultViewController.answerBox = self.answerBox
             resultViewController.postdata = self.postdata
             resultViewController.masterArray = self.masterArray
+            resultViewController.newArray = self.newArray
+            print("aabbaa")
+            dump(resultViewController.newArray)
+            print("ccaacc")
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
     }

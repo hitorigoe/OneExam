@@ -18,12 +18,18 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var postdata:Any?
     var postRef3 :DatabaseReference!
     var masterArray: [MasterData2] = []
+    var resultArray: [ResultData] = []
+    var newArray:Array<Any> = []
+    var value1: Any?
+    var question: String?
+    var answer:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
         for item in answerBox {
-              self.postRef3 = Database.database().reference().child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
+              self.postRef3 = ref.child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
               self.postRef3.setValue(item.value)
            // Database.database().reference().child("exam").child(postdata as! String).observe(.childAdded, with: { snapshot in
            //     // Get user value
@@ -38,14 +44,24 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             
               
         }
-
-        print("aaaa")
-        dump(masterArray)
-        print("bbbb")
+        ref.child("exam").child(self.postdata as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            for itemSnapShot in snapshot.children {
+                //ここで取得したデータを自分で定義したデータ型に入れて、加工する
+                var resultData = ResultData(snapshot: itemSnapShot as! DataSnapshot)
+                self.resultArray.insert(resultData!, at: 0)
+                dump(self.resultArray[0])
+                print("post")
+                print("ここは何回？")
+                self.tableView.reloadData()
+            }
+        })
+        
+        
         tableView.delegate = self
         tableView.dataSource = self
         //initTableView()
-        
+
         let nib = UINib(nibName: "ResultTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         
@@ -60,17 +76,18 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return answerBox.count
+        return resultArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
+        print("tableにはいった")
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
-        //dump(masterArray[answerBox.count].title!)
-        print("aqaqaqaq")
-        //cell.setMasterData2(masterArray[indexPath.row])
-        cell.questionLabel.text = masterArray[0].title!
-        cell.answerLabel.text = masterArray[0].answer
+        print(indexPath.row)
+        //cell.setResultData(indexPath)
+        cell.questionLabel.text = resultArray[indexPath.row].question
+        cell.answerLabel.text = resultArray[indexPath.row].answer
         return cell
     }
     /*

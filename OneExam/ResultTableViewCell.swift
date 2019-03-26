@@ -33,10 +33,8 @@ class ResultTableViewCell: UITableViewCell {
         
         self.questionLabel.text = "\(resultData.question!) "
         self.answerLabel.text = "\(resultData.answer!) "
-        //self.linkLabel.text = "\(masterData.link!) "
-        //let formatter = DateFormatter()
-        //formatter.dateFormat = "yyyy-MM-dd"
-        //let dateString = formatter.string(from: "\(masterData.id!) ")
+        dump(self.questionLabel.text)
+        print("OK")
     
     }
     func setMasterData2(_ masterData: MasterData2) {

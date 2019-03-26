@@ -55,13 +55,13 @@ class ViewController: UIViewController {
         // タブをタップした時に表示するViewControllerを設定する
         let resultViewController = storyboard?.instantiateViewController(withIdentifier: "Result")
         let examViewController = storyboard?.instantiateViewController(withIdentifier: "Exam")
-        let dlViewController = storyboard?.instantiateViewController(withIdentifier: "DL")
+        let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
         
         tabBarController.setView(resultViewController, at: 1)
         tabBarController.setView(homeViewController, at: 0)
         tabBarController.setView(examViewController, at: 2)
-        tabBarController.setView(dlViewController, at: 3)
+        tabBarController.setView(settingViewController, at: 3)
         
 
     }

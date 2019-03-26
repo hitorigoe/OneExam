@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,20 +19,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="623" height="206.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字漢字漢字漢字？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxJ-rM-7wO">
-                        <rect key="frame" x="30" y="21" width="156" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="漢字漢字漢字漢字？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxJ-rM-7wO">
+                        <rect key="frame" x="32" y="21" width="189" height="21"/>
+                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京駅までいくらかかりますか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU8-1b-YEc">
-                        <rect key="frame" x="30" y="62" width="323" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="北京駅までいくらかかりますか？" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU8-1b-YEc">
+                        <rect key="frame" x="32" y="62" width="471" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xpU-ZN-paK">
-                        <rect key="frame" x="553" y="21" width="60" height="60"/>
+                        <rect key="frame" x="533" y="21" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="2cK-xP-QqO"/>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="81t-fv-6rp"/>
@@ -51,17 +51,18 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="nxJ-rM-7wO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="1zy-Ko-7B8"/>
                     <constraint firstAttribute="trailingMargin" secondItem="e5h-GE-nPY" secondAttribute="trailing" constant="10" id="4Jq-oc-vv4"/>
                     <constraint firstItem="zU8-1b-YEc" firstAttribute="top" secondItem="nxJ-rM-7wO" secondAttribute="bottom" constant="20" id="59m-Na-Q4p"/>
                     <constraint firstItem="e5h-GE-nPY" firstAttribute="top" secondItem="zU8-1b-YEc" secondAttribute="bottom" constant="30" id="8r1-AZ-1pg"/>
-                    <constraint firstItem="xpU-ZN-paK" firstAttribute="leading" secondItem="zU8-1b-YEc" secondAttribute="trailing" constant="200" id="9pj-ed-8vG"/>
-                    <constraint firstItem="nxJ-rM-7wO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="D1f-iO-8ud"/>
+                    <constraint firstItem="xpU-ZN-paK" firstAttribute="leading" secondItem="zU8-1b-YEc" secondAttribute="trailing" constant="30" id="9pj-ed-8vG"/>
                     <constraint firstItem="zU8-1b-YEc" firstAttribute="leading" secondItem="nxJ-rM-7wO" secondAttribute="leading" id="KHw-j8-38R"/>
+                    <constraint firstItem="zU8-1b-YEc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="USB-5O-Zu6"/>
                     <constraint firstItem="e5h-GE-nPY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="YKt-1B-tGu"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="top" secondItem="nxJ-rM-7wO" secondAttribute="top" id="YW7-SK-v1B"/>
+                    <constraint firstItem="xpU-ZN-paK" firstAttribute="trailing" secondItem="e5h-GE-nPY" secondAttribute="trailing" id="YuQ-oy-EnV"/>
                     <constraint firstAttribute="bottomMargin" secondItem="e5h-GE-nPY" secondAttribute="bottom" constant="42" id="fuW-ET-cBL"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="j7Y-fC-5ar"/>
-                    <constraint firstAttribute="trailing" secondItem="xpU-ZN-paK" secondAttribute="trailing" constant="10" id="pqs-Cg-0xR"/>
                     <constraint firstItem="nxJ-rM-7wO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="qTQ-o7-d4H"/>
                 </constraints>
             </tableViewCellContentView>
@@ -71,7 +72,7 @@
                 <outlet property="imgView" destination="xpU-ZN-paK" id="S8S-0K-fxg"/>
                 <outlet property="questionLabel" destination="nxJ-rM-7wO" id="Pqm-zU-kws"/>
             </connections>
-            <point key="canvasLocation" x="138" y="-215"/>
+            <point key="canvasLocation" x="537" y="-193"/>
         </tableViewCell>
     </objects>
 </document>
