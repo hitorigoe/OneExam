@@ -90,6 +90,12 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         cell.answerLabel.text = resultArray[indexPath.row].answer
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _ = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
+        
+        let avViewController = self.storyboard?.instantiateViewController(withIdentifier:"AV") as! AVPlayerViewController
+        self.navigationController?.pushViewController(avViewController, animated: true)
+    }
     /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170 //変更

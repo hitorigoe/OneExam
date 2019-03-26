@@ -28,6 +28,7 @@
 		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
 		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
 		EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FFB7122438FC400AD277C /* MasterData.swift */; };
+		EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */; };
 		EFFF0DB62249422700C6F5B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		EF4FFB7122438FC400AD277C /* MasterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData.swift; sourceTree = "<group>"; };
+		EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 		EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */,
 				EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */,
 				2288DC912248FFF80087D6B5 /* ResultData.swift */,
+				EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */,
 			);
 			path = OneExam;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */,
 				22023BEE223BA03500D0A854 /* ViewController.swift in Sources */,
 				22023BEC223BA03500D0A854 /* AppDelegate.swift in Sources */,
+				EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */,
 				EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */,
 				22023BF4223BA03500D0A854 /* OneExam.xcdatamodeld in Sources */,
 				2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */,

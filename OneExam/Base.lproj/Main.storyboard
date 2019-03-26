@@ -362,6 +362,77 @@
             </objects>
             <point key="canvasLocation" x="2153" y="133"/>
         </scene>
+        <!--Player View Controller-->
+        <scene sceneID="DX6-Rt-ryX">
+            <objects>
+                <viewController storyboardIdentifier="AV" id="knS-Np-z5g" customClass="AVPlayerViewController" customModule="OneExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VfS-k9-Tg8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4y-W6-0nJ">
+                                <rect key="frame" x="10" y="50" width="355" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="p3L-fJ-vWE"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3B-Ws-Mr1">
+                                <rect key="frame" x="10" y="370" width="355" height="128"/>
+                                <connections>
+                                    <segue destination="1wn-mE-0yp" kind="embed" id="kxV-Ui-HD5"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-sb-4cj">
+                                <rect key="frame" x="39" y="390" width="210" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8Jb-zE-Wch"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DB-Bd-XPS">
+                                <rect key="frame" x="10" y="523" width="355" height="30"/>
+                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="動画をみる"/>
+                                <connections>
+                                    <action selector="playVideo:" destination="knS-Np-z5g" eventType="touchUpInside" id="UXD-I9-Znv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSW-ND-fk4">
+                                <rect key="frame" x="10" y="574" width="355" height="30"/>
+                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="動画ダウンロード"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9fK-AX-6fz" firstAttribute="trailing" secondItem="G3B-Ws-Mr1" secondAttribute="trailing" constant="10" id="3Vl-Qm-p8w"/>
+                            <constraint firstItem="Z4y-W6-0nJ" firstAttribute="top" secondItem="9fK-AX-6fz" secondAttribute="top" constant="30" id="E3s-HP-Kff"/>
+                            <constraint firstItem="fSW-ND-fk4" firstAttribute="leading" secondItem="9fK-AX-6fz" secondAttribute="leading" constant="10" id="Nb0-Rz-yt7"/>
+                            <constraint firstItem="2DB-Bd-XPS" firstAttribute="top" secondItem="G3B-Ws-Mr1" secondAttribute="bottom" constant="10" id="TzI-p3-xOz"/>
+                            <constraint firstItem="fSW-ND-fk4" firstAttribute="top" secondItem="2DB-Bd-XPS" secondAttribute="bottom" constant="10" id="aDq-RP-Bix"/>
+                            <constraint firstItem="DfZ-sb-4cj" firstAttribute="leading" secondItem="VfS-k9-Tg8" secondAttribute="leadingMargin" constant="10" id="eVo-sF-uJE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DfZ-sb-4cj" secondAttribute="trailing" constant="10" id="h9K-AV-sNV"/>
+                            <constraint firstItem="9fK-AX-6fz" firstAttribute="trailing" secondItem="2DB-Bd-XPS" secondAttribute="trailing" constant="10" id="jCb-R6-sGv"/>
+                            <constraint firstItem="Z4y-W6-0nJ" firstAttribute="leading" secondItem="9fK-AX-6fz" secondAttribute="leading" constant="10" id="mYK-Se-BAg"/>
+                            <constraint firstItem="9fK-AX-6fz" firstAttribute="trailing" secondItem="fSW-ND-fk4" secondAttribute="trailing" constant="10" id="oup-SG-ZV7"/>
+                            <constraint firstItem="G3B-Ws-Mr1" firstAttribute="top" secondItem="Z4y-W6-0nJ" secondAttribute="bottom" constant="10" id="stT-LT-Mck"/>
+                            <constraint firstItem="2DB-Bd-XPS" firstAttribute="leading" secondItem="9fK-AX-6fz" secondAttribute="leading" constant="10" id="tMs-QG-aNw"/>
+                            <constraint firstItem="9fK-AX-6fz" firstAttribute="trailing" secondItem="Z4y-W6-0nJ" secondAttribute="trailing" constant="10" id="uDq-0E-kJ6"/>
+                            <constraint firstItem="G3B-Ws-Mr1" firstAttribute="leading" secondItem="9fK-AX-6fz" secondAttribute="leading" constant="10" id="wtf-8i-GH7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9fK-AX-6fz"/>
+                    </view>
+                    <connections>
+                        <outlet property="avView" destination="Z4y-W6-0nJ" id="ij9-Kh-y5d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJn-Hc-n3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="803.74812593703155"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GJY-Xj-feH">
             <objects>
@@ -380,6 +451,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XP-E4-u4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="165.59999999999999" y="805.54722638680664"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jWA-lH-lhS">
+            <objects>
+                <viewController id="1wn-mE-0yp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iSD-hb-ntK">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKJ-4I-p07" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

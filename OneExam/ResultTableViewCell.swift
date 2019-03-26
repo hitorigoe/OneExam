@@ -23,7 +23,7 @@ class ResultTableViewCell: UITableViewCell {
         img = UIImage(named:"verified")
         imgView.image = img
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
