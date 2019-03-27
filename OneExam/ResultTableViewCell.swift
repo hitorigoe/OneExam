@@ -20,7 +20,7 @@ class ResultTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        img = UIImage(named:"verified")
+        img = UIImage(named:"maru")
         imgView.image = img
     }
     

@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
-import PKHUD
-
+//import PKHUD
+import SVProgressHUD
 
 class ExamViewController: UIViewController {
     var postdata:Any?
@@ -30,6 +30,7 @@ class ExamViewController: UIViewController {
     var postRef3 :DatabaseReference!
     var immediately : Bool = false
     var answerBox : [String:Bool] = [:]
+    
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -110,7 +111,9 @@ class ExamViewController: UIViewController {
                 
                 //self.newArray.append(masterData)
                 self.aaa = valueDic["title"] as? String
-
+                    print("aaaas")
+                    dump(snapshot.key.count)
+                    print("fffddd")
                     //self.button1.text = valueDic["title"] as! UILabel
                     self.questionLabel.text = masterData.question
                     self.templateLabel.text = masterData.template
@@ -158,19 +161,21 @@ class ExamViewController: UIViewController {
             button3.isEnabled = false
             button4.isEnabled = false
             if button1.currentTitle!.contains(answer!) {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
                     
-                }
+                //}
+                SVProgressHUD.showSuccess(withStatus: "正解！！")
                 self.answerBox["answer\(self.page)"] = true
             } else {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //}
+                SVProgressHUD.showError(withStatus: "不正解です>_<")
                 self.answerBox["answer\(self.page)"] = false
             }
         }
@@ -191,18 +196,20 @@ class ExamViewController: UIViewController {
             button3.isEnabled = false
             button4.isEnabled = false
             if button2.currentTitle!.contains(answer!) {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //}
+                SVProgressHUD.showSuccess(withStatus: "正解！！")
                 self.answerBox["answer\(self.page)"] = true
             } else {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //q}
+                SVProgressHUD.showError(withStatus: "不正解です>_<")
                 self.answerBox["answer\(self.page)"] = false
             }
         }
@@ -224,19 +231,21 @@ class ExamViewController: UIViewController {
             button2.isEnabled = false
             button4.isEnabled = false
             if button3.currentTitle!.contains(answer!) {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //}
+                SVProgressHUD.showSuccess(withStatus: "正解！！")
                 self.answerBox["answer\(self.page)"] = true
                 
             } else {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: //PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //}
+                SVProgressHUD.showError(withStatus: "不正解です>_<")
                 self.answerBox["answer\(self.page)"] = false
             }
         }
@@ -256,22 +265,26 @@ class ExamViewController: UIViewController {
             button2.isEnabled = false
             button3.isEnabled = false
             if button4.currentTitle!.contains(answer!) {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.progressCircularImage, title: "正解です！", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //}
+                SVProgressHUD.showSuccess(withStatus: "正解！！")
                 self.answerBox["answer\(self.page)"] = true
             } else {
-                PKHUD.sharedHUD.contentView = CustomHUDView(image: PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
-                PKHUD.sharedHUD.show(onView: view)
-                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                //PKHUD.sharedHUD.contentView = CustomHUDView(image: //PKHUDAssets.crossImage, title: "不正解です。", subtitle: nil)
+                //PKHUD.sharedHUD.show(onView: view)
+                //PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
                     // Completion Handler
-                }
+                //}
+                SVProgressHUD.showError(withStatus: "不正解です>_<")
                 self.answerBox["answer\(self.page)"] = false
             }
         }
     }
+  
+    /*
     class CustomHUDView: PKHUDSquareBaseView {
         
         override init(image: UIImage?, title: String?, subtitle: String?) {
@@ -286,12 +299,11 @@ class ExamViewController: UIViewController {
             super.init(coder: aDecoder)
         }
     }
+ */
     
     @IBAction func nextButton(_ sender: UIButton) {
         if resultPage == false {
-            print("1answerBox")
-            dump(self.answerBox)
-            print("1answerBox")
+
             
             let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
             examViewController.page = self.page + 1
@@ -299,17 +311,13 @@ class ExamViewController: UIViewController {
             examViewController.answerBox = self.answerBox
             self.navigationController?.pushViewController(examViewController, animated: true)
         } else {
-            print("answerBox")
-            dump(self.answerBox)
-            print("answerBox")
+
             let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
             resultViewController.answerBox = self.answerBox
             resultViewController.postdata = self.postdata
             resultViewController.masterArray = self.masterArray
             resultViewController.newArray = self.newArray
-            print("aabbaa")
-            dump(resultViewController.newArray)
-            print("ccaacc")
+
             self.navigationController?.pushViewController(resultViewController, animated: true)
         }
     }

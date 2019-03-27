@@ -19,7 +19,7 @@ class AVPlayerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.avView.layer.borderColor = UIColor.black.cgColor
-        self.avView.layer.borderWidth = 5
+        self.avView.layer.borderWidth = 3
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
