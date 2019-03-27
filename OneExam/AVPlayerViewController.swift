@@ -18,9 +18,12 @@ class AVPlayerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.avView.layer.borderColor = UIColor.black.cgColor
+        self.avView.layer.borderWidth = 5
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
+        print("video")
         guard let url = URL(string: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8") else {
             return
         }
@@ -28,8 +31,8 @@ class AVPlayerViewController: UIViewController {
         let player = AVPlayer(url: url)
         
         let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.view.bounds
-        self.view.layer.addSublayer(playerLayer)
+        playerLayer.frame = self.avView.bounds
+        self.avView.layer.addSublayer(playerLayer)
         player.play()
     }
     

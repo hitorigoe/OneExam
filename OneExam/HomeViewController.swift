@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     var observing = false
     var masterArray: [MasterData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -148,11 +149,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //examViewController.postdata = self.masterArray[indexPath.row].id
             
             //self.present(examViewController, animated: true, completion: nil)
+            /*
             let navigationController = self.storyboard?.instantiateViewController(withIdentifier:"Navi") as! UINavigationController
             let examViewController = navigationController.topViewController  as! ExamViewController
             
             examViewController.postdata = self.masterArray[indexPath.row].id
             self.present(navigationController, animated: true, completion: nil)
+            */
+            let examViewController = (self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController)
+            print("seni")
+            dump(indexPath.row)
+            print("seni")
+            examViewController.postdata = self.masterArray[indexPath.row].id
+            self.present(examViewController, animated: true, completion: nil)
+            //self.navigationController?.pushViewController(examViewController, animated: true)
         })
         // キャンセルボタン
         let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{

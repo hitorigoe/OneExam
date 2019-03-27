@@ -48,9 +48,6 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <state key="normal" title="動画で確認"/>
-                        <connections>
-                            <action selector="playVideo:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zz9-xe-amK"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>
