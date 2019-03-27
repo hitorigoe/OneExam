@@ -26,6 +26,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("resultArrayの初期値")
+        dump(resultArray.count)
         let userID = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         for item in answerBox {
@@ -50,9 +52,9 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
                 //ここで取得したデータを自分で定義したデータ型に入れて、加工する
                 var resultData = ResultData(snapshot: itemSnapShot as! DataSnapshot)
                 self.resultArray.insert(resultData!, at: 0)
-                dump(self.resultArray[0])
                 print("post")
                 print("ここは何回？")
+                dump(self.resultArray.count)
                 self.tableView.reloadData()
             }
         })

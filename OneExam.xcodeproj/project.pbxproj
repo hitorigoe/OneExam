@@ -27,6 +27,7 @@
 		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
 		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
 		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
+		EF3B7EA7224BF39000CA79DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */; };
 		EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FFB7122438FC400AD277C /* MasterData.swift */; };
 		EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */; };
 		EFFF0DB62249422700C6F5B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */; };
@@ -57,6 +58,7 @@
 		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
+		EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF4FFB7122438FC400AD277C /* MasterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData.swift; sourceTree = "<group>"; };
 		EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 		EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				22BE41D422420DF400E33504 /* ExamViewController.swift */,
 				22023BF5223BA03700D0A854 /* Assets.xcassets */,
 				22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */,
+				EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
 				229BD10E224AFBE3002FEB6E /* GoogleService-Info.plist */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */,
+				EF3B7EA7224BF39000CA79DE /* GoogleService-Info.plist in Resources */,
 				22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */,
 				22023BF1223BA03500D0A854 /* Main.storyboard in Resources */,
 				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,
