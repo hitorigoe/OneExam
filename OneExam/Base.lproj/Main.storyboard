@@ -57,7 +57,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-fF-2yS">
-                                <rect key="frame" x="20" y="265" width="314" height="166"/>
+                                <rect key="frame" x="30.5" y="265" width="314" height="166"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
@@ -119,15 +119,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xRF-fF-2yS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="20" id="7h6-Ps-POd"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="Ann-OI-Il6"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="bottom" secondItem="9yP-tA-KP2" secondAttribute="bottom" id="NNb-kk-qN2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kef-a9-M0A" secondAttribute="trailing" constant="-18" id="Rgq-di-S8a"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="top" secondItem="xRF-fF-2yS" secondAttribute="bottom" constant="200" id="gbn-vz-C64"/>
                             <constraint firstAttribute="trailing" secondItem="Kef-a9-M0A" secondAttribute="trailing" constant="30" id="lls-Ms-seO"/>
                             <constraint firstItem="Kef-a9-M0A" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="30" id="lw6-vb-k1T"/>
-                            <constraint firstItem="xRF-fF-2yS" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="20" id="pyP-6c-BP6"/>
                             <constraint firstItem="Kef-a9-M0A" firstAttribute="top" secondItem="9yP-tA-KP2" secondAttribute="top" constant="110" id="xb2-nn-Ias"/>
+                            <constraint firstItem="xRF-fF-2yS" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="yrM-tf-t8V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9yP-tA-KP2"/>
                     </view>

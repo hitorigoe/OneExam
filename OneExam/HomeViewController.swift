@@ -80,7 +80,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         var index: Int = 1
                         for master in self.masterArray {
                             if master.id == masterData.id {
-                                index = self.masterArray.index(of: master)!
+                                index = self.masterArray.firstIndex(of: master)!
                                 break
                             }
                         }

@@ -57,7 +57,7 @@ class AVPlayerViewController: UIViewController {
                 let _path = path + "/test.mp4"
                 
                 //アプリ内に保存
-                try? data?.write(to: URL(fileURLWithPath: _path))
+                ((try? data?.write(to: URL(fileURLWithPath: _path))) as ()??)
                 print("ダウンロード終了")
             }
         }
