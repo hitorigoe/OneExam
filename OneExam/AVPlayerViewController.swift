@@ -9,23 +9,154 @@
 import UIKit
 import AVFoundation
 
-class AVPlayerViewController: UIViewController {
+class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        // ダウンロード完了時の処理
+        
+        print("didFinishDownloading")
+        
+        do {
+            if let data = NSData(contentsOf: location) {
+                
+                let fileExtension = location.pathExtension
+                let filePath = getSaveDirectory() + getIdFromDateTime() + "." + fileExtension
+                
+                print(filePath)
+                
+                try data.write(toFile: filePath, options: .atomic)
+            }
+        } catch let error as NSError {
+            print("download error: \(error)")
+        }
+    }
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        // ダウンロード進行中の処理
+        
+        let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+        
+        // ダウンロードの進捗をログに表示
+        print(String(format: "%.2f", progress * 100) + "%")
+        
+        // メインスレッドでプログレスバーの更新処理
+        DispatchQueue.main.async(execute: {
+            self.progressBar.setProgress(progress, animated: true)
+        })
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        // ダウンロードエラー発生時の処理
+        if error != nil {
+            print("download error: \(String(describing: error))")
+        }
+    }
+    // バックグラウンドで動作する非同期通信
+    func startDownloadTask() {
+        
+        let sessionConfig = URLSessionConfiguration.background(withIdentifier: "myapp-background")
+        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
+        
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV?alt=media&token=2d1dcf10-b1e2-45d2-8f74-d4ed9cc8f9af")!
+        
+        let downloadTask = session.downloadTask(with: url)
+        downloadTask.resume()
+    }
+    
+    // 現在時刻からユニークな文字列を得る
+    func getIdFromDateTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+        return dateFormatter.string(from: Date())
+    }
+    
+    // 保存するディレクトリのパス
+    func getSaveDirectory() -> String {
+        
+        let fileManager = Foundation.FileManager.default
+        
+        // ライブラリディレクトリのルートパスを取得して、それにフォルダ名を追加
+        let path = NSSearchPathForDirectoriesInDomains(Foundation.FileManager.SearchPathDirectory.libraryDirectory, Foundation.FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/DownloadFiles/"
+        
+        // ディレクトリがない場合は作る
+        if !fileManager.fileExists(atPath: path) {
+            createDir(path: path)
+        }
+        
+        return path
+    }
+    
+    // ディレクトリを作成
+    func createDir(path: String) {
+        do {
+            let fileManager = Foundation.FileManager.default
+            try fileManager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            print("createDir: \(error)")
+        }
+    }
 
     var player: AVPlayer!
     var screenWidth:CGFloat = 0
     var screenHeight:CGFloat = 0
+    var progressBar: UIProgressView!
     @IBOutlet weak var avView: UIView!
+    var label:UILabel!
+    var progressView:UIProgressView!
+    var progress:Float = 0.0
+    var timer:Timer!
+    var restartButton:UIButton!
+    @objc func restart(_ s:UIButton) {
+        
+        timer.invalidate()
+        progress = 0
+        label.text = "please wait ..."
+        timer = Timer.scheduledTimer(timeInterval: 0.01,
+                                     target: self,
+                                     selector: #selector(self.timerUpdate),
+                                     userInfo: nil,
+                                     repeats: true)
+        
+        // リセット時にアニメーションしたくないときはコメントアウトを解除
+        //progressView.setProgress(progress, animated: false)
+    }
+    @objc func timerUpdate() {
+        progress = progress + 0.001
+        if progress < 1.1 {  // 浮動小数点誤差のため、<= 1.0 だとtrueにならないことがある
+            progressView.setProgress(progress, animated: true)
+        } else {
+            timer.invalidate()
+            label.text = "Complete !"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.avView.layer.borderColor = UIColor.black.cgColor
         self.avView.layer.borderWidth = 3
-        screenWidth = self.view.bounds.width
-        screenHeight = self.view.bounds.height
-        // UIImage インスタンスの生成
-        
 
+        /// ラベル
+        label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:20))
+        var labelCenterPos = view.center
+        labelCenterPos.y = labelCenterPos.y + 30
+        label.center = labelCenterPos
+        label.text = "please wait ..."
+        label.textAlignment = .center
+        view.addSubview(label)
+        
+        /// プログレスバー
+        progressView = UIProgressView(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 60,height:20))
+        progressView.center = view.center
+        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 6.0)
+        progressView.progressTintColor = .blue
+        progressView.setProgress(progress, animated: true)
+        view.addSubview(progressView)
+
+        /// タイマー
+        //timer = Timer.scheduledTimer(timeInterval: 0.01,
+        //                             target: self,
+        //                             selector: #selector(self.timerUpdate),
+        //                             userInfo: nil,
+        //                             repeats: true)
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
@@ -33,6 +164,7 @@ class AVPlayerViewController: UIViewController {
         guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV?alt=media&token=2d1dcf10-b1e2-45d2-8f74-d4ed9cc8f9af") else {
             return
         }
+        // gs://oneexam-3d30f.appspot.com/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
         let player = AVPlayer(url: url)
         
@@ -44,31 +176,7 @@ class AVPlayerViewController: UIViewController {
     }
     
     @IBAction func touchedStartDownloadButton(_ sender: UIButton) {
-        //テキトーに動画ダウンロード
-        let url = URL(string: "https://www.vidsplay.com/wp-content/uploads/2017/05/toyboat.mp4")
-        let request = URLRequest(url: url!)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if(data == nil){
-                print("ダウンロード失敗")
-                return
-            }
-            if data!.count == 0 {
-                print("ダウンロード失敗？")
-            } else {
-                print("ダウンロード成功時")
-                //ドキュメントフォルダのパス
-                let path = NSSearchPathForDirectoriesInDomains(
-                    .documentDirectory,
-                    .userDomainMask, true).last!
-                //ファイルのパス
-                let _path = path + "/test.mp4"
-                
-                //アプリ内に保存
-                ((try? data?.write(to: URL(fileURLWithPath: _path))) as ()??)
-                print("ダウンロード終了")
-            }
-        }
-        task.resume()
+        startDownloadTask()
     }
     /*
     // MARK: - Navigation

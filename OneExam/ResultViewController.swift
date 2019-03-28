@@ -26,6 +26,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var img2:UIImage?
     var img:UIImage?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("resultArrayの初期値")
@@ -99,6 +100,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         cell.answerLabel.text = resultArray[indexPath.row].answer
 
         var str3:String = "answer" + String(indexPath.row + 1)
+        
         if answerBox[str3]! {
             cell.imgView.image = img
         } else {
