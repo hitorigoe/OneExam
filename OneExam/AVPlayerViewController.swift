@@ -12,7 +12,8 @@ import AVFoundation
 class AVPlayerViewController: UIViewController {
 
     var player: AVPlayer!
-    
+    var screenWidth:CGFloat = 0
+    var screenHeight:CGFloat = 0
     @IBOutlet weak var avView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,16 @@ class AVPlayerViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.avView.layer.borderColor = UIColor.black.cgColor
         self.avView.layer.borderWidth = 3
+        screenWidth = self.view.bounds.width
+        screenHeight = self.view.bounds.height
+        // UIImage インスタンスの生成
+        
+
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
         print("video")
-        guard let url = URL(string: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8") else {
+        guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV?alt=media&token=2d1dcf10-b1e2-45d2-8f74-d4ed9cc8f9af") else {
             return
         }
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
@@ -32,6 +38,7 @@ class AVPlayerViewController: UIViewController {
         
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.avView.bounds
+        
         self.avView.layer.addSublayer(playerLayer)
         player.play()
     }

@@ -23,11 +23,15 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var value1: Any?
     var question: String?
     var answer:String?
+    var img2:UIImage?
+    var img:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("resultArrayの初期値")
         dump(resultArray.count)
+        img2 = UIImage(named:"batsu")
+        img = UIImage(named:"maru")
         let userID = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         for item in answerBox {
@@ -83,13 +87,26 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
-        print("tableにはいった")
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
+        print("tableにはいった1")
         print(indexPath.row)
+        dump(answerBox)
+        print("tableにはいった2")
         //cell.setResultData(indexPath)
         cell.questionLabel.text = resultArray[indexPath.row].question
         cell.answerLabel.text = resultArray[indexPath.row].answer
+
+        var str3:String = "answer" + String(indexPath.row + 1)
+        if answerBox[str3]! {
+            cell.imgView.image = img
+        } else {
+            cell.imgView.image = img2
+        }
+        print("hoge")
+        print(answerBox[str3] as Any)
+        //cell.imgView.image = answerBox
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
