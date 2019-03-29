@@ -14,7 +14,7 @@ import FirebaseDatabase
 class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var answerBox : [String:Bool] = [:]
+    var answerBox : [String:String] = [:]
     var postdata:Any?
     var postRef3 :DatabaseReference!
     var masterArray: [MasterData2] = []
@@ -93,7 +93,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
         print("tableにはいった1")
         print(indexPath.row)
-        dump(answerBox)
+        
+        
         print("tableにはいった2")
         //cell.setResultData(indexPath)
         cell.questionLabel.text = resultArray[indexPath.row].question
@@ -101,7 +102,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
 
         var str3:String = "answer" + String(indexPath.row + 1)
         
-        if answerBox[str3]! {
+        if answerBox[str3] == "true" {
             cell.imgView.image = img
         } else {
             cell.imgView.image = img2

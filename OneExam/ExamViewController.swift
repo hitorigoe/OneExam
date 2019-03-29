@@ -15,15 +15,9 @@
 
 
 import UIKit
-
 import Firebase
-
 import FirebaseAuth
-
 import FirebaseDatabase
-
-//import PKHUD
-
 import SVProgressHUD
 
 
@@ -46,7 +40,7 @@ class ExamViewController: UIViewController {
     var postDic : [Int:[String:Any]]?
     var postRef3 :DatabaseReference!
     var immediately : Bool = false
-    var answerBox : [String:Bool] = [:]
+    var answerBox : [String:String] = [:]
     
     
     @IBOutlet weak var button1: UIButton!
@@ -122,9 +116,16 @@ class ExamViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
+        var aaa = "answer"
+        var mojistr = "answer" + String(self.page)
+        var bbb = aaa + mojistr
+        if let value = answerBox[bbb] {
+            print(mojistr)
+        }
         masterRef.observe(.childAdded, with: { snapshot1 in
-
+        
             _ = snapshot1.value
+            
             if self.page <= self.q {
                 print("とれとれ")
                 dump(Int(snapshot1.key as String)!)
@@ -136,6 +137,7 @@ class ExamViewController: UIViewController {
                     self.questionLabel.text = masterData.question
                     self.templateLabel.text = masterData.template
                     self.answer = masterData.answer
+                    
                     self.button1.setTitle(masterData.button1  ,for: .normal)
                     self.button2.setTitle(masterData.button2  ,for: .normal)
                     self.button3.setTitle(masterData.button3  ,for: .normal)
@@ -174,7 +176,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
                 SVProgressHUD.dismiss(withDelay: 1)
-                self.answerBox["answer\(self.page)"] = true
+                self.answerBox["answer\(self.page)"] = "button1"
                 
             } else {
                 
@@ -185,7 +187,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
                 
-                self.answerBox["answer\(self.page)"] = false
+                self.answerBox["answer\(self.page)"] = "false"
                 
             }
         }
@@ -217,7 +219,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
                 SVProgressHUD.dismiss(withDelay: 1)
-                self.answerBox["answer\(self.page)"] = true
+                self.answerBox["answer\(self.page)"] = "button2"
             } else {
 
                 
@@ -227,7 +229,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setForegroundColor(UIColor.red)
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
-                self.answerBox["answer\(self.page)"] = false
+                self.answerBox["answer\(self.page)"] = "false"
             }
         }
     }
@@ -256,7 +258,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
-                self.answerBox["answer\(self.page)"] = true
+                self.answerBox["answer\(self.page)"] = "button3"
             } else {
                 
                 
@@ -267,7 +269,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setForegroundColor(UIColor.red)
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
-                self.answerBox["answer\(self.page)"] = false
+                self.answerBox["answer\(self.page)"] = "false"
             }
         }
     }
@@ -295,7 +297,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
-                self.answerBox["answer\(self.page)"] = true
+                self.answerBox["answer\(self.page)"] = "button4"
             } else {
                 SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
@@ -303,7 +305,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setForegroundColor(UIColor.red)
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
-                self.answerBox["answer\(self.page)"] = false
+                self.answerBox["answer\(self.page)"] = "false"
                 
             }
         }
@@ -317,6 +319,7 @@ class ExamViewController: UIViewController {
             examViewController.page = self.page + 1
             examViewController.postdata = self.postdata
             examViewController.answerBox = self.answerBox
+            examViewController.isChecked = self.isChecked
             self.navigationController?.pushViewController(examViewController, animated: true)
         } else {
             let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
