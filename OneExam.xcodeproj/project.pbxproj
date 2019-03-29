@@ -24,6 +24,7 @@
 		22BE41D522420DF400E33504 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D422420DF400E33504 /* ExamViewController.swift */; };
 		22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D622420E3300E33504 /* ResultViewController.swift */; };
 		22BE41D922420EA400E33504 /* DLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D822420EA400E33504 /* DLViewController.swift */; };
+		22F188C0224DED7900BA3240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22F188BF224DED7900BA3240 /* GoogleService-Info.plist */; };
 		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
 		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
 		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
@@ -55,6 +56,7 @@
 		22BE41D422420DF400E33504 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		22BE41D622420E3300E33504 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		22BE41D822420EA400E33504 /* DLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLViewController.swift; sourceTree = "<group>"; };
+		22F188BF224DED7900BA3240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
 				229BD10E224AFBE3002FEB6E /* GoogleService-Info.plist */,
+				22F188BF224DED7900BA3240 /* GoogleService-Info.plist */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
 				EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
@@ -205,6 +208,7 @@
 			files = (
 				22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */,
 				EF3B7EA7224BF39000CA79DE /* GoogleService-Info.plist in Resources */,
+				22F188C0224DED7900BA3240 /* GoogleService-Info.plist in Resources */,
 				22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */,
 				22023BF1223BA03500D0A854 /* Main.storyboard in Resources */,
 				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,

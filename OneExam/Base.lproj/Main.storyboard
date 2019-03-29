@@ -129,11 +129,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9yP-tA-KP2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WQe-l2-Ge9">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" width="20" id="Vf2-2m-5Gz">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="WQe-l2-Ge9"/>
                     <connections>
                         <outlet property="button1" destination="6lP-fo-9Z9" id="wyR-oN-Uqf"/>
                         <outlet property="button2" destination="l9S-vO-fSr" id="CLU-fE-0NQ"/>
