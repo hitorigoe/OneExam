@@ -25,10 +25,12 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var answer:String?
     var img2:UIImage?
     var img:UIImage?
+    var i:Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         print("resultArrayの初期値")
         dump(resultArray.count)
         img2 = UIImage(named:"batsu")
@@ -56,11 +58,13 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             for itemSnapShot in snapshot.children {
                 //ここで取得したデータを自分で定義したデータ型に入れて、加工する
                 var resultData = ResultData(snapshot: itemSnapShot as! DataSnapshot)
-                self.resultArray.insert(resultData!, at: 0)
+                self.resultArray.insert(resultData!, at: self.i)
                 print("post")
                 print("ここは何回？")
                 dump(self.resultArray.count)
                 self.tableView.reloadData()
+                self.i = self.i + 1
+                
             }
         })
         
