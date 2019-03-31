@@ -113,15 +113,68 @@ class ExamViewController: UIViewController {
     }
     
     
-    
+    override func didMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+        if parent == nil {
+
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
+        var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+       
+
+        print(answerBox)
+        answerBox.forEach { item in
+            print(item.key)
+            print("ccc")
+            appDelegate.answerBox[item.key] = item.value
+            if String(item.key) == "answer" + String(self.page) {
+                //var tmp = "button" + String(self.page) as Any as? UIButton
+
+            }
+        }
+        answerBox = appDelegate.answerBox
+        print("backback2")
+        
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
         var aaa = "answer"
         var mojistr = "answer" + String(self.page)
-        var bbb = aaa + mojistr
-        if let value = answerBox[bbb] {
-            print(mojistr)
+        
+        print("current")
+        print(self.page)
+        print("current")
+
+        if var value = answerBox[mojistr] {
+            answerBox.forEach { item in
+                print("koko")
+                if String(item.key) == mojistr {
+                    print("soko")
+                    print(mojistr)
+                    print(self.page)
+                    print("soko")
+                    print(item.value)
+                    var tmp = String(item.value)
+
+                    if tmp == "button1" {
+                        button1.backgroundColor = .orange
+                    } else if tmp == "button2" {
+                        print("aaa")
+                        button2.backgroundColor = .orange
+                    } else if tmp == "button3" {
+                        button3.backgroundColor = .orange
+                    } else if tmp == "button4" {
+                        button4.backgroundColor = .orange
+                    }
+                    
+                }
+            }
+            
         }
+
+        print("111")
+        dump(answerBox)
+        print("111")
         masterRef.observe(.childAdded, with: { snapshot1 in
         
             _ = snapshot1.value
@@ -220,6 +273,10 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.answerBox["answer\(self.page)"] = "button2"
+                print("aaaa")
+                print(self.page)
+                
+                print("bbbb")
             } else {
 
                 

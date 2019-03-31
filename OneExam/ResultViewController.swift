@@ -102,10 +102,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
 
         var str3:String = "answer" + String(indexPath.row + 1)
         
-        if answerBox[str3] == "true" {
-            cell.imgView.image = img
-        } else {
+        if answerBox[str3] == "false" {
             cell.imgView.image = img2
+        } else {
+            cell.imgView.image = img
+    
         }
         print("hoge")
         print(answerBox[str3] as Any)
