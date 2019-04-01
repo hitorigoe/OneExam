@@ -106,7 +106,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
 
         var str3:String = "answer" + String(indexPath.row + 1)
         
-        if answerBox[str3] == "false" {
+        //if answerBox[str3] == "false" {
+        if (answerBox[str3]?.contains("false"))! {
             cell.imgView.image = img2
         } else {
             cell.imgView.image = img

@@ -31,7 +31,7 @@ class ExamViewController: UIViewController {
     var accessIndex : String = "0"
     var aaa : Any?
     var i : Int = 0
-    var j : Int = 1
+    var j : Int = 0
     var q : Int = 0
     var page: Int = 1
     var maxCnt : Int = 0
@@ -69,8 +69,6 @@ class ExamViewController: UIViewController {
             for _ in snapshot.children {
                 self.q = self.q + 1
             }
-            print("カウント")
-            print(self.q)
         })
         
         let view = UIView()
@@ -126,8 +124,7 @@ class ExamViewController: UIViewController {
 
         print(answerBox)
         answerBox.forEach { item in
-            print(item.key)
-            print("ccc")
+
             appDelegate.answerBox[item.key] = item.value
             if String(item.key) == "answer" + String(self.page) {
                 //var tmp = "button" + String(self.page) as Any as? UIButton
@@ -135,35 +132,26 @@ class ExamViewController: UIViewController {
             }
         }
         answerBox = appDelegate.answerBox
-        print("backback2")
+
         
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
-        var aaa = "answer"
-        var mojistr = "answer" + String(self.page)
         
-        print("current")
-        print(self.page)
-        print("current")
-
+        var mojistr = "answer" + String(self.page)
         if var value = answerBox[mojistr] {
             answerBox.forEach { item in
-                print("koko")
+                
                 if String(item.key) == mojistr {
-                    print("soko")
-                    print(mojistr)
-                    print(self.page)
-                    print("soko")
-                    print(item.value)
+
                     var tmp = String(item.value)
 
-                    if tmp == "button1" {
+                    if tmp.contains("button1")  {
                         button1.backgroundColor = .orange
-                    } else if tmp == "button2" {
+                    } else if tmp.contains("button2") {
                         print("aaa")
                         button2.backgroundColor = .orange
-                    } else if tmp == "button3" {
+                    } else if tmp.contains("button3") {
                         button3.backgroundColor = .orange
-                    } else if tmp == "button4" {
+                    } else if tmp.contains("button4") {
                         button4.backgroundColor = .orange
                     }
                     
@@ -171,22 +159,15 @@ class ExamViewController: UIViewController {
             }
             
         }
-
-        print("111")
-        dump(answerBox)
-        print("111")
         masterRef.observe(.childAdded, with: { snapshot1 in
         
             _ = snapshot1.value
             
             if self.page <= self.q {
-                print("とれとれ")
-                dump(Int(snapshot1.key as String)!)
-                print("とれとれ２")
                 if Int(snapshot1.key as String)! == self.page {
                     var masterData = MasterData2(snapshot: snapshot1)
 
-                    self.masterArray.insert(masterData, at: 0)
+                    self.masterArray.insert(masterData, at: self.j)
                     self.questionLabel.text = masterData.question
                     self.templateLabel.text = masterData.template
                     self.answer = masterData.answer
@@ -195,6 +176,7 @@ class ExamViewController: UIViewController {
                     self.button2.setTitle(masterData.button2  ,for: .normal)
                     self.button3.setTitle(masterData.button3  ,for: .normal)
                     self.button4.setTitle(masterData.button4  ,for: .normal)
+                    self.j = self.j + 1
                     if self.page == self.q  {
                         self.nextButton.setTitle("結果へ進む！"  ,for: .normal)
                         self.resultPage = true
@@ -240,7 +222,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
                 
-                self.answerBox["answer\(self.page)"] = "false"
+                self.answerBox["answer\(self.page)"] = "false:button1"
                 
             }
         }
@@ -273,10 +255,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.answerBox["answer\(self.page)"] = "button2"
-                print("aaaa")
-                print(self.page)
-                
-                print("bbbb")
+
             } else {
 
                 
@@ -286,7 +265,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setForegroundColor(UIColor.red)
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
-                self.answerBox["answer\(self.page)"] = "false"
+                self.answerBox["answer\(self.page)"] = "false:button2"
             }
         }
     }
@@ -326,7 +305,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setForegroundColor(UIColor.red)
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
-                self.answerBox["answer\(self.page)"] = "false"
+                self.answerBox["answer\(self.page)"] = "false:button3"
             }
         }
     }
@@ -362,7 +341,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setForegroundColor(UIColor.red)
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showError(withStatus: "不正解です>_<")
-                self.answerBox["answer\(self.page)"] = "false"
+                self.answerBox["answer\(self.page)"] = "false:button4"
                 
             }
         }
@@ -371,12 +350,17 @@ class ExamViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         
         if resultPage == false {
+            //answerBox.
+            // next
             
-            let examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
+            print("next")
+            dump(self.answerBox)
+            print("next")
+            var examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
             examViewController.page = self.page + 1
             examViewController.postdata = self.postdata
             examViewController.answerBox = self.answerBox
-            examViewController.isChecked = self.isChecked
+            //examViewController.isChecked = self.isChecked
             self.navigationController?.pushViewController(examViewController, animated: true)
         } else {
             let resultViewController = self.storyboard?.instantiateViewController(withIdentifier:"Result") as! ResultViewController
