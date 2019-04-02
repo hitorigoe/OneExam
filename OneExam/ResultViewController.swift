@@ -26,6 +26,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var img2:UIImage?
     var img:UIImage?
     var i:Int = 0
+    var tmp:Bool? = false
     
     
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         img2 = UIImage(named:"batsu")
         img = UIImage(named:"maru")
         let userID = Auth.auth().currentUser?.uid
+        
         let ref = Database.database().reference()
         for item in answerBox {
               self.postRef3 = ref.child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
@@ -53,6 +55,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             
               
         }
+        
         ref.child("exam").child(self.postdata as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             for itemSnapShot in snapshot.children {
@@ -107,7 +110,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         var str3:String = "answer" + String(indexPath.row + 1)
         
         //if answerBox[str3] == "false" {
-        if (answerBox[str3]?.contains("false"))! {
+        self.tmp = answerBox[str3]?.contains("false")
+        if self.tmp == true {
+        //if (answerBox[str3]?.contains("false"))! {
+            cell.imgView.image = img2
+        } else if self.tmp == nil {
             cell.imgView.image = img2
         } else {
             cell.imgView.image = img
@@ -115,8 +122,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         }
         print("hoge")
         print(answerBox[str3] as Any)
+        
         //cell.imgView.image = answerBox
+        
         return cell
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         _ = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
@@ -130,4 +140,13 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     }
     */
 
+    @IBAction func backButton(_ sender: Any) {
+        let homeViewController = (self.storyboard?.instantiateViewController(withIdentifier:"Home") as! HomeViewController)
+        let examViewController = (self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController)
+        //self.present(homeViewController, animated: true, completion: nil)
+        var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.answerBox = [:]
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+
+    }
 }

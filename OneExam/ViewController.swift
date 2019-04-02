@@ -31,11 +31,11 @@ class ViewController: UIViewController {
     func setupTab() {
         
         // 画像のファイル名を指定してESTabBarControllerを作成する
-        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home_selected_1_", "inbox", "favourite_selected","download"])
+        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home_selected_1_", "settings", "favourite_selected","download"])
         
         // 背景色、選択時の色を設定する
         tabBarController.selectedColor = UIColor(red: 1.0, green: 0.04, blue: 0.11, alpha: 1)
-        tabBarController.buttonsBackgroundColor = UIColor(red: 0.16, green: 0.91, blue: 0.57, alpha: 1)
+        tabBarController.buttonsBackgroundColor = UIColor(red: 0.16, green: 0.91, blue: 0.27, alpha: 1)
         tabBarController.selectionIndicatorHeight = 4
         
         // 作成したESTabBarControllerを親のViewController（＝self）に追加する
@@ -58,10 +58,10 @@ class ViewController: UIViewController {
         let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
         
-        tabBarController.setView(resultViewController, at: 1)
+        tabBarController.setView(resultViewController, at: 3)
         tabBarController.setView(homeViewController, at: 0)
         tabBarController.setView(examViewController, at: 2)
-        tabBarController.setView(settingViewController, at: 3)
+        tabBarController.setView(settingViewController, at: 1)
         
 
     }

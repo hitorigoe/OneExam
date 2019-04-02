@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     var observing = false
     var masterArray: [MasterData] = []
-    
+    var answerBox : [String:String] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -155,6 +155,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let examViewController = navigationController.topViewController  as! ExamViewController
             
             examViewController.postdata = self.masterArray[indexPath.row].id
+            examViewController.answerBox = self.answerBox
             self.present(navigationController, animated: true, completion: nil)
             
             /*

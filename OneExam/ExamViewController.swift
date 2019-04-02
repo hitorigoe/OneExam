@@ -133,7 +133,7 @@ class ExamViewController: UIViewController {
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
         
         var mojistr = "answer" + String(self.page)
-        if var value = answerBox[mojistr] {
+        if answerBox[mojistr] != nil {
             answerBox.forEach { item in
                 
                 if String(item.key) == mojistr {
@@ -366,7 +366,15 @@ class ExamViewController: UIViewController {
             resultViewController.postdata = self.postdata
             resultViewController.masterArray = self.masterArray
             resultViewController.newArray = self.newArray
-            self.navigationController?.pushViewController(resultViewController, animated: true)
+            button1.backgroundColor = .gray
+            button2.backgroundColor = .gray
+            button3.backgroundColor = .gray
+            button4.backgroundColor = .gray
+            button1.isEnabled = true
+            button2.isEnabled = true
+            button3.isEnabled = true
+            button4.isEnabled = true
+             self.navigationController?.pushViewController(resultViewController, animated: true)
             
         }
     }
