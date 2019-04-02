@@ -141,10 +141,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     */
 
     @IBAction func backButton(_ sender: Any) {
-        let homeViewController = (self.storyboard?.instantiateViewController(withIdentifier:"Home") as! HomeViewController)
-        let examViewController = (self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController)
-        //self.present(homeViewController, animated: true, completion: nil)
-        var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.answerBox = [:]
         self.presentingViewController?.dismiss(animated: true, completion: nil)
 

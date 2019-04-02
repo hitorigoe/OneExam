@@ -119,7 +119,7 @@ class ExamViewController: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         answerBox.forEach { item in
 
             appDelegate.answerBox[item.key] = item.value
@@ -143,16 +143,28 @@ class ExamViewController: UIViewController {
                     if tmp.contains("button1")  {
                         button1.backgroundColor = .orange
                         isChecked = false
+                        button2.isEnabled = false
+                        button3.isEnabled = false
+                        button4.isEnabled = false
                     } else if tmp.contains("button2") {
                         
                         button2.backgroundColor = .orange
                         isChecked = false
+                        button1.isEnabled = false
+                        button3.isEnabled = false
+                        button4.isEnabled = false
                     } else if tmp.contains("button3") {
                         button3.backgroundColor = .orange
                         isChecked = false
+                        button1.isEnabled = false
+                        button2.isEnabled = false
+                        button4.isEnabled = false
                     } else if tmp.contains("button4") {
                         button4.backgroundColor = .orange
                         isChecked = false
+                        button1.isEnabled = false
+                        button2.isEnabled = false
+                        button3.isEnabled = false
                     }
                     
                 }

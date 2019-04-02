@@ -10,6 +10,9 @@ import UIKit
 import AVFoundation
 
 class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
+    
+    
+    @IBOutlet weak var secondLabel: UILabel!
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         // ダウンロード完了時の処理
         
@@ -55,7 +58,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         let sessionConfig = URLSessionConfiguration.background(withIdentifier: "myapp-background")
         let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         
-        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV?alt=media&token=2d1dcf10-b1e2-45d2-8f74-d4ed9cc8f9af")!
+        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/favorite.mov?alt=media&token=b8f32ec3-466c-4fbc-87ca-c176d752d90b")!
         
         let downloadTask = session.downloadTask(with: url)
         downloadTask.resume()
@@ -135,22 +138,25 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         self.avView.layer.borderWidth = 3
 
         /// ラベル
-        label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:20))
+        /*
+        label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:70))
         var labelCenterPos = view.center
-        labelCenterPos.y = labelCenterPos.y + 30
+        labelCenterPos.y = labelCenterPos.y + 100
+        
         label.center = labelCenterPos
         label.text = "please wait ..."
         label.textAlignment = .center
         view.addSubview(label)
-        
+        */
         /// プログレスバー
-        progressView = UIProgressView(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 60,height:20))
+        /*
+        progressView = UIProgressView(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 60,height:100))
         progressView.center = view.center
         progressView.transform = CGAffineTransform(scaleX: 1.0, y: 6.0)
         progressView.progressTintColor = .blue
         progressView.setProgress(progress, animated: true)
         view.addSubview(progressView)
-
+        */
         /// タイマー
         //timer = Timer.scheduledTimer(timeInterval: 0.01,
         //                             target: self,
@@ -161,7 +167,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     
     @IBAction func playVideo(_ sender: UIButton) {
         print("video")
-        guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV?alt=media&token=2d1dcf10-b1e2-45d2-8f74-d4ed9cc8f9af") else {
+        guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/favorite.mov?alt=media&token=b8f32ec3-466c-4fbc-87ca-c176d752d90b") else {
             return
         }
         // gs://oneexam-3d30f.appspot.com/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV
@@ -187,5 +193,53 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
+}
+extension UIView {
+    
+    var top : CGFloat{
+        get{
+            return self.frame.origin.y
+        }
+        set{
+            var frame       = self.frame
+            frame.origin.y  = newValue
+            self.frame      = frame
+        }
+    }
+    
+    var bottom : CGFloat{
+        get{
+            return frame.origin.y + frame.size.height
+        }
+        set{
+            var frame       = self.frame
+            frame.origin.y  = newValue - self.frame.size.height
+            self.frame      = frame
+        }
+    }
+    
+    var right : CGFloat{
+        get{
+            return self.frame.origin.x + self.frame.size.width
+        }
+        set{
+            var frame       = self.frame
+            frame.origin.x  = newValue - self.frame.size.width
+            self.frame      = frame
+        }
+    }
+    
+    var left : CGFloat{
+        get{
+            return self.frame.origin.x
+        }
+        set{
+            var frame       = self.frame
+            frame.origin.x  = newValue
+            self.frame      = frame
+        }
+    }
 }
