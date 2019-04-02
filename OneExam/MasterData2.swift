@@ -30,7 +30,7 @@ class MasterData2: NSObject {
         
         //let valueDictionary = snapshot.value as! [String: Any]
         
-        print("zzz")
+        
         
         
         //let array = snapshot.value as! [Any]
@@ -61,7 +61,7 @@ class MasterData2: NSObject {
             }
         }
         */
-        print("xxx")
+        
         
         
         

@@ -28,6 +28,11 @@ class ExamViewController: UIViewController {
     var masterArray: [MasterData2] = []
     var newArray: Array<Any> = ["aaa","bbb"]
     var isChecked : Bool = true
+    var isChecked1 : Bool = true
+    var isChecked2 : Bool = true
+    var isChecked3 : Bool = true
+    var isChecked4 : Bool = true
+    
     var accessIndex : String = "0"
     var aaa : Any?
     var i : Int = 0
@@ -44,21 +49,15 @@ class ExamViewController: UIViewController {
     
     
     @IBOutlet weak var button1: UIButton!
-    
     @IBOutlet weak var button2: UIButton!
-    
     @IBOutlet weak var button3: UIButton!
-    
     @IBOutlet weak var button4: UIButton!
     
     
     
     @IBOutlet weak var nextButton: UIButton!
-    
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var templateLabel: UILabel!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -114,26 +113,23 @@ class ExamViewController: UIViewController {
     override func didMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
         if parent == nil {
-
+            let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.answerBox = self.answerBox
+            
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         var appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-
-       
-
-        print(answerBox)
         answerBox.forEach { item in
 
             appDelegate.answerBox[item.key] = item.value
             if String(item.key) == "answer" + String(self.page) {
-                //var tmp = "button" + String(self.page) as Any as? UIButton
+                var tmp = "button" + String(self.page) as Any as? UIButton
 
             }
         }
         answerBox = appDelegate.answerBox
 
-        
         let masterRef = Database.database().reference().child("exam").child(postdata as! String)
         
         var mojistr = "answer" + String(self.page)
@@ -146,13 +142,17 @@ class ExamViewController: UIViewController {
 
                     if tmp.contains("button1")  {
                         button1.backgroundColor = .orange
+                        isChecked = false
                     } else if tmp.contains("button2") {
-                        print("aaa")
+                        
                         button2.backgroundColor = .orange
+                        isChecked = false
                     } else if tmp.contains("button3") {
                         button3.backgroundColor = .orange
+                        isChecked = false
                     } else if tmp.contains("button4") {
                         button4.backgroundColor = .orange
+                        isChecked = false
                     }
                     
                 }
@@ -192,6 +192,7 @@ class ExamViewController: UIViewController {
     @IBAction func actionButton1(_ sender: UIButton) {
         
         isChecked = !isChecked
+        print(isChecked)
         
         if isChecked {
             button1.backgroundColor = .gray
@@ -350,12 +351,9 @@ class ExamViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         
         if resultPage == false {
-            //answerBox.
-            // next
-            
-            print("next")
-            dump(self.answerBox)
-            print("next")
+            print("count")
+            print(page)
+            print("countend")
             var examViewController = self.storyboard?.instantiateViewController(withIdentifier:"Exam") as! ExamViewController
             examViewController.page = self.page + 1
             examViewController.postdata = self.postdata
@@ -374,3 +372,4 @@ class ExamViewController: UIViewController {
     }
     
 }
+

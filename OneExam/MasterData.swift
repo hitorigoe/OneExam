@@ -45,8 +45,7 @@ class MasterData: NSObject {
                 continue
             }
         }
-        print("xxx")
-        print(title)
+       
         
         
     }
