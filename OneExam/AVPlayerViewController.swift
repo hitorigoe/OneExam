@@ -8,11 +8,69 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
+
 
 class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     
     
     @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    var player: AVPlayer!
+    var screenWidth:CGFloat = 0
+    var screenHeight:CGFloat = 0
+    //var progressBar: UIProgressView!
+    @IBOutlet weak var avView: UIView!
+    var label:UILabel!
+    var label2:UILabel!
+    var progressView:UIProgressView!
+    var progress:Float = 0.0
+    var timer:Timer!
+    var restartButton:UIButton!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        self.avView.layer.borderColor = UIColor.black.cgColor
+        self.avView.layer.borderWidth = 3
+        
+        /// ラベル
+        
+        /*
+        label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:20))
+        var labelCenterPos = view.center
+        labelCenterPos.y = labelCenterPos.y + 30
+        label.center = labelCenterPos
+        label.text = "しばらくお待ちください ..."
+        label.textAlignment = .center
+        view.addSubview(label)
+        label2 = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:20))
+        var labelCenterPos2 = view.center
+        labelCenterPos2.y = labelCenterPos2.y + 50
+        label2.center = labelCenterPos2
+        label2.text = "DLコレクションにて視聴できます。"
+        label2.textAlignment = .center
+        view.addSubview(label2)
+        
+        /// プログレスバー
+        progressView = UIProgressView(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 60,height:20))
+        progressView.center = view.center
+        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 6.0)
+        progressView.progressTintColor = .blue
+        progressView.setProgress(progress, animated: true)
+        view.addSubview(progressView)
+        */
+        /// タイマー
+        //timer = Timer.scheduledTimer(timeInterval: 0.01,
+        //                             target: self,
+        //                             selector: #selector(self.timerUpdate),
+        //                             userInfo: nil,
+        //                             repeats: true)
+    }
+    
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         // ダウンロード完了時の処理
         
@@ -27,6 +85,12 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
                 print(filePath)
                 
                 try data.write(toFile: filePath, options: .atomic)
+                //HUDの処理
+                SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
+                SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.custom)
+                SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
+                SVProgressHUD.showSuccess(withStatus: "ダウンロード完了！")
+                SVProgressHUD.dismiss(withDelay: 1)
             }
         } catch let error as NSError {
             print("download error: \(error)")
@@ -58,7 +122,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         let sessionConfig = URLSessionConfiguration.background(withIdentifier: "myapp-background")
         let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         
-        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/favorite.mov?alt=media&token=b8f32ec3-466c-4fbc-87ca-c176d752d90b")!
+        let url = URL(string: "gs://oneexam-3d30f.appspot.com")!
         
         let downloadTask = session.downloadTask(with: url)
         downloadTask.resume()
@@ -97,16 +161,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         }
     }
 
-    var player: AVPlayer!
-    var screenWidth:CGFloat = 0
-    var screenHeight:CGFloat = 0
-    var progressBar: UIProgressView!
-    @IBOutlet weak var avView: UIView!
-    var label:UILabel!
-    var progressView:UIProgressView!
-    var progress:Float = 0.0
-    var timer:Timer!
-    var restartButton:UIButton!
+
     @objc func restart(_ s:UIButton) {
         
         timer.invalidate()
@@ -130,49 +185,20 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
             label.text = "Complete !"
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.avView.layer.borderColor = UIColor.black.cgColor
-        self.avView.layer.borderWidth = 3
-
-        /// ラベル
-        /*
-        label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:70))
-        var labelCenterPos = view.center
-        labelCenterPos.y = labelCenterPos.y + 100
-        
-        label.center = labelCenterPos
-        label.text = "please wait ..."
-        label.textAlignment = .center
-        view.addSubview(label)
-        */
-        /// プログレスバー
-        /*
-        progressView = UIProgressView(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 60,height:100))
-        progressView.center = view.center
-        progressView.transform = CGAffineTransform(scaleX: 1.0, y: 6.0)
-        progressView.progressTintColor = .blue
-        progressView.setProgress(progress, animated: true)
-        view.addSubview(progressView)
-        */
-        /// タイマー
-        //timer = Timer.scheduledTimer(timeInterval: 0.01,
-        //                             target: self,
-        //                             selector: #selector(self.timerUpdate),
-        //                             userInfo: nil,
-        //                             repeats: true)
-    }
     
     @IBAction func playVideo(_ sender: UIButton) {
         print("video")
-        guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/favorite.mov?alt=media&token=b8f32ec3-466c-4fbc-87ca-c176d752d90b") else {
-            return
-        }
-        // gs://oneexam-3d30f.appspot.com/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        
+        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
+        let localURL = URL(fileURLWithPath: documentDirPath + "/cook.mov")
+
+
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
-        let player = AVPlayer(url: url)
+        let player = AVPlayer(url: localURL)
         
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.avView.bounds
@@ -182,7 +208,44 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     }
     
     @IBAction func touchedStartDownloadButton(_ sender: UIButton) {
-        startDownloadTask()
+        //startDownloadTask()
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        
+        let reference = storageRef.child("cook.mov")
+        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
+        let localURL = URL(fileURLWithPath: documentDirPath + "/cook.mov")
+        _ = reference.write(toFile: localURL) { url, error in
+            if error != nil {
+                // Uh-oh, an error occurred!
+                print("失敗")
+                print(error.debugDescription)
+            } else {
+                // Local file URL for "images/island.jpg" is returned
+                print("downloadできました")
+                print(localURL)
+            }
+        }
+        
+        /*
+        child.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if error != nil {
+            } else {
+                // ダウンロード先のURLを作成
+                let localURL: URL! = URL(fileURLWithPath: "\(NSTemporaryDirectory())cook.mov")
+                
+                // ダウンロードを実行
+                reference.write(toFile: localURL) { url, error in
+                    if (error != nil) {
+                        print("Uh-oh, an error occurred!")
+                    } else {
+                        print("download success!!")
+                    }
+                }
+            }
+        }
+        */
     }
     /*
     // MARK: - Navigation
@@ -194,6 +257,11 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     }
     */
     
+    @IBAction func homeButton(_ sender: Any) {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.answerBox = [:]
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
 
 }

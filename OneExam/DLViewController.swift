@@ -7,12 +7,47 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
+import Foundation
+import  FirebaseStorage
 
 class DLViewController: UIViewController {
 
+    
+    @IBOutlet weak var imageView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // AVPlayerView のインスタンス化と画面への追加
+        
+        // 動画を読み込み、動画プレイヤーに設定
+        print("video")
+       // let storage = Storage.storage()
+       // let storageRef = storage.reference()
+        
+        
+       // let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
+        // ドキュメントディレクトリの「パス」（String型）
+        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
+        
+        // ドキュメントディレクトリの「ファイルURL」（URL型）
+        let documentDirFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+        
+        print(documentDirPath)
+        print("--------------------")
+        print(documentDirFileURL)
 
+        
+        
+        // Create an AVPlayer, passing it the HTTP Live Streaming URL.
+        let documentDirPath1 = URL(string: documentDirPath + "cook.mov")
+        let player = AVPlayer(url: documentDirPath1!)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.imageView.bounds
+        
+        self.imageView.layer.addSublayer(playerLayer)
+        player.play()
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +62,7 @@ class DLViewController: UIViewController {
     }
     */
 
+    @IBAction func playVideo(_ sender: Any) {
+        
+    }
 }
