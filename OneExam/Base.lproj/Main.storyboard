@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                        <rect key="frame" x="0.0" y="120" width="314" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="120" width="314" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="G8o-m4-d5i"/>
                                             <constraint firstAttribute="height" constant="50" id="lCX-Hm-r7W"/>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                        <rect key="frame" x="0.0" y="130" width="314" height="50"/>
+                                        <rect key="frame" x="0.0" y="180" width="314" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BBb-2q-p62"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="X1M-Sc-A0R"/>
@@ -158,14 +158,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-UL-S3y">
-                                <rect key="frame" x="67.5" y="77" width="240" height="513"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="bu2-rE-IPj"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ダウンロード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP7-bP-Q5K">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ダウンロード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP7-bP-Q5K">
                                 <rect key="frame" x="135.5" y="323" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -181,20 +174,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="o0b-UL-S3y" firstAttribute="top" secondItem="RDh-cB-Z0I" secondAttribute="top" constant="57" id="2fg-NZ-pXk"/>
-                            <constraint firstItem="o0b-UL-S3y" firstAttribute="centerX" secondItem="JP7-bP-Q5K" secondAttribute="centerX" id="Ec3-Ha-3rK"/>
                             <constraint firstItem="uFB-N8-G6k" firstAttribute="top" secondItem="JP7-bP-Q5K" secondAttribute="bottom" constant="10" id="Jx6-BJ-TST"/>
                             <constraint firstItem="RDh-cB-Z0I" firstAttribute="trailing" secondItem="uFB-N8-G6k" secondAttribute="trailing" constant="10" id="JxL-ZE-k1m"/>
-                            <constraint firstItem="o0b-UL-S3y" firstAttribute="centerY" secondItem="ODx-7j-CQT" secondAttribute="centerY" id="MB2-Xq-7fu"/>
                             <constraint firstItem="uFB-N8-G6k" firstAttribute="leading" secondItem="RDh-cB-Z0I" secondAttribute="leading" constant="10" id="Mw7-W8-yfY"/>
                             <constraint firstItem="JP7-bP-Q5K" firstAttribute="centerY" secondItem="ODx-7j-CQT" secondAttribute="centerY" id="oJe-va-nus"/>
-                            <constraint firstItem="o0b-UL-S3y" firstAttribute="centerX" secondItem="uFB-N8-G6k" secondAttribute="centerX" id="xSV-7F-VlB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RDh-cB-Z0I"/>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="o0b-UL-S3y" id="kgI-Ui-2Vz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SE9-Ue-Vcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

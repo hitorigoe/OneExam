@@ -194,7 +194,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         
         
         let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
-        let localURL = URL(fileURLWithPath: documentDirPath + "/cook.mov")
+        let localURL = URL(fileURLWithPath: documentDirPath + "/hotel.mov")
 
 
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
@@ -213,9 +213,9 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         let storageRef = storage.reference()
         
         
-        let reference = storageRef.child("cook.mov")
+        let reference = storageRef.child("hotel.mov")
         let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
-        let localURL = URL(fileURLWithPath: documentDirPath + "/cook.mov")
+        let localURL = URL(fileURLWithPath: documentDirPath + "/hotel.mov")
         _ = reference.write(toFile: localURL) { url, error in
             if error != nil {
                 // Uh-oh, an error occurred!
@@ -260,54 +260,10 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     @IBAction func homeButton(_ sender: Any) {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.answerBox = [:]
+        
+        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 
-}
-extension UIView {
-    
-    var top : CGFloat{
-        get{
-            return self.frame.origin.y
-        }
-        set{
-            var frame       = self.frame
-            frame.origin.y  = newValue
-            self.frame      = frame
-        }
-    }
-    
-    var bottom : CGFloat{
-        get{
-            return frame.origin.y + frame.size.height
-        }
-        set{
-            var frame       = self.frame
-            frame.origin.y  = newValue - self.frame.size.height
-            self.frame      = frame
-        }
-    }
-    
-    var right : CGFloat{
-        get{
-            return self.frame.origin.x + self.frame.size.width
-        }
-        set{
-            var frame       = self.frame
-            frame.origin.x  = newValue - self.frame.size.width
-            self.frame      = frame
-        }
-    }
-    
-    var left : CGFloat{
-        get{
-            return self.frame.origin.x
-        }
-        set{
-            var frame       = self.frame
-            frame.origin.x  = newValue
-            self.frame      = frame
-        }
-    }
 }
