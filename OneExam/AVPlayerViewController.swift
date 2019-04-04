@@ -30,9 +30,22 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     var progress:Float = 0.0
     var timer:Timer!
     var restartButton:UIButton!
+    @IBOutlet weak var pandaView: UIImageView!
+    var image1: UIImage!
+    
+    @IBOutlet weak var playButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        image1 = UIImage(named:"panda")
+        pandaView.image = image1
+        label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:20))
+        var labelCenterPos = view.center
+        labelCenterPos.y = labelCenterPos.y + 30
+        label.center = labelCenterPos
         
+        label.textAlignment = .center
+        view.addSubview(label)
         // Do any additional setup after loading the view.
         self.avView.layer.borderColor = UIColor.black.cgColor
         self.avView.layer.borderWidth = 3
@@ -189,16 +202,14 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     
     @IBAction func playVideo(_ sender: UIButton) {
         print("video")
-        let storage = Storage.storage()
-        _ = storage.reference()
         
         
-        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
-        let localURL = URL(fileURLWithPath: documentDirPath + "/hotel.mov")
-
-
+        guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/favorite.mov?alt=media&token=b8f32ec3-466c-4fbc-87ca-c176d752d90b") else {
+            return
+        }
+        // gs://oneexam-3d30f.appspot.com/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
-        let player = AVPlayer(url: localURL)
+        let player = AVPlayer(url: url)
         
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.avView.bounds
@@ -210,10 +221,14 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     @IBAction func touchedStartDownloadButton(_ sender: UIButton) {
         //startDownloadTask()
         print("検知")
+        label.text = "しばらくおまちください..."
         let storage = Storage.storage()
         let storageRef = storage.reference()
+        let sessionConfig = URLSessionConfiguration.background(withIdentifier: "myapp-background")
+        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         
         
+
         let reference = storageRef.child("hotel.mov")
         let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
         let localURL = URL(fileURLWithPath: documentDirPath + "/hotel.mov")
@@ -226,6 +241,14 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
                 // Local file URL for "images/island.jpg" is returned
                 print("downloadできました")
                 print(localURL)
+                SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
+                SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.custom)
+                SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
+                SVProgressHUD.showSuccess(withStatus: "ダウンロード完了！")
+                SVProgressHUD.dismiss(withDelay: 1)
+                self.label.text = ""
+                
+
             }
         }
         

@@ -16,6 +16,9 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var displayNameTextField: UITextField!
     
+    @IBOutlet weak var imageView: UIImageView!
+    var image1: UIImage!
+
     @IBAction func handleChangeButton(_ sender: Any) {
         if let displayName = displayNameTextField.text {
             
@@ -60,7 +63,8 @@ class SettingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        image1 = UIImage(named:"chinese_")
+        imageView.image = image1
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {

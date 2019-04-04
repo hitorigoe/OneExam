@@ -13,10 +13,12 @@ class CollectViewController: UIViewController {
 
     @IBOutlet weak var collectionVIew: UICollectionView!
     
+    @IBOutlet weak var imageView: UICollectionView!
     let dataArray = ["あいさつ", "食事", "休日"]
+    let photos = "movie"
     
     var estimateWidth = 130.0
-    var cellMarginSize = 0
+    var cellMarginSize = 10
     var selectedImage: UIImage?
     
     override func viewDidLoad() {
@@ -59,10 +61,15 @@ extension CollectViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        
         cell.setData(text: self.dataArray[indexPath.row])
+        
         cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 3
+        cell.layer.borderWidth = 7
         return cell
     }
     
