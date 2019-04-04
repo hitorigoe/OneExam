@@ -10,12 +10,15 @@ import UIKit
 import AVFoundation
 import AVKit
 import Foundation
-import  FirebaseStorage
+import FirebaseStorage
 
 class DLViewController: UIViewController {
 
-    
-    @IBOutlet weak var imageView: UIView!
+    var documentDirPath :String!
+    var localURL: String!
+    var playerLayer: AVPlayerLayer!
+    var player: AVPlayer!
+    //@IBOutlet weak var imageView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,35 +29,43 @@ class DLViewController: UIViewController {
         
         // 動画を読み込み、動画プレイヤーに設定
         print("video")
+
         // Bundle Resourcesからsample.mp4を読み込んで再生
-        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
-        let localURL = documentDirPath + "/hotel.mov"
-        print(localURL)
+        self.documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
+        self.localURL = documentDirPath + "/hotel.mov"
         
-        let player = AVPlayer(url: URL(fileURLWithPath: localURL))
-        player.play()
+        self.player = AVPlayer(url: URL(fileURLWithPath: localURL))
         
         
         // AVPlayer用のLayerを生成
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        playerLayer.zPosition = -1 // ボタン等よりも後ろに表示
-        view.layer.insertSublayer(playerLayer, at: 0) // 動画をレイヤーとして追加
+        self.playerLayer = AVPlayerLayer(player: player)
+        view.frame = CGRect(x:0,y:100,width:self.view.bounds.width,height:300)
+        self.playerLayer.frame = view.bounds
+        
+        self.playerLayer.videoGravity = .resizeAspect
+        
+        self.playerLayer.zPosition = -1 // ボタン等よりも後ろに表示
+        view.layer.insertSublayer(self.playerLayer, at: 0) // 動画をレイヤーとして追加
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
-    @IBAction func playVideo(_ sender: Any) {
+    @IBAction func playsvideo(_ sender: UIButton) {
+        // Bundle Resourcesからsample.mp4を読み込んで再生
+
+
+        print("shori")
         
+        self.player.play()
+    }
+    
+    @IBAction func pauseVideo(_ sender: Any) {
+        // Bundle Resourcesからsample.mp4を読み込んで再生
+
+        self.player.pause()
+    }
+    @IBAction func backButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

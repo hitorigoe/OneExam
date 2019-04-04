@@ -190,7 +190,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     @IBAction func playVideo(_ sender: UIButton) {
         print("video")
         let storage = Storage.storage()
-        let storageRef = storage.reference()
+        _ = storage.reference()
         
         
         let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
@@ -209,6 +209,7 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     
     @IBAction func touchedStartDownloadButton(_ sender: UIButton) {
         //startDownloadTask()
+        print("検知")
         let storage = Storage.storage()
         let storageRef = storage.reference()
         

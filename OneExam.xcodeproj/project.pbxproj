@@ -17,8 +17,11 @@
 		2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A760224352FD00D594F6 /* SettingViewController.swift */; };
 		2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */; };
 		2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */; };
+		22081F9E225576CC00577E5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22081F9D225576CC00577E5C /* GoogleService-Info.plist */; };
+		22081FA22255809700577E5C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA02255809700577E5C /* ItemCell.swift */; };
+		22081FA32255809700577E5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22081FA12255809700577E5C /* ItemCell.xib */; };
+		22081FA52255874800577E5C /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA42255874800577E5C /* CollectViewController.swift */; };
 		2288DC922248FFF80087D6B5 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2288DC912248FFF80087D6B5 /* ResultData.swift */; };
-		22A3832B225358C1008E62E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22A3832A225358C1008E62E9 /* GoogleService-Info.plist */; };
 		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
 		22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D222420D7200E33504 /* HomeViewController.swift */; };
 		22BE41D522420DF400E33504 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D422420DF400E33504 /* ExamViewController.swift */; };
@@ -27,8 +30,6 @@
 		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
 		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
 		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
-		EF304E8C2254FA9200FA0CDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF304E8B2254FA9200FA0CDA /* GoogleService-Info.plist */; };
-		EF3B7EA7224BF39000CA79DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */; };
 		EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FFB7122438FC400AD277C /* MasterData.swift */; };
 		EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		0092B9232BA3380C0A837E6D /* Pods-OneExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.release.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.release.xcconfig"; sourceTree = "<group>"; };
 		09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		220006D722530C55006B3C8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22023BE8223BA03500D0A854 /* OneExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22023BEB223BA03500D0A854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22023BED223BA03500D0A854 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,25 +49,21 @@
 		2206A760224352FD00D594F6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
-		224CC7B82251328C0067F886 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22081F9D225576CC00577E5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22081FA02255809700577E5C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		22081FA12255809700577E5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		22081FA42255874800577E5C /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
 		2288DC912248FFF80087D6B5 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
-		229BD10E224AFBE3002FEB6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		22A3832A225358C1008E62E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22BE41D222420D7200E33504 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22BE41D422420DF400E33504 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		22BE41D622420E3300E33504 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		22BE41D822420EA400E33504 /* DLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLViewController.swift; sourceTree = "<group>"; };
-		22F188BF224DED7900BA3240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		22F188C1224E1BB700BA3240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
-		EF304E8B2254FA9200FA0CDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF4FFB7122438FC400AD277C /* MasterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData.swift; sourceTree = "<group>"; };
 		EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
-		EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,31 +99,25 @@
 		22023BEA223BA03500D0A854 /* OneExam */ = {
 			isa = PBXGroup;
 			children = (
+				22081F9F22557BF700577E5C /* ItemCell */,
 				22023BEB223BA03500D0A854 /* AppDelegate.swift */,
 				22023BED223BA03500D0A854 /* ViewController.swift */,
 				22023BEF223BA03500D0A854 /* Main.storyboard */,
-				EF304E8B2254FA9200FA0CDA /* GoogleService-Info.plist */,
 				2206A760224352FD00D594F6 /* SettingViewController.swift */,
-				224CC7B82251328C0067F886 /* GoogleService-Info.plist */,
 				22BE41D822420EA400E33504 /* DLViewController.swift */,
-				220006D722530C55006B3C8B /* GoogleService-Info.plist */,
 				22BE41D422420DF400E33504 /* ExamViewController.swift */,
 				22023BF5223BA03700D0A854 /* Assets.xcassets */,
 				22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */,
-				EF3B7EA6224BF39000CA79DE /* GoogleService-Info.plist */,
-				22F188C1224E1BB700BA3240 /* GoogleService-Info.plist */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
-				229BD10E224AFBE3002FEB6E /* GoogleService-Info.plist */,
-				22F188BF224DED7900BA3240 /* GoogleService-Info.plist */,
-				22A3832A225358C1008E62E9 /* GoogleService-Info.plist */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
-				EFFF0DB52249422700C6F5B4 /* GoogleService-Info.plist */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
 				22BE41D222420D7200E33504 /* HomeViewController.swift */,
 				22BE41D622420E3300E33504 /* ResultViewController.swift */,
 				2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */,
 				2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */,
+				22081FA42255874800577E5C /* CollectViewController.swift */,
 				EF4FFB7122438FC400AD277C /* MasterData.swift */,
+				22081F9D225576CC00577E5C /* GoogleService-Info.plist */,
 				2205A2FA224767B600DFBB2A /* MasterData2.swift */,
 				EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */,
 				EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */,
@@ -135,6 +125,15 @@
 				EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */,
 			);
 			path = OneExam;
+			sourceTree = "<group>";
+		};
+		22081F9F22557BF700577E5C /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				22081FA02255809700577E5C /* ItemCell.swift */,
+				22081FA12255809700577E5C /* ItemCell.xib */,
+			);
+			path = ItemCell;
 			sourceTree = "<group>";
 		};
 		767D454238F36A40B05F5BAE /* Frameworks */ = {
@@ -216,13 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				22023BF9223BA03700D0A854 /* LaunchScreen.storyboard in Resources */,
-				EF304E8C2254FA9200FA0CDA /* GoogleService-Info.plist in Resources */,
-				EF3B7EA7224BF39000CA79DE /* GoogleService-Info.plist in Resources */,
 				22023BF6223BA03700D0A854 /* Assets.xcassets in Resources */,
 				22023BF1223BA03500D0A854 /* Main.storyboard in Resources */,
 				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,
+				22081FA32255809700577E5C /* ItemCell.xib in Resources */,
 				2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */,
-				22A3832B225358C1008E62E9 /* GoogleService-Info.plist in Resources */,
+				22081F9E225576CC00577E5C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22081FA52255874800577E5C /* CollectViewController.swift in Sources */,
 				2205A2FB224767B600DFBB2A /* MasterData2.swift in Sources */,
 				EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */,
 				22BE41D922420EA400E33504 /* DLViewController.swift in Sources */,
@@ -283,6 +282,7 @@
 				22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */,
 				22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */,
 				2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */,
+				22081FA22255809700577E5C /* ItemCell.swift in Sources */,
 				22023BEE223BA03500D0A854 /* ViewController.swift in Sources */,
 				22023BEC223BA03500D0A854 /* AppDelegate.swift in Sources */,
 				EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */,

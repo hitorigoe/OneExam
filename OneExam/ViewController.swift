@@ -54,13 +54,13 @@ class ViewController: UIViewController {
         
         // タブをタップした時に表示するViewControllerを設定する
         let downloadViewController = storyboard?.instantiateViewController(withIdentifier: "Download")
-        let examViewController = storyboard?.instantiateViewController(withIdentifier: "Exam")
+        let examViewController = storyboard?.instantiateViewController(withIdentifier: "Collect")
         let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
         
-        tabBarController.setView(downloadViewController, at: 3)
+        tabBarController.setView(downloadViewController, at: 2)
         tabBarController.setView(homeViewController, at: 0)
-        tabBarController.setView(examViewController, at: 2)
+        tabBarController.setView(examViewController, at: 3)
         tabBarController.setView(settingViewController, at: 1)
         
 
