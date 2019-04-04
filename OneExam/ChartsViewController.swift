@@ -11,8 +11,7 @@ import Charts
 
 class ChartsViewController: UIViewController {
 
-    
-    let surveyData = ["正解": 80, "不正解": 20]
+    @IBOutlet weak var piChartView: UIView!
 
     let pieView : PieChartView = {
         let set = PieChartView()
@@ -26,30 +25,31 @@ class ChartsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "Pie"
-        setChart()
-        chartData()
-        /*
+        
+       //setChart()
+        //chartData()
         // Do any additional setup after loading the view.
         var rect = view.bounds
         rect.origin.y += 20
         rect.size.height -= 20
         let chartView = PieChartView(frame: rect)
         let entries = [
-            PieChartDataEntry(value: 10, label: "A"),
-            PieChartDataEntry(value: 20, label: "B"),
-            PieChartDataEntry(value: 30, label: "C"),
-            PieChartDataEntry(value: 40, label: "D"),
-            PieChartDataEntry(value: 50, label: "E")
-        ]
+            PieChartDataEntry(value: 80, label: "正解"),
+            PieChartDataEntry(value: 20, label: "不正解"),
+            ]
         
         let set = PieChartDataSet(values: entries, label: "Data")
-        set.setColor(UIColor.green, alpha: 0)
-        chartView.data = PieChartData(dataSet: set)
+        set.colors = ChartColorTemplates.colorful()
+        set.colors = [UIColor.red,UIColor.blue]
         
+        //set.setColor(UIColor.green, UIColor.blue,alpha:0x1)
+        chartView.data = PieChartData(dataSet: set)
+        print(self.view.bounds.width)
+        print(chartView.frame.width)
+        chartView.frame = CGRect(x:(self.view.bounds.width - 350) / 2,y:130,width: 350,height:350)
         view.addSubview(chartView)
-        */
     }
-    
+    /*
     func setChart(){
         view.addSubview(pieView)
         pieView.centerXAnchor.constraint(equalTo:    view.centerXAnchor).isActive = true
@@ -81,7 +81,7 @@ class ChartsViewController: UIViewController {
         pieView.data = chartData
         
     }
-    
+    */
 
     /*
     // MARK: - Navigation

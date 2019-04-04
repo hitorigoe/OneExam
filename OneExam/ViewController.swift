@@ -53,9 +53,9 @@ class ViewController: UIViewController {
         tabBarController.didMove(toParent: self)
         
         // タブをタップした時に表示するViewControllerを設定する
-        let downloadViewController = storyboard?.instantiateViewController(withIdentifier: "Download")
+        let downloadViewController = storyboard?.instantiateViewController(withIdentifier: "Charts")
         let examViewController = storyboard?.instantiateViewController(withIdentifier: "Collect")
-        let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Charts")
+        let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
         
         tabBarController.setView(downloadViewController, at: 2)
