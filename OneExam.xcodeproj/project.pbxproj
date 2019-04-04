@@ -21,6 +21,7 @@
 		22081FA22255809700577E5C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA02255809700577E5C /* ItemCell.swift */; };
 		22081FA32255809700577E5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22081FA12255809700577E5C /* ItemCell.xib */; };
 		22081FA52255874800577E5C /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA42255874800577E5C /* CollectViewController.swift */; };
+		22081FA72256041E00577E5C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA62256041E00577E5C /* ChartsViewController.swift */; };
 		2288DC922248FFF80087D6B5 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2288DC912248FFF80087D6B5 /* ResultData.swift */; };
 		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
 		22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D222420D7200E33504 /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 		22081FA02255809700577E5C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		22081FA12255809700577E5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		22081FA42255874800577E5C /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
+		22081FA62256041E00577E5C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		2288DC912248FFF80087D6B5 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22BE41D222420D7200E33504 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */,
 				2288DC912248FFF80087D6B5 /* ResultData.swift */,
 				EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */,
+				22081FA62256041E00577E5C /* ChartsViewController.swift */,
 			);
 			path = OneExam;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				22081FA52255874800577E5C /* CollectViewController.swift in Sources */,
 				2205A2FB224767B600DFBB2A /* MasterData2.swift in Sources */,
 				EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */,
+				22081FA72256041E00577E5C /* ChartsViewController.swift in Sources */,
 				22BE41D922420EA400E33504 /* DLViewController.swift in Sources */,
 				22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */,
 				2288DC922248FFF80087D6B5 /* ResultData.swift in Sources */,

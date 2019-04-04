@@ -34,16 +34,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kef-a9-M0A">
-                                <rect key="frame" x="30" y="174.5" width="315" height="79.5"/>
+                                <rect key="frame" x="30" y="174" width="315" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="到北京站需要多少钱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-g0-pHz">
-                                        <rect key="frame" x="52.5" y="0.0" width="210" height="27.5"/>
+                                        <rect key="frame" x="52.5" y="0.0" width="210" height="11"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下記の中から正しいものを選んでください。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-cn-zkJ">
-                                        <rect key="frame" x="1.5" y="29.5" width="312" height="50"/>
+                                        <rect key="frame" x="1.5" y="13" width="312" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bcP-af-MxD"/>
                                         </constraints>
@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qXs-rQ-XkC">
-                                <rect key="frame" x="37.5" y="718" width="300" height="36"/>
+                                <rect key="frame" x="37.5" y="667" width="300" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="EVa-Em-qNr"/>
                                 </constraints>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-fF-2yS">
-                                <rect key="frame" x="30.5" y="404" width="314" height="214"/>
+                                <rect key="frame" x="30.5" y="387" width="314" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                        <rect key="frame" x="0.0" y="120" width="314" height="34"/>
+                                        <rect key="frame" x="0.0" y="120" width="314" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="G8o-m4-d5i"/>
                                             <constraint firstAttribute="height" constant="50" id="lCX-Hm-r7W"/>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                        <rect key="frame" x="0.0" y="164" width="314" height="50"/>
+                                        <rect key="frame" x="0.0" y="130" width="314" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BBb-2q-p62"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="X1M-Sc-A0R"/>
@@ -257,6 +257,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sG3-J6-3u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3533.5999999999999" y="1544.0779610194904"/>
+        </scene>
+        <!--Charts View Controller-->
+        <scene sceneID="qMr-cS-VFY">
+            <objects>
+                <viewController storyboardIdentifier="Charts" id="jTZ-Al-eW9" customClass="ChartsViewController" customModule="OneExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3l8-KB-TDc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="22n-Gn-tMb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZ7-ad-e1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4274.3999999999996" y="1544.9775112443779"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="pIA-mS-9br">

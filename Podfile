@@ -14,4 +14,5 @@ target 'OneExam' do
   pod 'Firebase/Storage'
   pod 'SVProgressHUD','2.2.5'
   pod 'PKHUD', '~> 5.0'
+  pod 'Charts'
 end
