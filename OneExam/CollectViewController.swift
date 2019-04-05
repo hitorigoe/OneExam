@@ -8,22 +8,29 @@
 
 import UIKit
 import AVKit
-
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
 class CollectViewController: UIViewController {
 
     @IBOutlet weak var collectionVIew: UICollectionView!
     
     @IBOutlet weak var imageView: UICollectionView!
-    let dataArray = ["あいさつ", "食事", "休日"]
+    var dataArray: Array<Any> = []
+    
     let photos = "movie"
     
     var estimateWidth = 130.0
     var cellMarginSize = 10
     var selectedImage: UIImage?
+    var i: Int = 0
+    var label: UILabel?
     
+    @IBOutlet weak var nodata: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
         // Set Delegates
         self.collectionVIew.delegate = self
         self.collectionVIew.dataSource = self
@@ -44,6 +51,29 @@ class CollectViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.dataArray = []
+        let ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users_download").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            if snapshot.key.count > 1 {
+                self.label?.text?.removeAll()
+            }
+            self.i = 0
+            for itemSnapShot in snapshot.children {
+                //ここで取得したデータを自分で定義したデータ型に入れて、加工する
+                var chartData = ChartData(snapshot: itemSnapShot as! DataSnapshot)
+                
+                self.dataArray.append(chartData.movie!)
+                self.i = self.i + 1
+            }
+            self.collectionVIew.reloadData()
+        })
+        print("aabb")
+        dump(dataArray)
+    }
+    
     
     func setupGridView() {
         let flow = collectionVIew?.collectionViewLayout as! UICollectionViewFlowLayout
@@ -57,6 +87,8 @@ class CollectViewController: UIViewController {
 extension CollectViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("ccdd")
+        dump(dataArray)
         return self.dataArray.count
     }
     
@@ -66,7 +98,7 @@ extension CollectViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
-        cell.setData(text: self.dataArray[indexPath.row])
+        cell.setData(text: self.dataArray[indexPath.row] as! String)
         
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 7
@@ -77,11 +109,11 @@ extension CollectViewController: UICollectionViewDataSource {
                         didSelectItemAt indexPath: IndexPath) {
         
         // [indexPath.row] から画像名を探し、UImage を設定
-        print("タップした")
+        
         print(indexPath.row)
-        selectedImage = UIImage(named: dataArray[indexPath.row])
+        selectedImage = UIImage(named: dataArray[indexPath.row] as! String)
         let dlViewController = self.storyboard?.instantiateViewController(withIdentifier:"Download") as! DLViewController
-        //dlViewController.videoindex = self.dataArray[indexPath.row].id
+        dlViewController.moviedata = self.dataArray[indexPath.row] as! String
         
         self.present(dlViewController, animated: true, completion: nil)
         

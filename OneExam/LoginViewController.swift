@@ -15,9 +15,13 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     var image1: UIImage!
+    var image2: UIImage!
+    var image3: UIImage!
     @IBOutlet weak var mailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var displayNameTextField: UITextField!
+    @IBOutlet weak var panda1view: UIImageView!
+    @IBOutlet weak var panda2view: UIImageView!
     @IBAction func handleLoginButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
             
@@ -88,6 +92,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         image1 = UIImage(named:"chinese_")
         imageView.image = image1
+        image2 = UIImage(named:"panda-bear")
+        panda1view.image = image2
+        image3 = UIImage(named:"panda-bear")
+        panda2view.image = image3
         // Do any additional setup after loading the view.
     }
     

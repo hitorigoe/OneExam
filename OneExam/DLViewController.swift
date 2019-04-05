@@ -12,12 +12,14 @@ import AVKit
 import Foundation
 import FirebaseStorage
 
+
 class DLViewController: UIViewController {
 
     var documentDirPath :String!
     var localURL: String!
     var playerLayer: AVPlayerLayer!
     var player: AVPlayer!
+    var moviedata: String?
     //@IBOutlet weak var imageView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +31,9 @@ class DLViewController: UIViewController {
         
         // 動画を読み込み、動画プレイヤーに設定
         print("video")
-
         // Bundle Resourcesからsample.mp4を読み込んで再生
         self.documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
-        self.localURL = documentDirPath + "/hotel.mov"
+        self.localURL = documentDirPath + "/" + moviedata!
         
         self.player = AVPlayer(url: URL(fileURLWithPath: localURL))
         

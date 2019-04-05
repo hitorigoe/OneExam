@@ -17,6 +17,8 @@
 		2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A760224352FD00D594F6 /* SettingViewController.swift */; };
 		2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */; };
 		2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */; };
+		22072EF12256DCC900F89EA4 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22072EF02256DCC900F89EA4 /* ChartData.swift */; };
+		22072EF322573F8000F89EA4 /* ChartData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22072EF222573F8000F89EA4 /* ChartData2.swift */; };
 		22081FA22255809700577E5C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA02255809700577E5C /* ItemCell.swift */; };
 		22081FA32255809700577E5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22081FA12255809700577E5C /* ItemCell.xib */; };
 		22081FA52255874800577E5C /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA42255874800577E5C /* CollectViewController.swift */; };
@@ -50,6 +52,8 @@
 		2206A760224352FD00D594F6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
+		22072EF02256DCC900F89EA4 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		22072EF222573F8000F89EA4 /* ChartData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData2.swift; sourceTree = "<group>"; };
 		22081FA02255809700577E5C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		22081FA12255809700577E5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		22081FA42255874800577E5C /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
@@ -107,10 +111,10 @@
 				22023BEF223BA03500D0A854 /* Main.storyboard */,
 				2206A760224352FD00D594F6 /* SettingViewController.swift */,
 				22BE41D822420EA400E33504 /* DLViewController.swift */,
-				22BE41D422420DF400E33504 /* ExamViewController.swift */,
 				22023BF5223BA03700D0A854 /* Assets.xcassets */,
 				22023BF7223BA03700D0A854 /* LaunchScreen.storyboard */,
 				22023BFA223BA03700D0A854 /* Info.plist */,
+				22BE41D422420DF400E33504 /* ExamViewController.swift */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
 				22BE41D222420D7200E33504 /* HomeViewController.swift */,
@@ -126,6 +130,8 @@
 				2288DC912248FFF80087D6B5 /* ResultData.swift */,
 				EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */,
 				22081FA62256041E00577E5C /* ChartsViewController.swift */,
+				22072EF02256DCC900F89EA4 /* ChartData.swift */,
+				22072EF222573F8000F89EA4 /* ChartData2.swift */,
 			);
 			path = OneExam;
 			sourceTree = "<group>";
@@ -285,9 +291,11 @@
 				2288DC922248FFF80087D6B5 /* ResultData.swift in Sources */,
 				22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */,
 				22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */,
+				22072EF12256DCC900F89EA4 /* ChartData.swift in Sources */,
 				2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */,
 				22081FA22255809700577E5C /* ItemCell.swift in Sources */,
 				22023BEE223BA03500D0A854 /* ViewController.swift in Sources */,
+				22072EF322573F8000F89EA4 /* ChartData2.swift in Sources */,
 				22023BEC223BA03500D0A854 /* AppDelegate.swift in Sources */,
 				EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */,
 				EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */,

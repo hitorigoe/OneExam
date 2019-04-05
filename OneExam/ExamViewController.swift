@@ -224,7 +224,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
                 SVProgressHUD.dismiss(withDelay: 1)
-                self.answerBox["answer\(self.page)"] = "button1"
+                self.answerBox["answer\(self.page)"] = "true:button1"
                 
             } else {
                 
@@ -267,7 +267,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
                 SVProgressHUD.dismiss(withDelay: 1)
-                self.answerBox["answer\(self.page)"] = "button2"
+                self.answerBox["answer\(self.page)"] = "true:button2"
 
             } else {
 
@@ -307,7 +307,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
-                self.answerBox["answer\(self.page)"] = "button3"
+                self.answerBox["answer\(self.page)"] = "true:button3"
             } else {
                 
                 
@@ -346,7 +346,7 @@ class ExamViewController: UIViewController {
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.dismiss(withDelay: 1)
                 SVProgressHUD.showSuccess(withStatus: "正解です！！")
-                self.answerBox["answer\(self.page)"] = "button4"
+                self.answerBox["answer\(self.page)"] = "true:button4"
             } else {
                 SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)

@@ -17,6 +17,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var answerBox : [String:String] = [:]
     var postdata:Any?
     var postRef3 :DatabaseReference!
+    var postRef4 :DatabaseReference!
+    var postRef5 :DatabaseReference!
     var masterArray: [MasterData2] = []
     var resultArray: [ResultData] = []
     var newArray:Array<Any> = []
@@ -27,6 +29,10 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var img:UIImage?
     var i:Int = 0
     var tmp:Bool? = false
+    var truecount:Int = 0
+    var falsecount:Int = 0
+    var tmpcount:Int = 0
+    
     
     
     override func viewDidLoad() {
@@ -39,22 +45,45 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         let userID = Auth.auth().currentUser?.uid
         
         let ref = Database.database().reference()
+        // 解答データ上書き
+        print("ここでとめる")
+        dump(answerBox)
         for item in answerBox {
               self.postRef3 = ref.child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
               self.postRef3.setValue(item.value)
-           // Database.database().reference().child("exam").child(postdata as! String).observe(.childAdded, with: { snapshot in
-           //     // Get user value
-           //
-           //     let resultData = ResultData(snapshot: snapshot)
-           //     self.resultArray.insert(resultData, at: 0)
-           //     // ...
-           // }) { (error) in
-           //     print(error.localizedDescription)
-           // }
-
-            
-              
+            if item.value.contains("true") {
+                tmpcount = tmpcount + 1
+            }
         }
+        
+        
+        ref.child("users_test_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            print("users_test_count")
+            var testcount = snapshot.value
+            print(testcount)
+            print("testcount")
+            
+            if var aa = testcount {
+                let bb = testcount as! Int + 1
+                self.postRef4 = ref.child("users_test_count").child(userID!)
+                self.postRef4.setValue(bb)
+            }
+            
+        })
+        
+        ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            var truecount = snapshot.value
+            print(truecount)
+            print("truecount")
+            if var cc = truecount {
+                let dd = truecount as! Int + self.tmpcount
+                self.postRef5 = ref.child("users_true_count").child(userID!)
+                self.postRef5.setValue(dd)
+            }
+        })
+        
+        // answerBoxの中身をみる
+        //var str3:String = "answer" + String(indexPath.row + 1)
         
         ref.child("exam").child(self.postdata as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -88,6 +117,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
 
         // Do any additional setup after loading the view.
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultArray.count
@@ -111,7 +141,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         //if answerBox[str3] == "false" {
         self.tmp = answerBox[str3]?.contains("false")
-        if self.tmp == true {
+        if self.tmp == true { // これは間違ったことを示しているので、注意
         //if (answerBox[str3]?.contains("false"))! {
             cell.imgView.image = img2
         } else if self.tmp == nil {
@@ -120,8 +150,6 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             cell.imgView.image = img
     
         }
-        print("hoge")
-        print(answerBox[str3] as Any)
         
         //cell.imgView.image = answerBox
         
@@ -132,6 +160,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         _ = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
         
         let avViewController = self.storyboard?.instantiateViewController(withIdentifier:"AV") as! AVPlayerViewController
+        avViewController.postdata = self.postdata
         self.navigationController?.pushViewController(avViewController, animated: true)
     }
     /*

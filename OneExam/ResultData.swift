@@ -15,16 +15,18 @@ class ResultData: NSObject {
     var question: String?
     var answer: String?
     var correct: String?
+    var streamurl: String?
     var choices: [String:Any]?
     init?(snapshot: DataSnapshot) {
-        print("ショリショリ")
-        dump(snapshot.value )
+        
+        
         let valueDictionary = snapshot.value as! [String:Any]
         print("resultデータに処理がきた")
 
-            dump(valueDictionary["choices"]!)
+        
         self.question = valueDictionary["question"]! as? String
         self.correct = valueDictionary["answer"]! as? String
+        //self.streamurl = valueDictionary["streamurl"]! as? String
         choices = valueDictionary["choices"]! as? [String:Any]
         for item in choices! {
             print(item.key)

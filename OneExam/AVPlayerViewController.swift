@@ -32,11 +32,13 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     var restartButton:UIButton!
     @IBOutlet weak var pandaView: UIImageView!
     var image1: UIImage!
+    var postdata:Any?
+    var streamurl: String?
     
     @IBOutlet weak var playButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        let userID = Auth.auth().currentUser?.uid
         image1 = UIImage(named:"panda")
         pandaView.image = image1
         label = UILabel(frame: CGRect(x:0,y:0,width:UIScreen.main.bounds.width - 20,height:20))
@@ -49,7 +51,16 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         // Do any additional setup after loading the view.
         self.avView.layer.borderColor = UIColor.black.cgColor
         self.avView.layer.borderWidth = 3
+        let ref = Database.database().reference()
         
+        ref.child("exam").child(self.postdata as! String).child("1").child("streamurl").observeSingleEvent(of: .value, with: { (snapshot) in
+            let valueDictionary = snapshot.value as! String
+            print(valueDictionary)
+            self.streamurl = valueDictionary as String
+        })
+        print("aaa")
+        print(self.streamurl)
+        print("bbb")
         /// ラベル
         
         /*
@@ -201,10 +212,11 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
 
     
     @IBAction func playVideo(_ sender: UIButton) {
-        print("video")
+        print("kokot")
+        dump(self.streamurl)
+        print("kokot")
         
-        
-        guard let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/oneexam-3d30f.appspot.com/o/favorite.mov?alt=media&token=b8f32ec3-466c-4fbc-87ca-c176d752d90b") else {
+        guard let url = URL(string: self.streamurl!) else {
             return
         }
         // gs://oneexam-3d30f.appspot.com/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV
@@ -228,10 +240,10 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         
         
-
-        let reference = storageRef.child("hotel.mov")
+        let moviename = postdata as! String + ".mov"
+        let reference = storageRef.child(moviename)
         let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
-        let localURL = URL(fileURLWithPath: documentDirPath + "/hotel.mov")
+        let localURL = URL(fileURLWithPath: documentDirPath + "/" + moviename)
         _ = reference.write(toFile: localURL) { url, error in
             if error != nil {
                 // Uh-oh, an error occurred!
@@ -247,6 +259,9 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
                 SVProgressHUD.showSuccess(withStatus: "ダウンロード完了！")
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.label.text = ""
+                //データベースに登録
+                let regist = Database.database().reference().child("users_download").child((Auth.auth().currentUser?.uid)!).child(self.postdata as! String)
+                regist.setValue(self.postdata as! String + ".mov")
                 
 
             }
