@@ -18,7 +18,6 @@
 		2206A76422436F7A00D594F6 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */; };
 		2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */; };
 		22072EF12256DCC900F89EA4 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22072EF02256DCC900F89EA4 /* ChartData.swift */; };
-		22072EF322573F8000F89EA4 /* ChartData2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22072EF222573F8000F89EA4 /* ChartData2.swift */; };
 		22081FA22255809700577E5C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA02255809700577E5C /* ItemCell.swift */; };
 		22081FA32255809700577E5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22081FA12255809700577E5C /* ItemCell.xib */; };
 		22081FA52255874800577E5C /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA42255874800577E5C /* CollectViewController.swift */; };
@@ -30,10 +29,11 @@
 		22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D622420E3300E33504 /* ResultViewController.swift */; };
 		22BE41D922420EA400E33504 /* DLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D822420EA400E33504 /* DLViewController.swift */; };
 		55DD654E7DE75B395CE61E3A /* Pods_OneExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09653ED90FD23F82D66C7AA8 /* Pods_OneExam.framework */; };
+		EF01A5C12259F63200182987 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF01A5C02259F63200182987 /* GoogleService-Info.plist */; };
+		EF01A5C32259F88500182987 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF01A5C22259F88500182987 /* MovieViewController.swift */; };
 		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
 		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
 		EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FFB7122438FC400AD277C /* MasterData.swift */; };
-		EFA7601322565942008B34F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFA7601222565942008B34F3 /* GoogleService-Info.plist */; };
 		EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
 		22072EF02256DCC900F89EA4 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
-		22072EF222573F8000F89EA4 /* ChartData2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData2.swift; sourceTree = "<group>"; };
 		22081FA02255809700577E5C /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		22081FA12255809700577E5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		22081FA42255874800577E5C /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
@@ -65,10 +64,11 @@
 		22BE41D622420E3300E33504 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		22BE41D822420EA400E33504 /* DLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLViewController.swift; sourceTree = "<group>"; };
 		EDE082EE06752B3DEA2E9525 /* Pods-OneExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneExam.debug.xcconfig"; path = "Target Support Files/Pods-OneExam/Pods-OneExam.debug.xcconfig"; sourceTree = "<group>"; };
+		EF01A5C02259F63200182987 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF01A5C22259F88500182987 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		EF4FFB7122438FC400AD277C /* MasterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData.swift; sourceTree = "<group>"; };
-		EFA7601222565942008B34F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +121,7 @@
 				22BE41D622420E3300E33504 /* ResultViewController.swift */,
 				2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */,
 				2206A76322436F7A00D594F6 /* MasterTableViewCell.xib */,
-				EFA7601222565942008B34F3 /* GoogleService-Info.plist */,
+				EF01A5C02259F63200182987 /* GoogleService-Info.plist */,
 				22081FA42255874800577E5C /* CollectViewController.swift */,
 				EF4FFB7122438FC400AD277C /* MasterData.swift */,
 				2205A2FA224767B600DFBB2A /* MasterData2.swift */,
@@ -131,7 +131,7 @@
 				EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */,
 				22081FA62256041E00577E5C /* ChartsViewController.swift */,
 				22072EF02256DCC900F89EA4 /* ChartData.swift */,
-				22072EF222573F8000F89EA4 /* ChartData2.swift */,
+				EF01A5C22259F88500182987 /* MovieViewController.swift */,
 			);
 			path = OneExam;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,
 				22081FA32255809700577E5C /* ItemCell.xib in Resources */,
 				2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */,
-				EFA7601322565942008B34F3 /* GoogleService-Info.plist in Resources */,
+				EF01A5C12259F63200182987 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +293,9 @@
 				22BE41D722420E3300E33504 /* ResultViewController.swift in Sources */,
 				22072EF12256DCC900F89EA4 /* ChartData.swift in Sources */,
 				2206A761224352FD00D594F6 /* SettingViewController.swift in Sources */,
+				EF01A5C32259F88500182987 /* MovieViewController.swift in Sources */,
 				22081FA22255809700577E5C /* ItemCell.swift in Sources */,
 				22023BEE223BA03500D0A854 /* ViewController.swift in Sources */,
-				22072EF322573F8000F89EA4 /* ChartData2.swift in Sources */,
 				22023BEC223BA03500D0A854 /* AppDelegate.swift in Sources */,
 				EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */,
 				EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */,

@@ -11,6 +11,7 @@ import AVKit
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
+import MediaPlayer
 class CollectViewController: UIViewController {
 
     @IBOutlet weak var collectionVIew: UICollectionView!
@@ -27,6 +28,9 @@ class CollectViewController: UIViewController {
     var label: UILabel?
     
     @IBOutlet weak var nodata: UILabel!
+    var myMoviePlayerView : MPMoviePlayerViewController!
+    var moviedata:Any?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,11 +116,40 @@ extension CollectViewController: UICollectionViewDataSource {
         
         print(indexPath.row)
         selectedImage = UIImage(named: dataArray[indexPath.row] as! String)
-        let dlViewController = self.storyboard?.instantiateViewController(withIdentifier:"Download") as! DLViewController
-        dlViewController.moviedata = self.dataArray[indexPath.row] as! String
+        //let dlViewController = self.storyboard?.instantiateViewController(withIdentifier:"Download") as! DLViewController
+        //dlViewController.moviedata = self.dataArray[indexPath.row] as! String
         
-        self.present(dlViewController, animated: true, completion: nil)
+        //self.present(dlViewController, animated: true, completion: nil)
+        /*
+        let movieViewController = self.storyboard?.instantiateViewController(withIdentifier:"Movie") as! MovieViewController
+        movieViewController.moviedata = self.dataArray[indexPath.row] as! String
         
+        self.present(movieViewController, animated: true, completion: nil)
+        */
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let sessionConfig = URLSessionConfiguration.background(withIdentifier: "myapp-background")
+        //let session = URLSession(configuration: sessionConfig, delegate: self as! URLSessionDelegate, delegateQueue: nil)
+        
+        moviedata = self.dataArray[indexPath.row] as! String
+        let moviename = moviedata as! String
+        print(moviename)
+        let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
+        let localURL = URL(fileURLWithPath: documentDirPath + "/" + moviename)
+        print(localURL)
+        // MPMoviePlayerViewControllerのインスタンスを生成.
+        myMoviePlayerView = MPMoviePlayerViewController(contentURL: localURL)
+        
+        
+        
+        // 動画の再生が終了した時のNotification.
+        
+        //NotificationCenter.default.addObserver(self, action: #selector(self.moviePlayBackDidFinish(_:forEvent:)), for: .touchUpInside)
+        //name: NSNotification.Name.MPMoviePlayerPlaybackDidFinish,
+        //object: myMoviePlayerView.moviePlayer)
+        // 画面遷移.
+        self.present(myMoviePlayerView, animated: true, completion: nil)
     }
 
 }

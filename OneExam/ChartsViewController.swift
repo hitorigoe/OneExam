@@ -21,7 +21,6 @@ class ChartsViewController: UIViewController {
     var qqq: Int = 0
     var heightdata: CGFloat!
     let userDefaults:UserDefaults = UserDefaults.standard
-    var newArray:[ChartData2] = []
     let pieView : PieChartView = {
         let set = PieChartView()
         set.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +30,9 @@ class ChartsViewController: UIViewController {
         return set
     }()
     
+    @IBOutlet weak var receivecount: UILabel!
+    @IBOutlet weak var correctcount: UILabel!
+    @IBOutlet weak var examcount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.heightdata = (self.view.bounds.height - 350) / 2
@@ -45,6 +47,7 @@ class ChartsViewController: UIViewController {
             // Get user value
             if var tmp = snapshot.value {
                 self.correct_count = tmp as! Int
+                self.correctcount.text = "総正解数：\(tmp)"
                 // UsersDefaults
                 _ = self.userDefaults.integer(forKey: "users_true_count")
                 self.userDefaults.set(self.correct_count, forKey: "users_true_count")
@@ -57,6 +60,9 @@ class ChartsViewController: UIViewController {
             // Get user value
             if var tmp2 = snapshot.value {
                 self.test_count = tmp2 as! Int * 3
+                self.receivecount.text = "テスト受講回数：\(tmp2)"
+                self.examcount.text = "総問題数：\(tmp2 as! Int * 3)"
+                
                 _ = self.userDefaults.integer(forKey: "users_test_count")
                 self.userDefaults.set(self.test_count, forKey: "users_test_count")
                 self.userDefaults.synchronize()
@@ -102,8 +108,7 @@ class ChartsViewController: UIViewController {
         chartView.frame = CGRect(x:(self.view.bounds.width - 350) / 2,y:self.heightdata,width: 350,height:350)
         view.addSubview(chartView)
         print("pripri")
-        print(newArray)
-
+        
     }
 
 

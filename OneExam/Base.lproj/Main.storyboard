@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                        <rect key="frame" x="0.0" y="120" width="314" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="120" width="314" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="G8o-m4-d5i"/>
                                             <constraint firstAttribute="height" constant="50" id="lCX-Hm-r7W"/>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                        <rect key="frame" x="0.0" y="130" width="314" height="50"/>
+                                        <rect key="frame" x="0.0" y="180" width="314" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BBb-2q-p62"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="X1M-Sc-A0R"/>
@@ -149,6 +149,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heP-kL-PNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104.8" y="805.54722638680664"/>
+        </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="lwK-AR-4iG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6f5-DS-Mle" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Movie" id="l1J-UM-nsK" customClass="MovieViewController" customModule="OneExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWZ-oE-D3E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-Nf-3Eu">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onclickMyButton:" destination="l1J-UM-nsK" eventType="touchUpInside" id="q0m-uU-dnk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8XH-lR-LRd"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-322" y="1482"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PRq-Be-KU7">
@@ -287,9 +312,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="何度も受けて全部正解率をあげよう！" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZb-l9-eVz">
-                                <rect key="frame" x="20" y="108.5" width="335" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="何度も受けて正解率をあげよう！" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZb-l9-eVz">
+                                <rect key="frame" x="20" y="108.5" width="335" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テスト受講回数：0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mD0-nB-8ta">
+                                <rect key="frame" x="104.5" y="145" width="166.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総正解数：0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEU-ZH-uwk">
+                                <rect key="frame" x="133.5" y="178" width="108.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総問題数：0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu7-Nb-UKS">
+                                <rect key="frame" x="133.5" y="211" width="108.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -298,13 +341,33 @@
                         <constraints>
                             <constraint firstItem="BZb-l9-eVz" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="0B0-gV-zXK"/>
                             <constraint firstItem="BZb-l9-eVz" firstAttribute="leading" secondItem="Gb3-dO-vHb" secondAttribute="leading" constant="20" id="2Fs-ow-4MM"/>
+                            <constraint firstItem="mD0-nB-8ta" firstAttribute="top" secondItem="BZb-l9-eVz" secondAttribute="bottom" constant="10" id="2Sd-Kf-plp"/>
+                            <constraint firstItem="HEU-ZH-uwk" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="5Jx-Sy-KIF"/>
+                            <constraint firstItem="BZb-l9-eVz" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="7TZ-ZE-iu8"/>
+                            <constraint firstItem="BZb-l9-eVz" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="8py-Ze-Jte"/>
                             <constraint firstItem="DC1-ul-lGe" firstAttribute="top" secondItem="Nly-hV-dGk" secondAttribute="top" constant="46" id="DVP-Es-5TS"/>
+                            <constraint firstItem="DC1-ul-lGe" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="FPv-H9-izo"/>
+                            <constraint firstItem="mD0-nB-8ta" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="IDe-vc-r1d"/>
+                            <constraint firstItem="BZb-l9-eVz" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="Mnu-gS-8vK"/>
+                            <constraint firstItem="mD0-nB-8ta" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="TKe-5D-Tul"/>
+                            <constraint firstItem="DC1-ul-lGe" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="VML-hX-iBi"/>
+                            <constraint firstItem="mD0-nB-8ta" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="W9v-gS-EmC"/>
                             <constraint firstItem="DC1-ul-lGe" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="WWL-tr-zUh"/>
                             <constraint firstAttribute="trailing" secondItem="BZb-l9-eVz" secondAttribute="trailing" constant="20" id="cIy-Mq-w2l"/>
+                            <constraint firstItem="HEU-ZH-uwk" firstAttribute="top" secondItem="mD0-nB-8ta" secondAttribute="bottom" constant="10" id="eIs-7k-VAI"/>
+                            <constraint firstItem="hu7-Nb-UKS" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="jko-7m-q0g"/>
+                            <constraint firstItem="hu7-Nb-UKS" firstAttribute="top" secondItem="HEU-ZH-uwk" secondAttribute="bottom" constant="10" id="lSh-zp-dt0"/>
+                            <constraint firstItem="DC1-ul-lGe" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="v8Y-ui-iaM"/>
                             <constraint firstItem="BZb-l9-eVz" firstAttribute="top" secondItem="DC1-ul-lGe" secondAttribute="bottom" constant="10" id="yLo-Ev-gkh"/>
+                            <constraint firstItem="HEU-ZH-uwk" firstAttribute="centerX" secondItem="Gb3-dO-vHb" secondAttribute="centerX" id="yoc-jg-K8d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nly-hV-dGk"/>
                     </view>
+                    <connections>
+                        <outlet property="correctcount" destination="HEU-ZH-uwk" id="7qH-1T-rmA"/>
+                        <outlet property="examcount" destination="hu7-Nb-UKS" id="YyK-3i-eFD"/>
+                        <outlet property="receivecount" destination="mD0-nB-8ta" id="aYV-WE-N2j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZ7-ad-e1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
