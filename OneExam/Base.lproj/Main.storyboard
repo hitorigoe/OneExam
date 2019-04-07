@@ -93,7 +93,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                        <rect key="frame" x="0.0" y="120" width="314" height="50"/>
+                                        <rect key="frame" x="0.0" y="120" width="314" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="G8o-m4-d5i"/>
                                             <constraint firstAttribute="height" constant="50" id="lCX-Hm-r7W"/>
@@ -105,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                        <rect key="frame" x="0.0" y="180" width="314" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="130" width="314" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BBb-2q-p62"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="X1M-Sc-A0R"/>
@@ -153,7 +153,6 @@
         <!--Movie View Controller-->
         <scene sceneID="lwK-AR-4iG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6f5-DS-Mle" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Movie" id="l1J-UM-nsK" customClass="MovieViewController" customModule="OneExam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZWZ-oE-D3E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -172,6 +171,7 @@
                         <viewLayoutGuide key="safeArea" id="8XH-lR-LRd"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6f5-DS-Mle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-322" y="1482"/>
         </scene>
@@ -245,7 +245,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mfk-x6-Rj0">
-                                <rect key="frame" x="40" y="50" width="295" height="617"/>
+                                <rect key="frame" x="40" y="87.5" width="295" height="579.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sHH-22-yWL">
                                     <size key="itemSize" width="134" height="134"/>
@@ -254,7 +254,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テスト受講後の動画視聴ページより動画をダウンロードしてください。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MQ2-t8-wOL">
-                                    <rect key="frame" x="0.0" y="0.0" width="295" height="617"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295" height="579.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -268,22 +268,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1A0-Ia-hCl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1A0-Ia-hCl">
+                                                    <rect key="frame" x="0.0" y="26" width="134" height="108"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="1A0-Ia-hCl" firstAttribute="top" secondItem="CVM-MN-5f7" secondAttribute="topMargin" constant="-2" id="Ef6-oK-RbR"/>
+                                            <constraint firstAttribute="bottom" secondItem="1A0-Ia-hCl" secondAttribute="bottom" id="NOZ-42-t1Q"/>
+                                            <constraint firstItem="1A0-Ia-hCl" firstAttribute="leading" secondItem="CVM-MN-5f7" secondAttribute="leading" id="OZ2-t2-Kec"/>
+                                            <constraint firstAttribute="trailing" secondItem="1A0-Ia-hCl" secondAttribute="trailing" id="ewG-1L-Yfc"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="動画コレクション" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89e-ny-ldc">
+                                <rect key="frame" x="10" y="30" width="355" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="S7E-mv-MW9" firstAttribute="trailing" secondItem="89e-ny-ldc" secondAttribute="trailing" constant="10" id="2rh-zY-zsl"/>
+                            <constraint firstItem="89e-ny-ldc" firstAttribute="top" secondItem="XLv-h7-Fwq" secondAttribute="top" constant="30" id="33z-ij-eQF"/>
                             <constraint firstItem="Mfk-x6-Rj0" firstAttribute="bottom" secondItem="S7E-mv-MW9" secondAttribute="bottom" id="Eqg-AV-eVs"/>
                             <constraint firstItem="Mfk-x6-Rj0" firstAttribute="leading" secondItem="S7E-mv-MW9" secondAttribute="leading" constant="40" id="Kux-TM-F4c"/>
                             <constraint firstItem="S7E-mv-MW9" firstAttribute="trailing" secondItem="Mfk-x6-Rj0" secondAttribute="trailing" constant="40" id="SAd-6Y-QeS"/>
-                            <constraint firstItem="Mfk-x6-Rj0" firstAttribute="top" secondItem="S7E-mv-MW9" secondAttribute="top" constant="30" id="VEu-HD-l3Y"/>
+                            <constraint firstItem="89e-ny-ldc" firstAttribute="leading" secondItem="S7E-mv-MW9" secondAttribute="leading" constant="10" id="mk8-pB-9yw"/>
+                            <constraint firstItem="Mfk-x6-Rj0" firstAttribute="top" secondItem="89e-ny-ldc" secondAttribute="bottom" constant="30" id="wHk-5D-w2P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S7E-mv-MW9"/>
                     </view>
@@ -389,7 +403,7 @@
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-YM-3T8">
-                                <rect key="frame" x="10" y="570" width="355" height="40"/>
+                                <rect key="frame" x="10" y="622" width="355" height="40"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Homeへ戻る"/>
@@ -397,19 +411,68 @@
                                     <action selector="backButton:" destination="3s9-1D-koN" eventType="touchUpInside" id="QW1-1c-JvO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-dP-Kwn">
+                                <rect key="frame" x="10" y="582" width="355" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="動画ダウンロード"/>
+                                <connections>
+                                    <action selector="downloadButton:" destination="3s9-1D-koN" eventType="touchUpInside" id="YPU-Y3-5UA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7E-rO-z1g">
+                                <rect key="frame" x="10" y="532" width="355" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="動画をみる（ストリーム）"/>
+                                <connections>
+                                    <action selector="streamButton:" destination="3s9-1D-koN" eventType="touchUpInside" id="7uB-pL-z2R"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xga-DQ-LU2">
+                                <rect key="frame" x="10" y="553" width="355" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ダウンロードした動画は動画コレクションより閲覧してください。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blT-q5-jj8">
+                                <rect key="frame" x="10" y="470" width="355" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zsR-dP-Kwn" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" constant="10" id="0Sz-CB-gvA"/>
                             <constraint firstItem="ddL-YM-3T8" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" constant="10" id="1l7-OF-hyd"/>
+                            <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="D7E-rO-z1g" secondAttribute="trailing" constant="10" id="31m-Ud-ORt"/>
+                            <constraint firstItem="ddL-YM-3T8" firstAttribute="top" secondItem="zsR-dP-Kwn" secondAttribute="bottom" constant="10" id="3bq-zy-uVy"/>
+                            <constraint firstItem="ddL-YM-3T8" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="AbQ-mS-tqo"/>
                             <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="ZK5-eM-cNp" secondAttribute="trailing" id="CBB-p1-Nfs"/>
+                            <constraint firstItem="Xga-DQ-LU2" firstAttribute="top" secondItem="blT-q5-jj8" secondAttribute="bottom" constant="30" id="CYS-oY-ukk"/>
                             <constraint firstItem="ZK5-eM-cNp" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" id="FK3-yy-fzY"/>
+                            <constraint firstItem="ddL-YM-3T8" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="GVt-9u-fTi"/>
+                            <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="Xga-DQ-LU2" secondAttribute="trailing" constant="10" id="MuD-Ll-ykH"/>
+                            <constraint firstItem="zsR-dP-Kwn" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="PHH-ku-Br4"/>
+                            <constraint firstItem="blT-q5-jj8" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" constant="10" id="WAz-nr-SAE"/>
                             <constraint firstItem="ZK5-eM-cNp" firstAttribute="top" secondItem="K9O-57-HuG" secondAttribute="top" constant="40" id="cDN-KO-8Rq"/>
+                            <constraint firstItem="zsR-dP-Kwn" firstAttribute="top" secondItem="Xga-DQ-LU2" secondAttribute="bottom" constant="29" id="czS-eN-XMB"/>
                             <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="ddL-YM-3T8" secondAttribute="trailing" constant="10" id="e4u-Wr-Kns"/>
-                            <constraint firstItem="ddL-YM-3T8" firstAttribute="top" secondItem="ZK5-eM-cNp" secondAttribute="bottom" constant="10" id="zQX-U1-VsK"/>
+                            <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="blT-q5-jj8" secondAttribute="trailing" constant="10" id="ezy-mw-yp8"/>
+                            <constraint firstItem="ddL-YM-3T8" firstAttribute="top" secondItem="D7E-rO-z1g" secondAttribute="bottom" constant="50" id="jkB-fq-rbm"/>
+                            <constraint firstItem="zsR-dP-Kwn" firstAttribute="top" secondItem="D7E-rO-z1g" secondAttribute="bottom" constant="10" id="lOp-OG-u39"/>
+                            <constraint firstItem="Xga-DQ-LU2" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" constant="10" id="mzS-ma-akw"/>
+                            <constraint firstItem="D7E-rO-z1g" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="peF-TL-dRS"/>
+                            <constraint firstItem="D7E-rO-z1g" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" constant="10" id="v0l-Z3-SxM"/>
+                            <constraint firstItem="K9O-57-HuG" firstAttribute="bottom" secondItem="ddL-YM-3T8" secondAttribute="bottom" constant="5" id="wXi-AO-w6m"/>
+                            <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="zsR-dP-Kwn" secondAttribute="trailing" constant="10" id="xMQ-bk-QDf"/>
+                            <constraint firstItem="zsR-dP-Kwn" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="zWJ-d4-xrw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K9O-57-HuG"/>
                     </view>
                     <connections>
+                        <outlet property="aLabel" destination="Xga-DQ-LU2" id="KJ6-I1-1Gz"/>
                         <outlet property="tableView" destination="ZK5-eM-cNp" id="egz-Kk-fnD"/>
                     </connections>
                 </viewController>

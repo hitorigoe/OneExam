@@ -12,6 +12,7 @@ import SVProgressHUD
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
+import MediaPlayer
 
 
 class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
@@ -36,6 +37,8 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
     var streamurl: String?
     
     @IBOutlet weak var playButton: UIButton!
+    var myMoviePlayerView : MPMoviePlayerViewController!
+    var moviedata:Any?
     override func viewDidLoad() {
         super.viewDidLoad()
         let userID = Auth.auth().currentUser?.uid
@@ -219,15 +222,10 @@ class AVPlayerViewController: UIViewController, URLSessionDownloadDelegate {
         guard let url = URL(string: self.streamurl!) else {
             return
         }
-        // gs://oneexam-3d30f.appspot.com/BBA9CC28-B7E3-4B82-B2AF-062773E2C3FC.MOV
-        // Create an AVPlayer, passing it the HTTP Live Streaming URL.
-        let player = AVPlayer(url: url)
         
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.avView.bounds
+        myMoviePlayerView = MPMoviePlayerViewController(contentURL: url)
         
-        self.avView.layer.addSublayer(playerLayer)
-        player.play()
+        self.present(myMoviePlayerView, animated: true, completion: nil)
     }
     
     @IBAction func touchedStartDownloadButton(_ sender: UIButton) {

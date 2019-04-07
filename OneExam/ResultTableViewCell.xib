@@ -12,21 +12,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="207" id="KGk-i7-Jjw" customClass="ResultTableViewCell" customModule="OneExam" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="623" height="207"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="ResultTableViewCell" customModule="OneExam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="623" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="623" height="206.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="623" height="127.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="漢字漢字漢字漢字？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxJ-rM-7wO">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字漢字漢字漢字？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxJ-rM-7wO">
                         <rect key="frame" x="38" y="21" width="189" height="24.5"/>
                         <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="北京駅までいくらかかりますか？" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU8-1b-YEc">
-                        <rect key="frame" x="38" y="65.5" width="450" height="23"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京駅までいくらかかりますか？" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zU8-1b-YEc">
+                        <rect key="frame" x="38" y="65.5" width="450" height="26.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="450" id="xT2-bc-xpo"/>
                         </constraints>
@@ -43,26 +43,14 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="pbb-tj-Cbh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップして動画で確認→" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkH-Kd-e8C">
-                        <rect key="frame" x="38" y="146" width="188" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="3mI-SB-Fu6"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nxJ-rM-7wO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="18" id="1zy-Ko-7B8"/>
                     <constraint firstItem="zU8-1b-YEc" firstAttribute="top" secondItem="nxJ-rM-7wO" secondAttribute="bottom" constant="20" id="59m-Na-Q4p"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="leading" secondItem="zU8-1b-YEc" secondAttribute="trailing" constant="30" id="9pj-ed-8vG"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="kkH-Kd-e8C" secondAttribute="trailing" constant="10" id="AOj-7c-jlN"/>
-                    <constraint firstItem="kkH-Kd-e8C" firstAttribute="leading" secondItem="nxJ-rM-7wO" secondAttribute="leading" id="Jms-5y-8aS"/>
                     <constraint firstItem="zU8-1b-YEc" firstAttribute="leading" secondItem="nxJ-rM-7wO" secondAttribute="leading" id="Ngf-gN-HM2"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="kkH-Kd-e8C" secondAttribute="bottom" constant="10" id="NhT-qW-iXe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zU8-1b-YEc" secondAttribute="bottom" constant="25" id="Wy2-G8-o5t"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="top" secondItem="nxJ-rM-7wO" secondAttribute="top" id="YW7-SK-v1B"/>
-                    <constraint firstItem="kkH-Kd-e8C" firstAttribute="top" secondItem="zU8-1b-YEc" secondAttribute="bottom" constant="10" id="a2c-2o-pRg"/>
                     <constraint firstItem="xpU-ZN-paK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="j7Y-fC-5ar"/>
                     <constraint firstItem="nxJ-rM-7wO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="qTQ-o7-d4H"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xpU-ZN-paK" secondAttribute="trailing" constant="10" id="wPu-MZ-b5K"/>
@@ -74,7 +62,7 @@
                 <outlet property="imgView" destination="xpU-ZN-paK" id="S8S-0K-fxg"/>
                 <outlet property="questionLabel" destination="nxJ-rM-7wO" id="Pqm-zU-kws"/>
             </connections>
-            <point key="canvasLocation" x="537" y="-193"/>
+            <point key="canvasLocation" x="536.79999999999995" y="-229.38530734632684"/>
         </tableViewCell>
     </objects>
 </document>

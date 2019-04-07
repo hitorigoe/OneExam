@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="132" height="137"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn5-AP-n7F">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn5-AP-n7F">
                         <rect key="frame" x="45" y="87.5" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,7 +36,6 @@
             <color key="backgroundColor" red="0.80392156862745101" green="0.29402624108496883" blue="0.48837259857185744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="eof-pD-g4z" secondAttribute="bottom" constant="3" id="3iZ-BX-h9r"/>
-                <constraint firstItem="Gn5-AP-n7F" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="9pV-hj-siy"/>
                 <constraint firstItem="eof-pD-g4z" firstAttribute="top" secondItem="Gn5-AP-n7F" secondAttribute="bottom" constant="5" id="TFx-7K-CEN"/>
                 <constraint firstItem="Gn5-AP-n7F" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="jLE-0I-KCd"/>
                 <constraint firstItem="eof-pD-g4z" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="s3k-oJ-1qu"/>
