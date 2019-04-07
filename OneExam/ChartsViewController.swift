@@ -38,12 +38,12 @@ class ChartsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         print("haitta")
-        let ref = Database.database().reference()
+        var ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         
-        ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot)  in
+        ref.child("users_true_count").child(userID!).observe(.value, with: { (snapshot)  in
             // Get user value
-            if let tmp = snapshot.value {
+            if var tmp = snapshot.value {
                 self.correct_count = tmp as! Int
                 // UsersDefaults
                 _ = self.userDefaults.integer(forKey: "users_true_count")
@@ -53,9 +53,9 @@ class ChartsViewController: UIViewController {
             
         })
         
-        ref.child("users_test_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users_test_count").child(userID!).observe(.value, with: { (snapshot) in
             // Get user value
-            if let tmp2 = snapshot.value {
+            if var tmp2 = snapshot.value {
                 self.test_count = tmp2 as! Int * 3
                 _ = self.userDefaults.integer(forKey: "users_test_count")
                 self.userDefaults.set(self.test_count, forKey: "users_test_count")
@@ -72,7 +72,10 @@ class ChartsViewController: UIViewController {
         let chartView = PieChartView(frame: rect)
         let users_true_count: Double = Double(userDefaults.integer(forKey: "users_true_count"))
         let users_test_count: Double = Double(userDefaults.integer(forKey: "users_test_count"))
-        
+        print("users_test_count")
+        print(users_test_count)
+        print("users_true_count")
+        print(users_true_count)
         var dNumber: Double
         dNumber = users_true_count / users_test_count
         let correct_percent2 = ceil(dNumber * 100)
@@ -102,39 +105,7 @@ class ChartsViewController: UIViewController {
         print(newArray)
 
     }
-    /*
-    func setChart(){
-        view.addSubview(pieView)
-        pieView.centerXAnchor.constraint(equalTo:    view.centerXAnchor).isActive = true
-        pieView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        pieView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
-        pieView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
-        
-    }
-    
-    func chartData(){
-        var data = [PieChartDataEntry]()
-        for (key,value) in surveyData{
-            
-            let entry = PieChartDataEntry(value: Double(value), label: key)
-            data.append(entry)
-        }
-        let chart = PieChartDataSet(values: data, label: "")
-        chart.colors = ChartColorTemplates.material()
-        chart.sliceSpace = 2
-        chart.selectionShift = 5
-        chart.xValuePosition = .outsideSlice
-        chart.yValuePosition = .outsideSlice
-        chart.valueTextColor = .black
-        chart.valueLineWidth = 0.5
-        chart.valueLinePart1Length = 0.2
-        chart.valueLinePart2Length = 4
-        chart.drawValuesEnabled = true
-        let chartData = PieChartData(dataSet: chart)
-        pieView.data = chartData
-        
-    }
-    */
+
 
     /*
     // MARK: - Navigation
