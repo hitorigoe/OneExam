@@ -58,10 +58,13 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var templateLabel: UILabel!
+    @IBOutlet weak var urya: UILabel!
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // 要素をとる方法
+        print("fff")
+        print(self.view.bounds.height)
         _ = Database.database().reference().child("exam").child(self.postdata as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             self.q = 0
@@ -71,23 +74,30 @@ class ExamViewController: UIViewController {
         })
         
         let view = UIView()
-        view.frame = CGRect(x:10,y:100,width:self.view.bounds.width - 20,height:250)
+        //view.frame = CGRect(x:10,y:50,width:self.view.bounds.width - 20,height:self.view.bounds.height * 1/4 )
         // 枠線の色
-        view.layer.borderColor = UIColor.gray.cgColor
+        //view.layer.borderColor = UIColor.gray.cgColor
         // 枠線の太さ
-        view.layer.borderWidth = 3
+        view.layer.borderWidth = 10
         // 角丸
         view.layer.cornerRadius = 5
         // 角丸にした部分のはみ出し許可 false:はみ出し可 true:はみ出し不可
         view.layer.masksToBounds = true
         self.view.addSubview(view)
         // Do any additional setup after loading the view.
+        
+        
         let rgba = UIColor.gray // ボタン背景色設定
         button1.backgroundColor = rgba                                               // 背景色
         button1.layer.borderWidth = 0                                              // 枠線の幅
         button1.layer.borderColor = UIColor.black.cgColor                            // 枠線の色
+        button1.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         button1.layer.cornerRadius = 5.0 // 角丸のサイズ
-        button1.titleEdgeInsets = UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
+        
+        let rate1 = ceil(self.view.bounds.height * 0.012)
+        print("aaa")
+        print(rate1)
+        button1.titleEdgeInsets = UIEdgeInsets(top: rate1, left: rate1, bottom: rate1, right: rate1)
         button1.setTitleColor(UIColor.white, for: UIControl.State.normal)
         button2.backgroundColor = rgba                                               // 背景色
         button2.layer.borderWidth = 0                                              // 枠線の幅
@@ -107,6 +117,7 @@ class ExamViewController: UIViewController {
         button4.layer.cornerRadius = 5.0                                             // 角丸のサイズ
         button4.titleEdgeInsets = UIEdgeInsets(top: 5.0, left: 7.0, bottom: 5.0, right: 7.0)
         button4.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        
     }
     
     
@@ -181,8 +192,9 @@ class ExamViewController: UIViewController {
 
                     self.masterArray.insert(masterData, at: self.j)
                     self.questionLabel.text = masterData.question
+                    self.urya.text = "正しいものを選べ。"
                     //self.templateLabel.text = masterData.template
-                    self.templateLabel.text = "下記の中から正しいものを選んでください。"
+                    //self.templateLabel.text = "下記の中から正しいものを選んでください。"
                     self.answer = masterData.answer
                     
                     self.button1.setTitle(masterData.button1  ,for: .normal)

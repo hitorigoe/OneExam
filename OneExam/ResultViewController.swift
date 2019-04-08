@@ -92,6 +92,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     
     var image1: UIImage!
     var streamurl: String?
+    var contentfile: String? = nil
     
     
     var myMoviePlayerView : MPMoviePlayerViewController!
@@ -103,16 +104,14 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        print("resultArrayの初期値")
-        dump(resultArray.count)
+
         img2 = UIImage(named:"batsu")
         img = UIImage(named:"maru")
         let userID = Auth.auth().currentUser?.uid
         
         let ref = Database.database().reference()
         // 解答データ上書き
-        print("ここでとめる")
-        dump(answerBox)
+
         for item in answerBox {
               self.postRef3 = ref.child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
               self.postRef3.setValue(item.value)
@@ -127,10 +126,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         })
         
         ref.child("users_test_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            print("users_test_count")
             var testcount = snapshot.value
-            print(testcount)
-            print("testcount")
+
             
             if var aa = testcount {
                 let bb = testcount as! Int + 1
@@ -142,8 +139,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             var truecount = snapshot.value
-            print(truecount)
-            print("truecount")
+
             if var cc = truecount {
                 let dd = truecount as! Int + self.tmpcount
                 self.postRef5 = ref.child("users_true_count").child(userID!)
@@ -201,6 +197,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         //cell.setResultData(indexPath)
         cell.questionLabel.text = resultArray[indexPath.row].question
         cell.answerLabel.text = resultArray[indexPath.row].answer
+        self.contentfile = resultArray[indexPath.row].content
 
         var str3:String = "answer" + String(indexPath.row + 1)
         
@@ -224,15 +221,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         _ = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
         
-        //let avViewController = self.storyboard?.instantiateViewController(withIdentifier:"AV") as! AVPlayerViewController
-        //avViewController.postdata = self.postdata
-        //self.navigationController?.pushViewController(avViewController, animated: true)
     }
-    /*
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170 //変更
-    }
-    */
+ 
 
     @IBAction func backButton(_ sender: Any) {
 
@@ -260,7 +250,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: nil)
         
         
-        let moviename = postdata as! String + ".mov"
+        let moviename = self.contentfile as! String + ".mov"
         let reference = storageRef.child(moviename)
         let documentDirPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
         let localURL = URL(fileURLWithPath: documentDirPath + "/" + moviename)
@@ -281,7 +271,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
                 self.aLabel.text = ""
                 //データベースに登録
                 let regist = Database.database().reference().child("users_download").child((Auth.auth().currentUser?.uid)!).child(self.postdata as! String)
-                regist.setValue(self.postdata as! String + ".mov")
+                regist.setValue(self.contentfile as! String + ".mov")
                 
                 
             }

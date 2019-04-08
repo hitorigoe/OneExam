@@ -15,6 +15,7 @@ class ResultData: NSObject {
     var question: String?
     var answer: String?
     var correct: String?
+    var content: String?
     var streamurl: String?
     var choices: [String:Any]?
     init?(snapshot: DataSnapshot) {
@@ -26,6 +27,7 @@ class ResultData: NSObject {
         
         self.question = valueDictionary["question"]! as? String
         self.correct = valueDictionary["answer"]! as? String
+        self.content = valueDictionary["content"]! as? String
         //self.streamurl = valueDictionary["streamurl"]! as? String
         choices = valueDictionary["choices"]! as? [String:Any]
         for item in choices! {

@@ -34,27 +34,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kef-a9-M0A">
-                                <rect key="frame" x="30" y="174.5" width="315" height="79.5"/>
+                                <rect key="frame" x="30" y="164" width="315" height="25.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="到北京站需要多少钱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad6-g0-pHz">
-                                        <rect key="frame" x="52.5" y="0.0" width="210" height="27.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下記の中から正しいものを選んでください。" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoW-cn-zkJ">
-                                        <rect key="frame" x="1.5" y="29.5" width="312" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="bcP-af-MxD"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="61.5" y="0.0" width="192.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qXs-rQ-XkC">
-                                <rect key="frame" x="37.5" y="718" width="300" height="36"/>
+                                <rect key="frame" x="37.5" y="631" width="300" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="EVa-Em-qNr"/>
                                 </constraints>
@@ -64,15 +55,14 @@
                                     <action selector="nextButton:" destination="9RI-fM-OD1" eventType="touchUpInside" id="5ot-lv-F4c"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-fF-2yS">
-                                <rect key="frame" x="30.5" y="404" width="314" height="214"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-fF-2yS">
+                                <rect key="frame" x="10" y="353" width="355" height="198"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-fo-9Z9">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                        <rect key="frame" x="27.5" y="0.0" width="300" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="T6X-X2-TFk"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="vEe-hd-rsq"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="z8N-CE-NsL"/>
+                                            <constraint firstAttribute="width" constant="300" id="NcZ-3r-H97"/>
+                                            <constraint firstAttribute="height" constant="42" id="qiV-uc-aWX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="1. 北京？"/>
@@ -81,10 +71,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-vO-fSr">
-                                        <rect key="frame" x="0.0" y="60" width="314" height="50"/>
+                                        <rect key="frame" x="27.5" y="52" width="300" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="iel-mb-8Ne"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="nq6-Wg-YVD"/>
+                                            <constraint firstAttribute="width" constant="300" id="2km-nt-awl"/>
+                                            <constraint firstAttribute="height" constant="42" id="8Gy-0k-aDC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="2. 北京？"/>
@@ -93,10 +83,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EdD-jl-zOF">
-                                        <rect key="frame" x="0.0" y="120" width="314" height="50"/>
+                                        <rect key="frame" x="27.5" y="104" width="300" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="G8o-m4-d5i"/>
-                                            <constraint firstAttribute="height" constant="50" id="lCX-Hm-r7W"/>
+                                            <constraint firstAttribute="width" constant="300" id="IGT-MC-3FN"/>
+                                            <constraint firstAttribute="height" constant="42" id="YhL-sr-WVA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="3. 北京？"/>
@@ -105,10 +95,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kBc-Qv-7Ph">
-                                        <rect key="frame" x="0.0" y="180" width="314" height="34"/>
+                                        <rect key="frame" x="27.5" y="156" width="300" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="BBb-2q-p62"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="314" id="X1M-Sc-A0R"/>
+                                            <constraint firstAttribute="height" constant="42" id="Fdj-mb-uyM"/>
+                                            <constraint firstAttribute="width" constant="300" id="Fnq-Gr-hhl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="4. 北京？"/>
@@ -118,16 +108,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正しいものを選べ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7H-Pz-D3s">
+                                <rect key="frame" x="10" y="197.5" width="355" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xRF-fF-2yS" firstAttribute="top" secondItem="Kef-a9-M0A" secondAttribute="bottom" constant="150" id="6KM-Lf-1Vv"/>
+                            <constraint firstItem="g7H-Pz-D3s" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="0cL-u4-HAb"/>
+                            <constraint firstItem="9yP-tA-KP2" firstAttribute="trailing" secondItem="g7H-Pz-D3s" secondAttribute="trailing" constant="10" id="1Qq-aN-FEi"/>
+                            <constraint firstItem="g7H-Pz-D3s" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="10" id="48s-cr-19W"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="Ann-OI-Il6"/>
+                            <constraint firstItem="xRF-fF-2yS" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="10" id="LRJ-eD-G8X"/>
                             <constraint firstItem="qXs-rQ-XkC" firstAttribute="bottom" secondItem="9yP-tA-KP2" secondAttribute="bottom" id="NNb-kk-qN2"/>
-                            <constraint firstItem="qXs-rQ-XkC" firstAttribute="top" secondItem="xRF-fF-2yS" secondAttribute="bottom" constant="100" id="gbn-vz-C64"/>
+                            <constraint firstItem="g7H-Pz-D3s" firstAttribute="top" secondItem="Kef-a9-M0A" secondAttribute="bottom" constant="8" symbolic="YES" id="aDo-Yb-xwy"/>
+                            <constraint firstItem="9yP-tA-KP2" firstAttribute="trailing" secondItem="xRF-fF-2yS" secondAttribute="trailing" constant="10" id="cSy-aA-qBA"/>
                             <constraint firstAttribute="trailing" secondItem="Kef-a9-M0A" secondAttribute="trailing" constant="30" id="lls-Ms-seO"/>
                             <constraint firstItem="Kef-a9-M0A" firstAttribute="leading" secondItem="9yP-tA-KP2" secondAttribute="leading" constant="30" id="lw6-vb-k1T"/>
-                            <constraint firstItem="Kef-a9-M0A" firstAttribute="top" secondItem="9yP-tA-KP2" secondAttribute="top" constant="110" id="xb2-nn-Ias"/>
+                            <constraint firstItem="qXs-rQ-XkC" firstAttribute="top" secondItem="xRF-fF-2yS" secondAttribute="bottom" constant="80" id="vy8-Qx-7K4"/>
+                            <constraint firstItem="Kef-a9-M0A" firstAttribute="top" secondItem="9yP-tA-KP2" secondAttribute="top" constant="100" id="xb2-nn-Ias"/>
                             <constraint firstItem="xRF-fF-2yS" firstAttribute="centerX" secondItem="LZw-WL-N6B" secondAttribute="centerX" id="yrM-tf-t8V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9yP-tA-KP2"/>
@@ -140,7 +141,7 @@
                         <outlet property="button4" destination="kBc-Qv-7Ph" id="8RM-LD-M9y"/>
                         <outlet property="nextButton" destination="qXs-rQ-XkC" id="w4U-It-rrI"/>
                         <outlet property="questionLabel" destination="Ad6-g0-pHz" id="FQE-IN-XFB"/>
-                        <outlet property="templateLabel" destination="GoW-cn-zkJ" id="lHL-mw-Mjg"/>
+                        <outlet property="urya" destination="g7H-Pz-D3s" id="CIt-VI-V0r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heP-kL-PNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,10 +394,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZK5-eM-cNp">
-                                <rect key="frame" x="0.0" y="60" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="qs4-At-dt3"/>
+                                    <constraint firstAttribute="height" constant="400" id="lwf-yj-NvM"/>
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-YM-3T8">
@@ -433,8 +434,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ダウンロードした動画は動画コレクションより閲覧してください。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blT-q5-jj8">
-                                <rect key="frame" x="10" y="470" width="355" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <rect key="frame" x="10" y="20" width="355" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -445,9 +446,9 @@
                             <constraint firstItem="ddL-YM-3T8" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" constant="10" id="1l7-OF-hyd"/>
                             <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="D7E-rO-z1g" secondAttribute="trailing" constant="10" id="31m-Ud-ORt"/>
                             <constraint firstItem="ddL-YM-3T8" firstAttribute="top" secondItem="zsR-dP-Kwn" secondAttribute="bottom" constant="10" id="3bq-zy-uVy"/>
+                            <constraint firstItem="blT-q5-jj8" firstAttribute="top" secondItem="K9O-57-HuG" secondAttribute="top" id="8ds-GJ-rEP"/>
                             <constraint firstItem="ddL-YM-3T8" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="AbQ-mS-tqo"/>
                             <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="ZK5-eM-cNp" secondAttribute="trailing" id="CBB-p1-Nfs"/>
-                            <constraint firstItem="Xga-DQ-LU2" firstAttribute="top" secondItem="blT-q5-jj8" secondAttribute="bottom" constant="30" id="CYS-oY-ukk"/>
                             <constraint firstItem="ZK5-eM-cNp" firstAttribute="leading" secondItem="K9O-57-HuG" secondAttribute="leading" id="FK3-yy-fzY"/>
                             <constraint firstItem="ddL-YM-3T8" firstAttribute="centerX" secondItem="N3B-qY-Qjh" secondAttribute="centerX" id="GVt-9u-fTi"/>
                             <constraint firstItem="K9O-57-HuG" firstAttribute="trailing" secondItem="Xga-DQ-LU2" secondAttribute="trailing" constant="10" id="MuD-Ll-ykH"/>

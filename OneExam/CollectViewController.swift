@@ -116,16 +116,7 @@ extension CollectViewController: UICollectionViewDataSource {
         
         print(indexPath.row)
         selectedImage = UIImage(named: dataArray[indexPath.row] as! String)
-        //let dlViewController = self.storyboard?.instantiateViewController(withIdentifier:"Download") as! DLViewController
-        //dlViewController.moviedata = self.dataArray[indexPath.row] as! String
-        
-        //self.present(dlViewController, animated: true, completion: nil)
-        /*
-        let movieViewController = self.storyboard?.instantiateViewController(withIdentifier:"Movie") as! MovieViewController
-        movieViewController.moviedata = self.dataArray[indexPath.row] as! String
-        
-        self.present(movieViewController, animated: true, completion: nil)
-        */
+
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
