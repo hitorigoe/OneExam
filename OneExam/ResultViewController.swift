@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 import MediaPlayer
 import SVProgressHUD
 
@@ -196,11 +197,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ResultTableViewCell
-        print("tableにはいった1")
-        print(indexPath.row)
-        
-        
-        print("tableにはいった2")
+
         //cell.setResultData(indexPath)
         cell.questionLabel.text = resultArray[indexPath.row].question
         cell.answerLabel.text = resultArray[indexPath.row].answer

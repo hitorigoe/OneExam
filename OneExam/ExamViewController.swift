@@ -181,7 +181,8 @@ class ExamViewController: UIViewController {
 
                     self.masterArray.insert(masterData, at: self.j)
                     self.questionLabel.text = masterData.question
-                    self.templateLabel.text = masterData.template
+                    //self.templateLabel.text = masterData.template
+                    self.templateLabel.text = "下記の中から正しいものを選んでください。"
                     self.answer = masterData.answer
                     
                     self.button1.setTitle(masterData.button1  ,for: .normal)

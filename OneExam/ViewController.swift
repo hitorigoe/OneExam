@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     func setupTab() {
         
         // 画像のファイル名を指定してESTabBarControllerを作成する
-        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "settings", "pie","download"])
+        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "pie","download","settings"])
         
         // 背景色、選択時の色を設定する
         tabBarController.selectedColor = UIColor(red: 0.7, green: 0.04, blue: 0.11, alpha: 1)

@@ -36,7 +36,7 @@ class MasterData: NSObject {
                 self.title = valueDictionary["title"] as? String
                 self.content = valueDictionary["content"] as? String
                 self.question = valueDictionary["question"] as? String
-                self.template = valueDictionary["template"] as? String
+                //self.template = valueDictionary["template"] as? String
                 self.answer = valueDictionary["answer"] as? String
                 if let choice = valueDictionary["choices"] as? [[String:String]] {
                     self.choices = choice

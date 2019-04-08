@@ -59,6 +59,7 @@ class ChartsViewController: UIViewController {
         ref.child("users_test_count").child(userID!).observe(.value, with: { (snapshot) in
             // Get user value
             if var tmp2 = snapshot.value {
+                print("rcfff")
                 self.test_count = tmp2 as! Int * 3
                 self.receivecount.text = "テスト受講回数：\(tmp2)"
                 self.examcount.text = "総問題数：\(tmp2 as! Int * 3)"
