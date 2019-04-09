@@ -93,9 +93,9 @@ class LoginViewController: UIViewController {
         image1 = UIImage(named:"chinese_")
         imageView.image = image1
         image2 = UIImage(named:"panda-bear")
-        panda1view.image = image2
+        //panda1view.image = image2
         image3 = UIImage(named:"panda-bear")
-        panda2view.image = image3
+        //panda2view.image = image3
         // Do any additional setup after loading the view.
     }
     

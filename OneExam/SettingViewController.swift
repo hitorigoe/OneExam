@@ -73,7 +73,7 @@ class SettingViewController: UIViewController {
         // 表示名を取得してTextFieldに設定する
         let user = Auth.auth().currentUser
         if let user = user {
-            displayNameTextField.text = user.displayName
+        //    displayNameTextField.text = user.displayName
         }
     }
     

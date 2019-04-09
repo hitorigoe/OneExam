@@ -1,0 +1,96 @@
+
+/* Class = "UIButton"; normalTitle = "動画をみる(ストリーム)"; ObjectID = "2DB-Bd-XPS"; */
+"2DB-Bd-XPS.normalTitle" = "動画をみる(ストリーム)";
+
+/* Class = "UIButton"; normalTitle = "1. 北京？"; ObjectID = "6lP-fo-9Z9"; */
+"6lP-fo-9Z9.normalTitle" = "1. 北京？";
+
+/* Class = "UILabel"; text = "動画コレクション(試験終了後にダウンロードできます)"; ObjectID = "89e-ny-ldc"; */
+"89e-ny-ldc.text" = "動画コレクション(試験終了後にダウンロードできます)";
+
+/* Class = "UILabel"; text = "到北京站需要多少钱"; ObjectID = "Ad6-g0-pHz"; */
+"Ad6-g0-pHz.text" = "到北京站需要多少钱";
+
+/* Class = "UILabel"; text = "何度も受けて正解率をあげよう！"; ObjectID = "BZb-l9-eVz"; */
+"BZb-l9-eVz.text" = "何度も受けて正解率をあげよう！";
+
+/* Class = "UIButton"; normalTitle = "動画をみる（ストリーム）"; ObjectID = "D7E-rO-z1g"; */
+"D7E-rO-z1g.normalTitle" = "動画をみる（ストリーム）";
+
+/* Class = "UILabel"; text = "正解率"; ObjectID = "DC1-ul-lGe"; */
+"DC1-ul-lGe.text" = "正解率";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DfZ-sb-4cj"; */
+"DfZ-sb-4cj.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "3. 北京？"; ObjectID = "EdD-jl-zOF"; */
+"EdD-jl-zOF.normalTitle" = "3. 北京？";
+
+/* Class = "UITextField"; placeholder = "パスワード(6文字以上)"; ObjectID = "FhE-Pw-afC"; */
+"FhE-Pw-afC.placeholder" = "パスワード(6文字以上)";
+
+/* Class = "UILabel"; text = "総正解数：0"; ObjectID = "HEU-ZH-uwk"; */
+"HEU-ZH-uwk.text" = "総正解数：0";
+
+/* Class = "UIButton"; normalTitle = "再生"; ObjectID = "J9Q-7m-M3S"; */
+"J9Q-7m-M3S.normalTitle" = "再生";
+
+/* Class = "UIButton"; normalTitle = "アカウント作成"; ObjectID = "KjV-xA-soT"; */
+"KjV-xA-soT.normalTitle" = "アカウント作成";
+
+/* Class = "UIButton"; normalTitle = "停止"; ObjectID = "N3T-Uy-Ewa"; */
+"N3T-Uy-Ewa.normalTitle" = "停止";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PeG-Nf-3Eu"; */
+"PeG-Nf-3Eu.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Homeへ戻る"; ObjectID = "QOq-Qq-bcO"; */
+"QOq-Qq-bcO.normalTitle" = "Homeへ戻る";
+
+/* Class = "UIButton"; normalTitle = "ログイン"; ObjectID = "RM1-iC-JxH"; */
+"RM1-iC-JxH.normalTitle" = "ログイン";
+
+/* Class = "UITextField"; placeholder = "アカウント作成時は表示名を入力"; ObjectID = "UvZ-mL-ZqE"; */
+"UvZ-mL-ZqE.placeholder" = "アカウント作成時は表示名を入力";
+
+/* Class = "UILabel"; text = "ダウンロードした動画は動画コレクションより閲覧してください。"; ObjectID = "blT-q5-jj8"; */
+"blT-q5-jj8.text" = "ダウンロードした動画は動画コレクションより閲覧してください。";
+
+/* Class = "UIButton"; normalTitle = "ログアウト"; ObjectID = "cvA-ni-sdV"; */
+"cvA-ni-sdV.normalTitle" = "ログアウト";
+
+/* Class = "UIButton"; normalTitle = "Homeへ戻る"; ObjectID = "ddL-YM-3T8"; */
+"ddL-YM-3T8.normalTitle" = "Homeへ戻る";
+
+/* Class = "UILabel"; text = "正しいものを選べ"; ObjectID = "g7H-Pz-D3s"; */
+"g7H-Pz-D3s.text" = "正しいものを選べ";
+
+/* Class = "UILabel"; text = "総問題数：0"; ObjectID = "hu7-Nb-UKS"; */
+"hu7-Nb-UKS.text" = "総問題数：0";
+
+/* Class = "UIButton"; normalTitle = "4. 北京？"; ObjectID = "kBc-Qv-7Ph"; */
+"kBc-Qv-7Ph.normalTitle" = "4. 北京？";
+
+/* Class = "UIButton"; normalTitle = "2. 北京？"; ObjectID = "l9S-vO-fSr"; */
+"l9S-vO-fSr.normalTitle" = "2. 北京？";
+
+/* Class = "UITextField"; placeholder = "メールアドレス"; ObjectID = "lZo-Ja-mgG"; */
+"lZo-Ja-mgG.placeholder" = "メールアドレス";
+
+/* Class = "UILabel"; text = "テスト受講回数：0"; ObjectID = "mD0-nB-8ta"; */
+"mD0-nB-8ta.text" = "テスト受講回数：0";
+
+/* Class = "UIButton"; normalTitle = "次の問題へ進む"; ObjectID = "qXs-rQ-XkC"; */
+"qXs-rQ-XkC.normalTitle" = "次の問題へ進む";
+
+/* Class = "UIButton"; normalTitle = "もどる"; ObjectID = "qnS-90-S4F"; */
+"qnS-90-S4F.normalTitle" = "もどる";
+
+/* Class = "UIButton"; normalTitle = "表示名変更"; ObjectID = "xED-d8-NUl"; */
+"xED-d8-NUl.normalTitle" = "表示名変更";
+
+/* Class = "UINavigationItem"; title = "Grid View"; ObjectID = "zlP-hf-CfX"; */
+"zlP-hf-CfX.title" = "Grid View";
+
+/* Class = "UIButton"; normalTitle = "動画ダウンロード"; ObjectID = "zsR-dP-Kwn"; */
+"zsR-dP-Kwn.normalTitle" = "動画ダウンロード";
