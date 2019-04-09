@@ -101,8 +101,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var aLabel: UILabel!
     
+    @IBOutlet weak var downloadBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.downloadBtn.isEnabled = false
         self.navigationItem.setHidesBackButton(true, animated: true)
 
         img2 = UIImage(named:"batsu")
@@ -145,6 +148,13 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
                 self.postRef5 = ref.child("users_true_count").child(userID!)
                 self.postRef5.setValue(dd)
             }
+        })
+        ref.child("users_download").child(userID!).child(masterArray[0].content).observe(.value, with: { (snapshot)  in
+            // Get user value
+            if snapshot.value is NSNull {
+                self.downloadBtn.isEnabled = true
+            }
+        
         })
         
         // answerBoxの中身をみる

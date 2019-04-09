@@ -471,6 +471,7 @@
                     </view>
                     <connections>
                         <outlet property="aLabel" destination="Xga-DQ-LU2" id="KJ6-I1-1Gz"/>
+                        <outlet property="downloadBtn" destination="zsR-dP-Kwn" id="cuV-9d-78a"/>
                         <outlet property="tableView" destination="ZK5-eM-cNp" id="egz-Kk-fnD"/>
                     </connections>
                 </viewController>

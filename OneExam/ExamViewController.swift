@@ -391,6 +391,7 @@ class ExamViewController: UIViewController {
             resultViewController.postdata = self.postdata
             resultViewController.masterArray = self.masterArray
             resultViewController.newArray = self.newArray
+            
             button1.backgroundColor = .gray
             button2.backgroundColor = .gray
             button3.backgroundColor = .gray
