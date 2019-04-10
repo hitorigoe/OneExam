@@ -19,9 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="623" height="127.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="漢字漢字漢字漢字？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxJ-rM-7wO">
-                        <rect key="frame" x="38" y="21" width="144" height="24.5"/>
-                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="漢字漢字漢字漢字？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxJ-rM-7wO">
+                        <rect key="frame" x="38" y="21" width="180" height="24.5"/>
+                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -30,7 +30,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="450" id="xT2-bc-xpo"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                         <color key="textColor" red="1" green="0.24354234068082725" blue="0.11399086898900945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

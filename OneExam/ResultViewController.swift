@@ -132,7 +132,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             var testcount = snapshot.value
 
             
-            if var aa = testcount {
+            if snapshot.value is NSNull {
+                let bb = 1
+                self.postRef4 = ref.child("users_test_count").child(userID!)
+                self.postRef4.setValue(bb)
+            } else {
                 let bb = testcount as! Int + 1
                 self.postRef4 = ref.child("users_test_count").child(userID!)
                 self.postRef4.setValue(bb)
@@ -143,7 +147,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             var truecount = snapshot.value
 
-            if var cc = truecount {
+            if snapshot.value is NSNull {
+                let dd = self.tmpcount
+                self.postRef5 = ref.child("users_true_count").child(userID!)
+                self.postRef5.setValue(dd)
+            } else {
                 let dd = truecount as! Int + self.tmpcount
                 self.postRef5 = ref.child("users_true_count").child(userID!)
                 self.postRef5.setValue(dd)
@@ -278,6 +286,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
                 SVProgressHUD.setMinimumSize(CGSize(width: 100, height: 100))
                 SVProgressHUD.showSuccess(withStatus: "ダウンロード完了！")
                 SVProgressHUD.dismiss(withDelay: 1)
+                self.downloadBtn.isEnabled = false
                 self.aLabel.text = ""
                 //データベースに登録
                 let regist = Database.database().reference().child("users_download").child((Auth.auth().currentUser?.uid)!).child(self.postdata as! String)

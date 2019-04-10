@@ -22,6 +22,7 @@
 		22081FA32255809700577E5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22081FA12255809700577E5C /* ItemCell.xib */; };
 		22081FA52255874800577E5C /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA42255874800577E5C /* CollectViewController.swift */; };
 		22081FA72256041E00577E5C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA62256041E00577E5C /* ChartsViewController.swift */; };
+		220E200A225D6679002DCD90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220E2009225D6679002DCD90 /* GoogleService-Info.plist */; };
 		2288DC922248FFF80087D6B5 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2288DC912248FFF80087D6B5 /* ResultData.swift */; };
 		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
 		22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D222420D7200E33504 /* HomeViewController.swift */; };
@@ -33,7 +34,6 @@
 		EF0984792247D88100E1DF84 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */; };
 		EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */; };
 		EF4FFB7222438FC400AD277C /* MasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4FFB7122438FC400AD277C /* MasterData.swift */; };
-		EF693E78225CEC3900F39D3A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF693E77225CEC3900F39D3A /* GoogleService-Info.plist */; };
 		EFD0F761224A841E00D97FF5 /* AVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +57,7 @@
 		22081FA12255809700577E5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		22081FA42255874800577E5C /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
 		22081FA62256041E00577E5C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		220E2009225D6679002DCD90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2288DC912248FFF80087D6B5 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22BE41D222420D7200E33504 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		EF4FFB7122438FC400AD277C /* MasterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterData.swift; sourceTree = "<group>"; };
-		EF693E77225CEC3900F39D3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF693E79225D1A2C00F39D3A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		EF693E7A225D1A2C00F39D3A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerViewController.swift; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 				22023BFA223BA03700D0A854 /* Info.plist */,
 				22BE41D422420DF400E33504 /* ExamViewController.swift */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
+				220E2009225D6679002DCD90 /* GoogleService-Info.plist */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
-				EF693E77225CEC3900F39D3A /* GoogleService-Info.plist */,
 				22BE41D222420D7200E33504 /* HomeViewController.swift */,
 				22BE41D622420E3300E33504 /* ResultViewController.swift */,
 				2206A76222436F7A00D594F6 /* MasterTableViewCell.swift */,
@@ -231,7 +231,7 @@
 				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,
 				22081FA32255809700577E5C /* ItemCell.xib in Resources */,
 				2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */,
-				EF693E78225CEC3900F39D3A /* GoogleService-Info.plist in Resources */,
+				220E200A225D6679002DCD90 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

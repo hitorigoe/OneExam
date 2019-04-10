@@ -39,11 +39,13 @@ class ChartsViewController: UIViewController {
         var ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         
-        ref.child("users_true_count").child(userID!).observe(.value, with: { (snapshot)  in
+        ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot)  in
             // Get user value
-            if var tmp = snapshot.value {
-                self.correct_count = tmp as! Int
-                self.correctcount.text = "総正解数：\(tmp)"
+            if snapshot.value is NSNull {
+
+            } else {
+                self.correct_count = snapshot.value as! Int
+                self.correctcount.text = "総正解数：\(self.correct_count)"
                 // UsersDefaults
                 _ = self.userDefaults.integer(forKey: "users_true_count")
                 self.userDefaults.set(self.correct_count, forKey: "users_true_count")
@@ -52,13 +54,15 @@ class ChartsViewController: UIViewController {
             
         })
         
-        ref.child("users_test_count").child(userID!).observe(.value, with: { (snapshot) in
+        ref.child("users_test_count").child(userID!).observeSingleEvent(of:.value, with: { (snapshot) in
             // Get user value
-            if var tmp2 = snapshot.value {
+            if snapshot.value is NSNull {
+
+            } else {
                 print("rcfff")
-                self.test_count = tmp2 as! Int * 3
-                self.receivecount.text = "テスト受講回数：\(tmp2)"
-                self.examcount.text = "総問題数：\(tmp2 as! Int * 3)"
+                self.test_count = snapshot.value as! Int * 3
+                self.receivecount.text = "テスト受講回数：\(snapshot.value as! Int)"
+                self.examcount.text = "総問題数：\(snapshot.value as! Int * 3)"
                 
                 _ = self.userDefaults.integer(forKey: "users_test_count")
                 self.userDefaults.set(self.test_count, forKey: "users_test_count")
@@ -127,9 +131,11 @@ class ChartsViewController: UIViewController {
         
         ref.child("users_true_count").child(userID!).observe(.value, with: { (snapshot)  in
             // Get user value
-            if var tmp = snapshot.value {
-                self.correct_count = tmp as! Int
-                self.correctcount.text = "総正解数：\(tmp)"
+            if snapshot.value is NSNull {
+
+            } else {
+                self.correct_count = snapshot.value as! Int
+                self.correctcount.text = "総正解数：\(snapshot.value as! Int)"
                 // UsersDefaults
                 _ = self.userDefaults.integer(forKey: "users_true_count")
                 self.userDefaults.set(self.correct_count, forKey: "users_true_count")
@@ -140,11 +146,13 @@ class ChartsViewController: UIViewController {
         
         ref.child("users_test_count").child(userID!).observe(.value, with: { (snapshot) in
             // Get user value
-            if var tmp2 = snapshot.value {
+            if snapshot.value is NSNull {
+
+            } else {
                 print("rcfff")
-                self.test_count = tmp2 as! Int * 3
-                self.receivecount.text = "テスト受講回数：\(tmp2)"
-                self.examcount.text = "総問題数：\(tmp2 as! Int * 3)"
+                self.test_count = snapshot.value as! Int * 3
+                self.receivecount.text = "テスト受講回数：\(snapshot.value as! Int)"
+                self.examcount.text = "総問題数：\(snapshot.value as! Int * 3)"
                 
                 _ = self.userDefaults.integer(forKey: "users_test_count")
                 self.userDefaults.set(self.test_count, forKey: "users_test_count")
