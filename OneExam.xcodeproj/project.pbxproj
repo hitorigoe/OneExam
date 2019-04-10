@@ -22,7 +22,7 @@
 		22081FA32255809700577E5C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22081FA12255809700577E5C /* ItemCell.xib */; };
 		22081FA52255874800577E5C /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA42255874800577E5C /* CollectViewController.swift */; };
 		22081FA72256041E00577E5C /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22081FA62256041E00577E5C /* ChartsViewController.swift */; };
-		220E200A225D6679002DCD90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220E2009225D6679002DCD90 /* GoogleService-Info.plist */; };
+		2262C615225DE01C00ED58F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2262C614225DE01C00ED58F1 /* GoogleService-Info.plist */; };
 		2288DC922248FFF80087D6B5 /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2288DC912248FFF80087D6B5 /* ResultData.swift */; };
 		22BE41D12241E20D00E33504 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D02241E20D00E33504 /* LoginViewController.swift */; };
 		22BE41D322420D7200E33504 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE41D222420D7200E33504 /* HomeViewController.swift */; };
@@ -57,7 +57,7 @@
 		22081FA12255809700577E5C /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		22081FA42255874800577E5C /* CollectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectViewController.swift; sourceTree = "<group>"; };
 		22081FA62256041E00577E5C /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
-		220E2009225D6679002DCD90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2262C614225DE01C00ED58F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2288DC912248FFF80087D6B5 /* ResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultData.swift; sourceTree = "<group>"; };
 		22BE41D02241E20D00E33504 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22BE41D222420D7200E33504 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 				22023BFA223BA03700D0A854 /* Info.plist */,
 				22BE41D422420DF400E33504 /* ExamViewController.swift */,
 				22023BF2223BA03500D0A854 /* OneExam.xcdatamodeld */,
-				220E2009225D6679002DCD90 /* GoogleService-Info.plist */,
 				22BE41D02241E20D00E33504 /* LoginViewController.swift */,
 				22BE41D222420D7200E33504 /* HomeViewController.swift */,
 				22BE41D622420E3300E33504 /* ResultViewController.swift */,
@@ -128,6 +127,7 @@
 				EF4FFB7122438FC400AD277C /* MasterData.swift */,
 				2205A2FA224767B600DFBB2A /* MasterData2.swift */,
 				EF0984772247D88000E1DF84 /* ResultTableViewCell.swift */,
+				2262C614225DE01C00ED58F1 /* GoogleService-Info.plist */,
 				EF0984782247D88100E1DF84 /* ResultTableViewCell.xib */,
 				2288DC912248FFF80087D6B5 /* ResultData.swift */,
 				EFD0F760224A841E00D97FF5 /* AVPlayerViewController.swift */,
@@ -207,6 +207,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 				ja,
 			);
@@ -231,7 +232,7 @@
 				EF09847A2247D88100E1DF84 /* ResultTableViewCell.xib in Resources */,
 				22081FA32255809700577E5C /* ItemCell.xib in Resources */,
 				2206A76522436F7A00D594F6 /* MasterTableViewCell.xib in Resources */,
-				220E200A225D6679002DCD90 /* GoogleService-Info.plist in Resources */,
+				2262C615225DE01C00ED58F1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.toritori3.OneExam;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.toritori4.OneExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.toritori3.OneExam;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.toritori4.OneExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         let tabBarView = tabBarController.view!
         tabBarView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabBarView)
+        if #available(iOS 11.0, *) {
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             tabBarView.topAnchor.constraint(equalTo: safeArea.topAnchor),
@@ -50,6 +51,8 @@ class ViewController: UIViewController {
             tabBarView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             tabBarView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             ])
+        }
+        
         tabBarController.didMove(toParent: self)
         
         // タブをタップした時に表示するViewControllerを設定する
