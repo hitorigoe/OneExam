@@ -39,7 +39,7 @@ class ChartsViewController: UIViewController {
         var ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
         
-        ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot)  in
+        ref.child("users_true_count").child(userID!).observe( .value, with: { (snapshot)  in
             // Get user value
             if snapshot.value is NSNull {
 
@@ -54,12 +54,12 @@ class ChartsViewController: UIViewController {
             
         })
         
-        ref.child("users_test_count").child(userID!).observeSingleEvent(of:.value, with: { (snapshot) in
+        ref.child("users_test_count").child(userID!).observe(.value, with: { (snapshot) in
             // Get user value
             if snapshot.value is NSNull {
 
             } else {
-                print("rcfff")
+                
                 self.test_count = snapshot.value as! Int * 3
                 self.receivecount.text = "テスト受講回数：\(snapshot.value as! Int)"
                 self.examcount.text = "総問題数：\(snapshot.value as! Int * 3)"
@@ -89,8 +89,11 @@ class ChartsViewController: UIViewController {
         let tmp = 100 - correct_percent2
         
         //let correct_percent3 = ceil(correct_percent2 ) as! FloatingPoint
-        
-        let entries = [
+        var entries = [
+            PieChartDataEntry(value: 50, label: "結果表示"),
+            PieChartDataEntry(value: 50, label: "結果表示"),
+        ]
+        entries = [
             PieChartDataEntry(value: correct_percent2, label: "正解率"),
             PieChartDataEntry(value: tmp, label: "不正解率"),
         ]
@@ -103,7 +106,7 @@ class ChartsViewController: UIViewController {
         
         //set.setColor(UIColor.green, UIColor.blue,alpha:0x1)
         chartView.data = PieChartData(dataSet: set)
-        print("ppp")
+        
         print(self.view.bounds.width)
         
         if self.view.bounds.width > 350.0 {
@@ -126,7 +129,8 @@ class ChartsViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-
+        self.userDefaults.removeObject(forKey: "users_true_count")
+        self.userDefaults.removeObject(forKey: "users_test_count")
     }
     override func viewWillAppear(_ animated: Bool) {
         print("haitta")

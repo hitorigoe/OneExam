@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import SVProgressHUD
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     var image1: UIImage!
@@ -89,10 +89,20 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        mailAddressTextField.delegate = self
+        passwordTextField.delegate = self
+        displayNameTextField.delegate = self
         image1 = UIImage(named:"chinese_")
+        let reSize = CGSize(width: 30, height:30)
+        image1.reSizeImage(reSize: reSize)
         imageView.image = image1
         image2 = UIImage(named:"panda-bear")
         //panda1view.image = image2
@@ -112,4 +122,21 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+extension UIImage {
+    // resize image
+    func reSizeImage(reSize:CGSize)->UIImage {
+        //UIGraphicsBeginImageContext(reSize);
+        UIGraphicsBeginImageContextWithOptions(reSize,false,UIScreen.main.scale);
+        self.draw(in: CGRect(x: 0, y: 0, width: reSize.width, height: reSize.height));
+        let reSizeImage:UIImage! = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return reSizeImage;
+    }
+    
+    // scale the image at rates
+    func scaleImage(scaleSize:CGFloat)->UIImage {
+        let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
+        return reSizeImage(reSize: reSize)
+    }
 }
