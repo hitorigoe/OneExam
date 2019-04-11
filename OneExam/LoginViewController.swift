@@ -19,7 +19,9 @@ class LoginViewController: UIViewController {
     var image3: UIImage!
     @IBOutlet weak var mailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var displayNameTextField: UITextField!
+    
     @IBOutlet weak var panda1view: UIImageView!
     @IBOutlet weak var panda2view: UIImageView!
     @IBAction func handleLoginButton(_ sender: Any) {

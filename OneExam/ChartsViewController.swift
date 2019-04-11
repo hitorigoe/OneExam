@@ -105,10 +105,14 @@ class ChartsViewController: UIViewController {
         chartView.data = PieChartData(dataSet: set)
         print("ppp")
         print(self.view.bounds.width)
-        print(chartView.frame.width)
-        chartView.frame = CGRect(x:(self.view.bounds.width - 350) / 2,y:self.heightdata,width: 350,height:350)
-        view.addSubview(chartView)
-        print("pripri")
+        
+        if self.view.bounds.width > 350.0 {
+            chartView.frame = CGRect(x:(self.view.bounds.width - 350) / 2,y:self.heightdata,width: 350,height:350)
+            view.addSubview(chartView)
+        } else {
+            chartView.frame = CGRect(x:(self.view.bounds.width - 270) / 2,y:self.heightdata + 100 ,width: 270,height:270)
+            view.addSubview(chartView)
+        }
         
     
     
@@ -195,10 +199,14 @@ class ChartsViewController: UIViewController {
         chartView.data = PieChartData(dataSet: set)
         print("ppp")
         print(self.view.bounds.width)
-        print(chartView.frame.width)
-        chartView.frame = CGRect(x:(self.view.bounds.width - 350) / 2,y:self.heightdata,width: 350,height:350)
-        view.addSubview(chartView)
-        print("pripri")
+        
+        if self.view.bounds.width > 350.0 {
+            chartView.frame = CGRect(x:(self.view.bounds.width - 350) / 2,y:self.heightdata,width: 350,height:350)
+            view.addSubview(chartView)
+        } else {
+            chartView.frame = CGRect(x:(self.view.bounds.width - 270) / 2,y:self.heightdata + 100 ,width: 270,height:270)
+            view.addSubview(chartView)
+        }
         
     }
 
