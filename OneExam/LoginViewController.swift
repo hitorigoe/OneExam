@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import SVProgressHUD
+import ESTabBarController
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -84,10 +85,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         SVProgressHUD.dismiss()
                         // 画面を閉じてViewControllerに戻る
                         self.dismiss(animated: true, completion: nil)
+                        //let tabBarController = self.parent as! ESTabBarController
+                        //tabBarController.setSelectedIndex(0, animated: false)
                     }
                 }
             }
         }
+    }
+    @IBAction func noMemberBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // キーボードを閉じる

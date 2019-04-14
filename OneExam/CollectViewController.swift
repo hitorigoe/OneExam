@@ -31,6 +31,7 @@ class CollectViewController: UIViewController {
     var myMoviePlayerView : MPMoviePlayerViewController!
     var moviedata:Any?
     
+    @IBOutlet weak var nMemberLabel: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,23 +60,34 @@ class CollectViewController: UIViewController {
         self.dataArray = []
         let ref = Database.database().reference()
         let userID = Auth.auth().currentUser?.uid
-        ref.child("users_download").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            if snapshot.key.count > 1 {
-                self.label?.text?.removeAll()
-            }
-            self.i = 0
-            for itemSnapShot in snapshot.children {
-                //ここで取得したデータを自分で定義したデータ型に入れて、加工する
-                var chartData = ChartData(snapshot: itemSnapShot as! DataSnapshot)
-                
-                self.dataArray.append(chartData.movie!)
-                self.i = self.i + 1
-            }
-            self.collectionVIew.reloadData()
-        })
+        if userID != nil {
+            ref.child("users_download").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                if snapshot.key.count > 1 {
+                    self.label?.text?.removeAll()
+                }
+                self.i = 0
+                for itemSnapShot in snapshot.children {
+                    //ここで取得したデータを自分で定義したデータ型に入れて、加工する
+                    var chartData = ChartData(snapshot: itemSnapShot as! DataSnapshot)
+                    
+                    self.dataArray.append(chartData.movie!)
+                    self.i = self.i + 1
+                }
+                self.collectionVIew.reloadData()
+                            self.nMemberLabel.setTitle("", for: .normal)
+            })
+        } else {
+            nMemberLabel.setTitle("会員登録すると成績表示されます", for: .normal)
+        }
         print("aabb")
         dump(dataArray)
+    }
+    
+    @IBAction func nMemberBtn(_ sender: Any) {
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier:"Login") as! LoginViewController
+        
+        self.present(loginViewController, animated: true, completion: nil)
     }
     
     

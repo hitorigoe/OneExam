@@ -114,12 +114,13 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         
         let ref = Database.database().reference()
         // 解答データ上書き
-
-        for item in answerBox {
-              self.postRef3 = ref.child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
-              self.postRef3.setValue(item.value)
-            if item.value.contains("true") {
-                tmpcount = tmpcount + 1
+        if userID != nil {
+            for item in answerBox {
+                  self.postRef3 = ref.child("users_exam_detail").child(userID!).child(self.postdata as! String).child("\(item.key)")
+                  self.postRef3.setValue(item.value)
+                if item.value.contains("true") {
+                    tmpcount = tmpcount + 1
+                }
             }
         }
         ref.child("exam").child(self.postdata as! String).child("1").child("streamurl").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -128,42 +129,40 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             self.streamurl = valueDictionary as String
         })
         
-        ref.child("users_test_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            var testcount = snapshot.value
-
-            
-            if snapshot.value is NSNull {
-                let bb = 1
-                self.postRef4 = ref.child("users_test_count").child(userID!)
-                self.postRef4.setValue(bb)
-            } else {
-                let bb = testcount as! Int + 1
-                self.postRef4 = ref.child("users_test_count").child(userID!)
-                self.postRef4.setValue(bb)
-            }
-            
-        })
+        if userID != nil { ref.child("users_test_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                var testcount = snapshot.value
+                if snapshot.value is NSNull {
+                    let bb = 1
+                    self.postRef4 = ref.child("users_test_count").child(userID!)
+                    self.postRef4.setValue(bb)
+                } else {
+                    let bb = testcount as! Int + 1
+                    self.postRef4 = ref.child("users_test_count").child(userID!)
+                    self.postRef4.setValue(bb)
+                }
+            })
         
         ref.child("users_true_count").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            var truecount = snapshot.value
+                var truecount = snapshot.value
 
-            if snapshot.value is NSNull {
-                let dd = self.tmpcount
-                self.postRef5 = ref.child("users_true_count").child(userID!)
-                self.postRef5.setValue(dd)
-            } else {
-                let dd = truecount as! Int + self.tmpcount
-                self.postRef5 = ref.child("users_true_count").child(userID!)
-                self.postRef5.setValue(dd)
-            }
-        })
+                if snapshot.value is NSNull {
+                    let dd = self.tmpcount
+                    self.postRef5 = ref.child("users_true_count").child(userID!)
+                    self.postRef5.setValue(dd)
+                } else {
+                    let dd = truecount as! Int + self.tmpcount
+                    self.postRef5 = ref.child("users_true_count").child(userID!)
+                    self.postRef5.setValue(dd)
+                }
+            })
         ref.child("users_download").child(userID!).child(masterArray[0].content).observe(.value, with: { (snapshot)  in
-            // Get user value
-            if snapshot.value is NSNull {
-                self.downloadBtn.isEnabled = true
-            }
+                // Get user value
+                if snapshot.value is NSNull {
+                    self.downloadBtn.isEnabled = true
+                }
         
-        })
+            })
+        }
         
         // answerBoxの中身をみる
         //var str3:String = "answer" + String(indexPath.row + 1)
@@ -174,9 +173,6 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
                 //ここで取得したデータを自分で定義したデータ型に入れて、加工する
                 var resultData = ResultData(snapshot: itemSnapShot as! DataSnapshot)
                 self.resultArray.insert(resultData!, at: self.i)
-                print("post")
-                print("ここは何回？")
-                dump(self.resultArray.count)
                 self.tableView.reloadData()
                 self.i = self.i + 1
                 
@@ -369,7 +365,5 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
                 print("createDir: \(error)")
             }
         }
-        
-    
     }
 }

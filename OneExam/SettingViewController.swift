@@ -19,6 +19,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var image1: UIImage!
 
+    @IBOutlet weak var settingBtn: UIButton!
     @IBAction func handleChangeButton(_ sender: Any) {
         if let displayName = displayNameTextField.text {
             
@@ -51,15 +52,21 @@ class SettingViewController: UIViewController {
     }
     @IBAction func handleLogoutButton(_ sender: Any) {
         // ログアウトする
-        try! Auth.auth().signOut()
+        if Auth.auth().currentUser != nil {
+            try! Auth.auth().signOut()
+            // ログイン画面を表示する
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
         
-        // ログイン画面を表示する
-        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-        self.present(loginViewController!, animated: true, completion: nil)
-        
-        // ログイン画面から戻ってきた時のためにホーム画面（index = 0）を選択している状態にしておく
-        let tabBarController = parent as! ESTabBarController
-        tabBarController.setSelectedIndex(0, animated: false)
+            // ログイン画面から戻ってきた時のためにホーム画面（index = 0）を選択している状態にしておく
+            let tabBarController = parent as! ESTabBarController
+            tabBarController.setSelectedIndex(0, animated: false)
+        } else {
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier:"Login") as! LoginViewController
+            
+            self.present(loginViewController, animated: true, completion: nil)
+        }
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +81,9 @@ class SettingViewController: UIViewController {
         let user = Auth.auth().currentUser
         if let user = user {
         //    displayNameTextField.text = user.displayName
+            settingBtn.setTitle("ログアウト", for: .normal)
+        } else {
+            settingBtn.setTitle("会員登録する", for: .normal)
         }
     }
     

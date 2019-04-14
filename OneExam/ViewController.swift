@@ -12,7 +12,7 @@ import Firebase // 先頭でFirebaseをimportしておく
 import FirebaseAuth
 
 class ViewController: UIViewController {
-    
+    var nologin: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +24,10 @@ class ViewController: UIViewController {
         if Auth.auth().currentUser == nil {
             // ログインしていないときの処理
             // ログインレス機能を取り付ける
+            /*
             let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
             self.present(loginViewController!, animated: true, completion: nil)
+            */
         }
     }
     
